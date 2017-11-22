@@ -6,10 +6,10 @@ use ieee.numeric_std.all;
 entity bancoRegistradores is
     generic
     (
-        larguraDados        : natural := 8;
-        larguraEndBancoRegs : natural := 3
+        larguraDados        : natural := 32;
+        larguraEndBancoRegs : natural := 32
     );
-	 
+
 -- Leitura de 2 registradores e escrita em 1 registrador simultaneamente.
     port
     (
@@ -20,7 +20,7 @@ entity bancoRegistradores is
         enderecoC   : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
 --
         dadoEscritaC    : in std_logic_vector((larguraDados-1) downto 0);
---      
+--
         escreveC      : in std_logic := '1';
 --
         saidaA          : out std_logic_vector((larguraDados -1) downto 0);
@@ -28,19 +28,19 @@ entity bancoRegistradores is
     );
 end entity;
 
-architecture behaviour of bancoRegistradores is 
+architecture behaviour of bancoRegistradores is
 
 
 	subtype word_t is std_logic_vector(7 downto 0);
 	type memory_t is array(7 downto 0) of word_t;
-	
+
 		-- Declare the RAM signal.
 	-- signal ram : memory_t;
-	
+
 	-- Register to hold the address
 	signal addr_reg : natural range 0 to 7;
-	
-	
+
+
 	function init_bank
 		return memory_t is
 		variable tmp : memory_t := (others => (others => '0'));
@@ -54,15 +54,15 @@ architecture behaviour of bancoRegistradores is
 		tmp(5) := std_logic_vector(to_unsigned(108, 8));
 		return tmp;
 	end init_bank;
-	
+
 	-- Declare the ROM signal and specify a default value.	Quartus II
-	-- will create a memory initialization file (.mif) based on the 
+	-- will create a memory initialization file (.mif) based on the
 	-- default value.
 	signal ram : memory_t := init_bank;
-	
-	
 
-begin 
+
+
+begin
 
 	process (clk)
 	begin
@@ -73,10 +73,10 @@ begin
 		end if;
 
 	end process;
-	
+
 	saidaA <= ram(to_integer(signed (enderecoA)));
-	
+
 	saidaB <= ram(to_integer(signed (enderecoB)));
-	
+
 
 end behaviour;
