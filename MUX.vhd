@@ -6,18 +6,18 @@ entity MUX is
 
   generic(
     DATA_WIDTH : natural := 32
-  )
+  );
 
   port (
-  SEL : in std_logic_vector (1 downto 0);
-  A   : in std_logic_vector (DATA_WIDTH downto 0);
-  B   : in std_logic_vector (DATA_WIDTH downto 0);
-  C : out std_logic_vector (DATA_WIDTH downto 0)
+  SEL : in std_logic;
+  A   : in std_logic_vector (DATA_WIDTH-1 downto 0);
+  B   : in std_logic_vector (DATA_WIDTH-1 downto 0);
+  C : out std_logic_vector (DATA_WIDTH-1 downto 0)
   );
 end entity;
 
 architecture MUX_ARCH of MUX is
 begin
-  C <= A WHEN (SEL = "0") ELSE
+  C <= A WHEN (SEL = '0') ELSE
            B;
 end architecture;

@@ -1,56 +1,21 @@
--- Quartus Prime VHDL Template
--- One-bit wide, N-bit long shift register with asynchronous reset
-
-library ieee;
+library IEEE;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
-entity basic_shift_register_asynchronous_reset is
-
-	generic
-	(
-		NUM_STAGES : natural := 256
+entity shifter is
+	generic (
+		DATA_WIDTH : natural := 32
 	);
-
-	port
-	(
-		clk	    : in std_logic;
-		enable	: in std_logic;
-		reset   : in std_logic;
-		sr_in	    : in std_logic;
-		sr_out	: out std_logic
-	);
-
+  port (
+	A : in std_logic_vector (DATA_WIDTH-1 downto 0);
+	B : out std_logic_vector (DATA_WIDTH-1 downto 0)
+  );
 end entity;
 
-architecture rtl of basic_shift_register_asynchronous_reset is
-
-	-- Build an array type for the shift register
-	type sr_length is array ((NUM_STAGES-1) downto 0) of std_logic;
-
-	-- Declare the shift register signal
-	signal sr: sr_length;
+architecture shifterarch of shifter  is
 
 begin
 
-	process (clk, reset)
-	begin
-		if (reset = '1') then
-			sr <= (others=>'0');
-		elsif (rising_edge(clk)) then
+	B <= A(DATA_WIDTH-3 downto 0) & "00";
 
-			if (enable = '1') then
-
-				-- Shift data by one stage; data from last stage is lost
-				sr((NUM_STAGES-1) downto 1) <= sr((NUM_STAGES-2) downto 0);
-
-				-- Load new data into the first stage
-				sr(0) <= sr_in;
-
-			end if;
-		end if;
-	end process;
-
-	-- Capture the data from the last stage, before it is lost
-	sr_out <= sr(NUM_STAGES-1);
-
-end rtl;
+end architecture;

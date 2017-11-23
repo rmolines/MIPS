@@ -31,14 +31,14 @@ end entity;
 architecture behaviour of bancoRegistradores is
 
 
-	subtype word_t is std_logic_vector(7 downto 0);
-	type memory_t is array(7 downto 0) of word_t;
+	subtype word_t is std_logic_vector((larguraDados-1) downto 0);
+	type memory_t is array((larguraEndBancoRegs-1) downto 0) of word_t;
 
 		-- Declare the RAM signal.
 	-- signal ram : memory_t;
 
 	-- Register to hold the address
-	signal addr_reg : natural range 0 to 7;
+	signal addr_reg : natural range 0 to (larguraEndBancoRegs-1);
 
 
 	function init_bank
@@ -46,12 +46,12 @@ architecture behaviour of bancoRegistradores is
 		variable tmp : memory_t := (others => (others => '0'));
 	begin
 		-- Initialize each address with the address itself
-		tmp(0) := std_logic_vector(to_unsigned(114, 8));
-		tmp(1) := std_logic_vector(to_unsigned(097, 8));
-		tmp(2) := std_logic_vector(to_unsigned(102, 8));
-		tmp(3) := std_logic_vector(to_unsigned(097, 8));
-		tmp(4) := std_logic_vector(to_unsigned(101, 8));
-		tmp(5) := std_logic_vector(to_unsigned(108, 8));
+		tmp(0) := std_logic_vector(to_signed(114, larguraDados));
+		tmp(1) := std_logic_vector(to_signed(097, larguraDados));
+		tmp(2) := std_logic_vector(to_signed(102, larguraDados));
+		tmp(3) := std_logic_vector(to_signed(097, larguraDados));
+		tmp(4) := std_logic_vector(to_signed(101, larguraDados));
+		tmp(5) := std_logic_vector(to_signed(108, larguraDados));
 		return tmp;
 	end init_bank;
 
@@ -74,9 +74,9 @@ begin
 
 	end process;
 
-	saidaA <= ram(to_integer(signed (enderecoA)));
+	saidaA <= ram(to_integer(unsigned (enderecoA)));
 
-	saidaB <= ram(to_integer(signed (enderecoB)));
+	saidaB <= ram(to_integer(unsigned (enderecoB)));
 
 
 end behaviour;

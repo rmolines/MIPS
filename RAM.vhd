@@ -5,7 +5,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity simple_dual_port_ram_single_clock is
+entity RAM is
 
 	generic
 	(
@@ -18,21 +18,37 @@ entity simple_dual_port_ram_single_clock is
 		clk		: in std_logic;
 		addr	: in natural range 0 to 2**ADDR_WIDTH - 1;
 		data	: in std_logic_vector((DATA_WIDTH-1) downto 0);
-		we		: in std_logic := '1';
-		re		: in std_logic := 1;
+		we		: in std_logic := '0';
+		re		: in std_logic := '1';
 		q		: out std_logic_vector((DATA_WIDTH -1) downto 0)
 	);
 
-end simple_dual_port_ram_single_clock;
+end RAM;
 
-architecture rtl of simple_dual_port_ram_single_clock is
+architecture rtl of RAM is
 
 	-- Build a 2-D array type for the RAM
 	subtype word_t is std_logic_vector((DATA_WIDTH-1) downto 0);
 	type memory_t is array(2**ADDR_WIDTH-1 downto 0) of word_t;
 
-	-- Declare the RAM signal.
-	signal ram : memory_t;
+	function init_bank
+		return memory_t is
+		variable tmp : memory_t := (others => (others => '0'));
+	begin
+		-- Initialize each address with the address itself
+		tmp(0) := std_logic_vector(to_signed(114, larguraDados));
+		tmp(1) := std_logic_vector(to_signed(097, larguraDados));
+		tmp(2) := std_logic_vector(to_signed(102, larguraDados));
+		tmp(3) := std_logic_vector(to_signed(097, larguraDados));
+		tmp(4) := std_logic_vector(to_signed(101, larguraDados));
+		tmp(5) := std_logic_vector(to_signed(108, larguraDados));
+		return tmp;
+	end init_bank;
+
+	-- Declare the ROM signal and specify a default value.	Quartus II
+	-- will create a memory initialization file (.mif) based on the
+	-- default value.
+	signal ram : memory_t := init_bank;
 
 begin
 
@@ -40,10 +56,10 @@ begin
 	begin
 	if(rising_edge(clk)) then
 		if(we = '1') then
-			ram(waddr) <= data;
+			ram(addr) <= data;
 		end if;
 		if (re = '1') then
-			q <= ram(raddr);
+			q <= ram(addr);
 		end if;
 	end if;
 	end process;

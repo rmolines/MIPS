@@ -1,14 +1,18 @@
-entity  is
+library IEEE;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity fluxoDeDados is
   port (
     clk : in std_logic
   );
 end entity;
 
-architecture MIPSarch of MIPS is
+architecture fluxoDeDadosarch of fluxoDeDados is
 
   signal      dataMemOut, readData1, readData2, extendedSignalOut, readMemData, PCOut,
               muxBEQOut, muxRtImmOut, ULAOut, muxJumpOut, muxULAMemOut, adderPCOut, adderBEQOut,
-              instMemOut, inst, immShifterOut, four: std_logic_vector (31 downto 0);
+              instMemOut, inst, immShifterOut, four, muxJumpIn, muxProxPC: std_logic_vector (31 downto 0);
 
   signal      instRs, instRt, instRd, muxRtRdOut   : std_logic_vector (4 downto 0);
 
@@ -23,12 +27,13 @@ architecture MIPSarch of MIPS is
   signal      ULAOP : std_logic_vector (1 downto 0);
 
   signal      memReadEnb, memWriteEnb, BEQ, muxRtRdSel, muxJumpSel,
-              regWriteEnb, muxRtImmSel, muxULAMemSel, zeroFlag
+              regWriteEnb, muxRtImmSel, muxULAMemSel, zeroFlag,
               ANDBeqOut: std_logic;
 
 
 begin
 
+  muxJumpIn <= PCOut(31 downto 28) & instShifterOut(25 downto 0) & "00";
   instRt <= instMemOut(20 downto 16);
   instRd <= instMemOut(15 downto 11);
   instRs <= instMemOut(25 downto 21);
@@ -38,20 +43,21 @@ begin
   instFunct <= instMemOut(5 downto 0);
 
   muxProxPC <= (adderPCOut(31 downto 28)
-                & instMemOut(25 downto 0);
+                & instMemOut(25 downto 0)
                 & "00");
 
-  four <= std_logic_vector(to_unsigned(4, four'length))
+  four <= std_logic_vector(to_unsigned(4, four'length));
+  ANDBeqOut <= zeroFlag AND BEQ;
 
   PC          : entity work.registradorGenerico port map
               (DIN => muxJumpOut, DOUT => PCOut, CLK => clk);
 
-  InstMem     : entity work.memoria portmap
-              (clk => clk, addr => PCOut,
-              re => '1', we => '0', q => instMemOut);
+  InstMem     : entity work.RAM port map
+              (clk => clk, addr => to_integer(signed(PCOut)),
+              re => '1', we => '0', q => instMemOut, data => muxJumpIn);
 
   MuxRtRd     : entity work.MUX generic map (DATA_WIDTH => 5)
-                port map (A => instRt, B => instRd, C => muxRtImmOut
+                port map (A => instRt, B => instRd, C => muxRtImmOut,
                 SEL => muxRtImmSel);
 
   BancoReg    : entity work.bancoRegistradores port map
@@ -70,34 +76,32 @@ begin
   SigExt      : entity work.signExtend port map
               (A => instImmSmall, B => signExtendOut);
 
-  BEQAnd      : entity work.AND port map
-              (A => BEQ, B => zeroFlag, C => ANDBeqOut);
-
-  MemDados    : entity work.memory port map
-              (clk => clk, addr => ULAOut, data => readData2,
+  MemDados    : entity work.RAM port map
+              (clk => clk, addr => to_integer(signed(ULAOut)), data => readData2,
               re => memReadEnb, we => memWriteEnb, q => readMemData);
 
-  MuxULA      : entity work.ULA port map
-              (A => readMemData, B => ULAOut, SEL => muxULAMemSel,
+  MuxULAMem   : entity work.MUX port map
+              (A => ULAOut, B => readMemData, SEL => muxULAMemSel,
               C => muxULAMemOut);
 
   MuxBEQ      : entity work.MUX port map
-              (SEL => ANDBeqOut, A => adderBEQOut, B => adderPCOut,
+              (SEL => ANDBeqOut, A => adderPCOut, B => adderBEQOut,
               C => muxBEQOut);
 
   AdderBEQ    : entity work.ULA port map
               (A => adderPCOut, B => immShifterOut, C => adderBEQOut,
-              SEL => '00');
+              SEL => "0010");
 
-  ShifterImm  : entity work.shifter port map
+  ShifterImm  : entity work.shifter generic map (DATA_WIDTH => 26)
+              port map
               (A => signExtendOut, B => immShifterOut);
 
   AdderPC     : entity work.ULA port map
-              (A => PCOut, B => four, SEL => '00', C => adderPCOut);
+              (A => PCOut, B => four, SEL => "0010", C => adderPCOut);
 
   MuxJUMP     : entity work.MUX port map
-              (SEL => muxJumpSel, A => instShifterOut,
-              B => muxBEQOut, C => muxJumpOut);
+              (SEL => muxJumpSel, A => muxBEQOut,
+              B => muxJumpIn, C => muxJumpOut);
 
   ShifterInst : entity work.shifter port map
               (A => instImmBig, B => instShifterOut);

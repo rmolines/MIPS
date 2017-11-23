@@ -3,12 +3,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 
  entity registradorGenerico is
     generic (
-        larguraDados : natural := 8
+        larguraDados : natural := 32
     );
       port (DIN : in    std_logic_vector(larguraDados-1 downto 0);
-           DOUT : out   std_logic_vector(larguraDados-1 downto 0) := "0000";
-           ENABLE : in  std_logic;
-           CLK,RST : in std_logic);
+           DOUT : out   std_logic_vector(larguraDados-1 downto 0);
+           ENABLE : in  std_logic := '1';
+           CLK : in std_logic;
+			  RST : in std_logic := '0');
  end entity;
 
  architecture comportamento of registradorGenerico is

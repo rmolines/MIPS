@@ -2,18 +2,18 @@ library IEEE;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity ULA is
+entity ULAMIPS is
 
     Port ( A :  in std_logic_vector(31 downto 0);
            B :  in std_logic_vector(31 downto 0);
            Sel: in std_logic_vector(3 downto 0);
            C : out std_logic_vector(31 downto 0);
-        	 overflow: out std_logic,
-				   zeroFlag : out std_logic
+        	  overflow: out std_logic;
+			  zeroFlag : out std_logic
    );
 end entity;
 
-architecture comportamento of ULA is
+architecture comportamento of ULAMIPS is
 
 begin
   process (A, B, Sel) is

@@ -2,7 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 use ieee.numeric_std.all;
 
-entity UCULA is
+entity UCFD is
   port (
   clk	  : in std_logic;
   OP    : in std_logic_vector(1 downto 0);
@@ -11,7 +11,7 @@ entity UCULA is
   );
 end entity;
 
-architecture UCULAarch of UCULA  is
+architecture UCFDarch of UCFD is
 
 
 begin
