@@ -1,0 +1,92 @@
+entity ULA is
+
+  Port ( A :  in std_logic_vector(31 downto 0);
+         B :  in std_logic_vector(31 downto 0);
+         Sel: in std_logic_vector(3 downto 0);
+         C : out std_logic_vector(31 downto 0);
+			   zeroFlag : out std_logic
+ );
+end entity;
+
+architecture ULAarch of ULA is
+
+  signal muxAOut, muxBOut, adderOut
+         andOut, orOut, sltIn: std_logic_vector(31 downto 0);
+  signal overflow : std_logic;
+
+begin
+
+  process (A, B, Sel) is
+    variable tempOF : std_logic_vector(2 downto 0);
+    variable tempA  : std_logic_vector(31 downto 0);
+    variable tempB  : std_logic_vector(31 downto 0);
+    variable C9     : std_logic_vector(32 downto 0);
+  begin
+    tempA := (others => '0');
+    tempB := (others => '0');
+    case Sel(3 downto 2) is
+      when "10" => tempA := std_logic_vector(-signed(A)+1)
+      when "01" => tempB := std_logic_vector(-signed(B)+1)
+      when others => tempA := A; tempB := B;
+    end case;
+    C9 := (others => '0');
+    case Sel(1 downto 0) is
+      when "11" => C9 := (0 => sltIn, others => '0');
+      when "10" => C9 := std_logic_vector(resize(signed(std_logic_vector(signed(A) + signed(B))), C9'length));
+      when "01" => C9(32 downto 0) := '0' & std_logic_vector(A OR B);
+      when "00" => C9(32 downto 0) := '0' & std_logic_vector(A AND B);
+      when others => C9 := (others => '0');
+    end case;
+    C(31 downto 0) <= C9(31 downto 0);
+    case Sel is
+      -- overflow = "b001" (entrada POSITIVA e saida NEGATIVA)  OU "b110" (entrada NEGATIVA e saida POSITIVA)
+      when "00" => tempOF := A(A'high) & B(B'high) & C9(C9'high-1);
+      when "01" => tempOF := A(A'high) & not(B(B'high)) & C9(C9'high-1);
+      when others => tempOF := (others => '0');
+    end case;
+    case tempOF is
+      when "001"  => overflow <= '1';
+      when "110"  => overflow <= '1';
+      when others => overflow <= '0';
+    end case;
+    sltIn(0) <= (0 => overflow XOR adderOut(31), others => '0');
+    case signed(C) is
+      when 0 => zeroFlag := '1'
+      when others => zeroFlag := '0';
+    end case;
+  end process;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  C => muxResultOut;
+  zeroFlag => NOT muxResultOut;
+  sltIn <= '1' WHEN ()
+
+  MuxA : entity work.MUX port map
+       (A => A, B => (NOT A), SEL => SEL(3),
+       C => muxAOut);
+
+  MuxB : entity work.MUX port map
+       (A => B, B => NOT B, SEL => SEL(2),
+       C => muxBOut);
+
+  Adder : entity work.adder port map
+       (A => muxAOut, B => muxBOut, C => adderOut,
+       vemUm => vemUm, overflow => overflow);
+
+  MUXResult : entity work.MUX4 port map
+       (A => andOut, B => orOut, C => adderOut,
+       D => sltOut, E => muxResultOut, sel => sel(1 downto 0));
+
+end architecture;
