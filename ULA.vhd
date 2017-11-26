@@ -21,7 +21,7 @@ architecture ULAarch of ULA is
 
 begin
 
-  process (A, B, Sel) is
+  process (A, B, Sel, sltIn, overflow) is
     variable tempOF : std_logic_vector(2 downto 0);
     variable tempA  : std_logic_vector(31 downto 0);
     variable tempB  : std_logic_vector(31 downto 0);

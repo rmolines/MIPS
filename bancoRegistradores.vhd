@@ -50,11 +50,12 @@ architecture behaviour of bancoRegistradores is
 		variable tmp : memory_t := (others => (others => '0'));
 	begin
 		-- Initialize each address with the address itself
-		tmp(0) := std_logic_vector(to_signed(0, larguraDados));
-		tmp(1) := std_logic_vector(to_signed(12, larguraDados));
-		tmp(2) := std_logic_vector(to_signed(13, larguraDados));
+		tmp(0) := std_logic_vector(to_signed(1000, larguraDados));
+		tmp(1) := std_logic_vector(to_signed(8, larguraDados));
+		tmp(2) := std_logic_vector(to_signed(-4, larguraDados));
 		tmp(3) := std_logic_vector(to_signed(3, larguraDados));
 		tmp(4) := std_logic_vector(to_signed(4, larguraDados));
+		tmp(31) := std_logic_vector(to_signed(1997, larguraDados));
 		return tmp;
 	end init_bank;
 

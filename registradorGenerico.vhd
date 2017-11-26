@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
 
  entity registradorGenerico is
     generic (
@@ -13,12 +14,15 @@ use IEEE.STD_LOGIC_1164.ALL;
  end entity;
 
  architecture comportamento of registradorGenerico is
+   signal reg : std_logic_vector (larguraDados-1 downto 0) := std_logic_vector(to_signed(0, larguraDados));
  begin
+
+--	 DOUT <= std_logic_vector(to_signed(0, larguraDados));
     -- In Altera devices, register signals have a set priority.
     -- The HDL design should reflect this priority.
     process(RST, CLK)
     begin
-            if (rising_edge(CLK)) then
+            if ((CLK) = '1') then
 					 if (RST = '1') then
 						DOUT <= (others => '0');
                 else if (ENABLE = '1') then

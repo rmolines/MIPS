@@ -6,7 +6,13 @@ entity fluxoDeDados is
   port (
     clk : in std_logic;
     regTestEnd : in std_logic_vector (4 downto 0);
-    regTestOut : out std_logic_vector (31 downto 0)
+	 memTestEnd : in std_logic_vector (31 downto 0);
+    regTestOut, memTestOut : out std_logic_vector (31 downto 0);
+    instRsOut, instRtOut, instRdOut : out std_logic_vector(4 downto 0);
+    readData1Out, readData2Out, writeData,
+    PCOutTeste, ULAINA, ULAINB, ULAOUTTESTE : out std_logic_vector(31 downto 0);
+    word : out std_logic_vector(9 downto 0);
+	  ULASEL : out std_logic_vector(3 downto 0)
   );
 end entity;
 
@@ -14,7 +20,7 @@ architecture fluxoDeDadosarch of fluxoDeDados is
 
   signal      dataMemOut, readData1, readData2, extendedSignalOut, readMemData, PCOut,
               muxBEQOut, muxRtImmOut, ULAOut, muxJumpOut, muxULAMemOut, adderPCOut, adderBEQOut,
-              instMemOut, inst, immShifterOut, four, muxJumpIn, muxProxPC, signExtendOut: std_logic_vector (31 downto 0);
+              instMemOut, inst, immShifterOut, four, muxJumpIn, signExtendOut: std_logic_vector (31 downto 0);
 
   signal      instRs, instRt, instRd, muxRtRdOut   : std_logic_vector (4 downto 0);
 
@@ -35,7 +41,7 @@ architecture fluxoDeDadosarch of fluxoDeDados is
 
 begin
 
-  muxJumpIn <= PCOut(31 downto 28) & instShifterOut(25 downto 0) & "00";
+  muxJumpIn <= adderPCOut(31 downto 28) & instShifterOut(25 downto 0) & "00";
   instRt <= instMemOut(20 downto 16);
   instRd <= instMemOut(15 downto 11);
   instRs <= instMemOut(25 downto 21);
@@ -43,16 +49,31 @@ begin
   instImmSmall <= instMemOut(15 downto 0);
   instOP <= instMemOut(31 downto 26);
   instFunct <= instMemOut(5 downto 0);
+  instRtOut <= instRt;
+  instRsOut <= instRs;
+  instRdOut <= instRd;
+  readData1Out <= readData1;
+  readData2Out <= readData2;
+  writeData <= muxULAMemOut;
+  ULAINA <= readData1;
+  ULAINB <= muxRtImmOut;
+  ULAOUTTESTE <= ULAOut;
+  ULASEL <= ULACtrl;
 
-  muxProxPC <= (adderPCOut(31 downto 28)
-                & instMemOut(25 downto 0)
-                & "00");
 
-  four <= std_logic_vector(to_unsigned(4, four'length));
+  word <= muxJumpSel & muxRtRdSel & regWriteEnb & muxRtImmSel
+          & muxULAMemSel & BEQ & memReadEnb & memWriteEnb & ULAOP;
+
+
+
+
+  four <= std_logic_vector(to_unsigned(1, four'length));
   ANDBeqOut <= zeroFlag AND BEQ;
 
   PC          : entity work.registradorGenerico port map
               (DIN => muxJumpOut, DOUT => PCOut, CLK => clk);
+
+  PCOutTeste <= PCOut;
 
   InstMem     : entity work.RAM port map
               (clk => clk, addr => to_integer(signed(PCOut)),
@@ -81,7 +102,8 @@ begin
 
   MemDados    : entity work.RAM port map
               (clk => clk, addr => to_integer(signed(ULAOut)), data => readData2,
-              re => memReadEnb, we => memWriteEnb, q => readMemData);
+              re => memReadEnb, we => memWriteEnb, q => readMemData,
+              endTeste => memTestEnd, saidaTeste => memTestOut);
 
   MuxULAMem   : entity work.MUX port map
               (A => ULAOut, B => readMemData, SEL => muxULAMemSel,
@@ -109,7 +131,15 @@ begin
 				  port map
               (A => instImmBig, B => instShifterOut);
 
+  UCFD        : entity work.UCFD port map
+              (clk => clk, OP => instOP, muxJump => muxJumpSel,
+              muxRtRd => muxRtRdSel, regWriteEnb => regWriteEnb,
+              muxRtImm => muxRtImmSel, ULAOP => ULAOP,
+              muxULAMem => muxULAMemSel, BEQ => BEQ, memReadEnb => memReadEnb,
+              memWriteEnb => memWriteEnb);
 
+  UCULA       : entity work.UCULA port map
+              (clk => clk, OP => ULAOP, funct => instFunct, ctrl => ULACtrl);
 
 
 end architecture;
