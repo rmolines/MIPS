@@ -7,7 +7,7 @@ entity bancoRegistradores is
     generic
     (
         larguraDados        : natural := 32;
-        larguraEndBancoRegs : natural := 32
+        larguraEndBancoRegs : natural := 5
     );
 
 -- Leitura de 2 registradores e escrita em 1 registrador simultaneamente.
@@ -24,7 +24,11 @@ entity bancoRegistradores is
         escreveC      : in std_logic := '1';
 --
         saidaA          : out std_logic_vector((larguraDados -1) downto 0);
-        saidaB          : out std_logic_vector((larguraDados -1) downto 0)
+        saidaB          : out std_logic_vector((larguraDados -1) downto 0);
+
+        endTeste        : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
+        saidaTeste      : out std_logic_vector((larguraDados -1) downto 0)
+
     );
 end entity;
 
@@ -32,7 +36,7 @@ architecture behaviour of bancoRegistradores is
 
 
 	subtype word_t is std_logic_vector((larguraDados-1) downto 0);
-	type memory_t is array((larguraEndBancoRegs-1) downto 0) of word_t;
+	type memory_t is array((2**larguraEndBancoRegs-1) downto 0) of word_t;
 
 		-- Declare the RAM signal.
 	-- signal ram : memory_t;
@@ -46,12 +50,11 @@ architecture behaviour of bancoRegistradores is
 		variable tmp : memory_t := (others => (others => '0'));
 	begin
 		-- Initialize each address with the address itself
-		tmp(0) := std_logic_vector(to_signed(114, larguraDados));
-		tmp(1) := std_logic_vector(to_signed(097, larguraDados));
-		tmp(2) := std_logic_vector(to_signed(102, larguraDados));
-		tmp(3) := std_logic_vector(to_signed(097, larguraDados));
-		tmp(4) := std_logic_vector(to_signed(101, larguraDados));
-		tmp(5) := std_logic_vector(to_signed(108, larguraDados));
+		tmp(0) := std_logic_vector(to_signed(0, larguraDados));
+		tmp(1) := std_logic_vector(to_signed(12, larguraDados));
+		tmp(2) := std_logic_vector(to_signed(13, larguraDados));
+		tmp(3) := std_logic_vector(to_signed(3, larguraDados));
+		tmp(4) := std_logic_vector(to_signed(4, larguraDados));
 		return tmp;
 	end init_bank;
 
@@ -77,6 +80,9 @@ begin
 	saidaA <= ram(to_integer(unsigned (enderecoA)));
 
 	saidaB <= ram(to_integer(unsigned (enderecoB)));
+
+  saidaTeste <= ram(to_integer(unsigned (endTeste)));
+
 
 
 end behaviour;

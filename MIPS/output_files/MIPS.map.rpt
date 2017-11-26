@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS
-Thu Nov 23 19:33:09 2017
+Fri Nov 24 15:21:48 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,11 +13,30 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |RAM
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: registradorGenerico:PC
+ 12. Parameter Settings for User Entity Instance: RAM:InstMem
+ 13. Parameter Settings for User Entity Instance: MUX:MuxRtRd
+ 14. Parameter Settings for User Entity Instance: bancoRegistradores:BancoReg
+ 15. Parameter Settings for User Entity Instance: MUX:muxRtImm
+ 16. Parameter Settings for User Entity Instance: RAM:MemDados
+ 17. Parameter Settings for User Entity Instance: MUX:MuxULAMem
+ 18. Parameter Settings for User Entity Instance: MUX:MuxBEQ
+ 19. Parameter Settings for User Entity Instance: shifter:ShifterImm
+ 20. Parameter Settings for User Entity Instance: MUX:MuxJUMP
+ 21. Parameter Settings for User Entity Instance: shifter:ShifterInst
+ 22. Port Connectivity Checks: "MUX:MuxJUMP"
+ 23. Port Connectivity Checks: "ULA:AdderPC"
+ 24. Port Connectivity Checks: "ULA:AdderBEQ"
+ 25. Port Connectivity Checks: "MUX:MuxBEQ"
+ 26. Port Connectivity Checks: "ULA:ULA"
+ 27. Port Connectivity Checks: "RAM:InstMem"
+ 28. Port Connectivity Checks: "registradorGenerico:PC"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +63,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 23 19:33:09 2017       ;
+; Analysis & Synthesis Status        ; Successful - Fri Nov 24 15:21:48 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; MIPS                                        ;
-; Top-level Entity Name              ; RAM                                         ;
+; Top-level Entity Name              ; fluxoDeDados                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 98                                          ;
-;     Total combinational functions  ; 34                                          ;
-;     Dedicated logic registers      ; 96                                          ;
-; Total registers                    ; 96                                          ;
-; Total pins                         ; 68                                          ;
+; Total logic elements               ; 6                                           ;
+;     Total combinational functions  ; 6                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 38                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +86,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; RAM                ; MIPS               ;
+; Top-level entity name                                                      ; fluxoDeDados       ; MIPS               ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -156,63 +175,1228 @@ agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                      ;
-+-----------------------------------------------+-----------------+-----------------+-----------------------------------------------+---------+
-; File Name with User-Entered Path              ; Used in Netlist ; File Type       ; File Name with Absolute Path                  ; Library ;
-+-----------------------------------------------+-----------------+-----------------+-----------------------------------------------+---------+
-; C:/Users/Rafael/Documents/GitHub/MIPS/RAM.vhd ; yes             ; User VHDL File  ; C:/Users/Rafael/Documents/GitHub/MIPS/RAM.vhd ;         ;
-+-----------------------------------------------+-----------------+-----------------+-----------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                        ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                 ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
+; ../ULA.vhd                       ; yes             ; User VHDL File  ; /home/rmolines/Documents/GitHub/MIPS/ULA.vhd                 ;         ;
+; ../signExtend.vhd                ; yes             ; User VHDL File  ; /home/rmolines/Documents/GitHub/MIPS/signExtend.vhd          ;         ;
+; ../shifter.vhd                   ; yes             ; User VHDL File  ; /home/rmolines/Documents/GitHub/MIPS/shifter.vhd             ;         ;
+; ../registradorGenerico.vhd       ; yes             ; User VHDL File  ; /home/rmolines/Documents/GitHub/MIPS/registradorGenerico.vhd ;         ;
+; ../RAM.vhd                       ; yes             ; User VHDL File  ; /home/rmolines/Documents/GitHub/MIPS/RAM.vhd                 ;         ;
+; ../MUX.vhd                       ; yes             ; User VHDL File  ; /home/rmolines/Documents/GitHub/MIPS/MUX.vhd                 ;         ;
+; ../fluxoDeDados.vhd              ; yes             ; User VHDL File  ; /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd        ;         ;
+; ../bancoRegistradores.vhd        ; yes             ; User VHDL File  ; /home/rmolines/Documents/GitHub/MIPS/bancoRegistradores.vhd  ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 98        ;
-;                                             ;           ;
-; Total combinational functions               ; 34        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 32        ;
-;     -- <=2 input functions                  ; 2         ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 34        ;
-;     -- arithmetic mode                      ; 0         ;
-;                                             ;           ;
-; Total registers                             ; 96        ;
-;     -- Dedicated logic registers            ; 96        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 68        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 96        ;
-; Total fan-out                               ; 488       ;
-; Average fan-out                             ; 1.83      ;
-+---------------------------------------------+-----------+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 6                   ;
+;                                             ;                     ;
+; Total combinational functions               ; 6                   ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 3                   ;
+;     -- 3 input functions                    ; 0                   ;
+;     -- <=2 input functions                  ; 3                   ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 6                   ;
+;     -- arithmetic mode                      ; 0                   ;
+;                                             ;                     ;
+; Total registers                             ; 0                   ;
+;     -- Dedicated logic registers            ; 0                   ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 38                  ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; regTestEnd[1]~input ;
+; Maximum fan-out                             ; 3                   ;
+; Total fan-out                               ; 60                  ;
+; Average fan-out                             ; 0.73                ;
++---------------------------------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |RAM                       ; 34 (34)             ; 96 (96)                   ; 0           ; 0            ; 0       ; 0         ; 68   ; 0            ; |RAM                ;             ;              ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Entity Name        ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------------+--------------+
+; |fluxoDeDados                    ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |fluxoDeDados                             ; fluxoDeDados       ; work         ;
+;    |bancoRegistradores:BancoReg| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fluxoDeDados|bancoRegistradores:BancoReg ; bancoRegistradores ; work         ;
++----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++------------------------------------------+---------------------------------------------+
+; Register name                            ; Reason for Removal                          ;
++------------------------------------------+---------------------------------------------+
+; registradorGenerico:PC|DOUT[0,1]         ; Stuck at GND due to stuck port data_in      ;
+; bancoRegistradores:BancoReg|ram[0][0]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][1]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][2]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][3]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][4]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][5]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][6]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][7]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][8]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][9]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][10]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][11]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][12]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][13]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][14]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][15]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][16]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][17]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][18]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][19]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][20]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][21]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][22]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][23]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][24]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][25]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][26]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][27]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][28]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][29]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][30]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[0][31]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][0]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][1]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][2]    ; Stuck at VCC due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][3]    ; Stuck at VCC due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][4]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][5]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][6]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][7]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][8]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][9]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][10]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][11]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][12]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][13]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][14]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][15]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][16]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][17]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][18]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][19]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][20]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][21]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][22]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][23]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][24]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][25]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][26]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][27]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][28]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][29]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][30]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[1][31]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][0]    ; Stuck at VCC due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][1]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][2]    ; Stuck at VCC due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][3]    ; Stuck at VCC due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][4]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][5]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][6]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][7]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][8]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][9]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][10]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][11]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][12]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][13]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][14]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][15]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][16]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][17]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][18]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][19]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][20]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][21]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][22]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][23]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][24]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][25]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][26]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][27]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][28]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][29]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][30]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[2][31]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][0]    ; Stuck at VCC due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][1]    ; Stuck at VCC due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][2]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][3]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][4]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][5]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][6]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][7]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][8]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][9]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][10]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][11]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][12]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][13]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][14]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][15]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][16]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][17]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][18]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][19]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][20]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][21]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][22]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][23]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][24]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][25]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][26]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][27]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][28]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][29]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][30]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[3][31]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][0]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][1]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][2]    ; Stuck at VCC due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][3]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][4]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][5]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][6]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][7]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][8]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][9]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][10]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][11]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][12]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][13]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][14]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][15]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][16]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][17]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][18]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][19]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][20]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][21]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][22]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][23]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][24]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][25]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][26]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][27]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][28]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][29]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][30]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[4][31]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][0]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][1]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][2]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][3]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][4]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][5]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][6]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][7]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][8]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][9]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][10]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][11]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][12]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][13]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][14]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][15]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][16]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][17]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][18]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][19]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][20]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][21]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][22]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][23]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][24]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][25]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][26]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][27]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][28]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][29]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][30]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[5][31]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][0]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][1]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][2]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][3]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][4]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][5]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][6]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][7]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][8]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][9]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][10]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][11]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][12]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][13]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][14]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][15]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][16]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][17]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][18]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][19]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][20]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][21]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][22]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][23]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][24]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][25]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][26]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][27]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][28]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][29]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][30]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[6][31]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][0]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][1]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][2]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][3]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][4]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][5]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][6]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][7]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][8]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][9]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][10]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][11]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][12]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][13]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][14]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][15]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][16]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][17]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][18]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][19]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][20]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][21]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][22]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][23]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][24]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][25]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][26]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][27]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][28]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][29]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][30]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[7][31]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][0]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][1]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][2]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][3]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][4]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][5]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][6]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][7]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][8]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][9]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][10]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][11]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][12]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][13]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][14]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][15]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][16]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][17]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][18]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][19]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][20]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][21]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][22]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][23]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][24]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][25]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][26]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][27]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][28]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][29]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][30]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[8][31]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][0]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][1]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][2]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][3]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][4]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][5]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][6]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][7]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][8]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][9]    ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][10]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][11]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][12]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][13]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][14]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][15]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][16]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][17]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][18]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][19]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][20]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][21]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][22]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][23]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][24]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][25]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][26]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][27]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][28]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][29]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][30]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[9][31]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[10][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[11][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[12][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[13][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[14][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[15][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[16][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[17][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[18][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[19][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[20][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[21][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[22][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[23][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[24][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[25][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[26][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[27][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[28][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[29][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[30][31]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][0]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][1]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][2]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][3]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][4]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][5]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][6]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][7]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][8]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][9]   ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][10]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][11]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][12]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][13]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][14]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][15]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][16]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][17]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][18]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][19]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][20]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][21]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][22]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][23]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][24]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][25]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][26]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][27]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][28]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][29]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][30]  ; Stuck at GND due to stuck port clock_enable ;
+; bancoRegistradores:BancoReg|ram[31][31]  ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:PC|DOUT[2..31]       ; Lost fanout                                 ;
+; Total Number of Removed Registers = 1056 ;                                             ;
++------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                    ;
++--------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                                            ;
++--------------------------------+---------------------------+-----------------------------------------------------------------------------------+
+; registradorGenerico:PC|DOUT[0] ; Stuck at GND              ; bancoRegistradores:BancoReg|ram[0][0], bancoRegistradores:BancoReg|ram[0][1],     ;
+;                                ; due to stuck port data_in ; bancoRegistradores:BancoReg|ram[0][3], bancoRegistradores:BancoReg|ram[0][28],    ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[0][29], bancoRegistradores:BancoReg|ram[0][30],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[0][31], bancoRegistradores:BancoReg|ram[1][0],    ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[1][1], bancoRegistradores:BancoReg|ram[1][3],     ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[1][28], bancoRegistradores:BancoReg|ram[1][29],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[1][30], bancoRegistradores:BancoReg|ram[1][31],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[2][0], bancoRegistradores:BancoReg|ram[2][1],     ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[2][3], bancoRegistradores:BancoReg|ram[2][28],    ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[2][29], bancoRegistradores:BancoReg|ram[2][30],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[2][31], bancoRegistradores:BancoReg|ram[3][0],    ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[3][1], bancoRegistradores:BancoReg|ram[3][3],     ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[3][28], bancoRegistradores:BancoReg|ram[3][29],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[3][30], bancoRegistradores:BancoReg|ram[3][31],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[4][0], bancoRegistradores:BancoReg|ram[4][1],     ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[4][3], bancoRegistradores:BancoReg|ram[4][28],    ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[4][29], bancoRegistradores:BancoReg|ram[4][30],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[4][31], bancoRegistradores:BancoReg|ram[5][0],    ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[5][1], bancoRegistradores:BancoReg|ram[5][3],     ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[5][28], bancoRegistradores:BancoReg|ram[5][29],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[5][30], bancoRegistradores:BancoReg|ram[5][31],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[6][0], bancoRegistradores:BancoReg|ram[6][1],     ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[6][3], bancoRegistradores:BancoReg|ram[6][28],    ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[6][29], bancoRegistradores:BancoReg|ram[6][30],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[6][31], bancoRegistradores:BancoReg|ram[7][0],    ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[7][1], bancoRegistradores:BancoReg|ram[7][3],     ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[7][28], bancoRegistradores:BancoReg|ram[7][29],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[7][30], bancoRegistradores:BancoReg|ram[7][31],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[8][0], bancoRegistradores:BancoReg|ram[8][1],     ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[8][3], bancoRegistradores:BancoReg|ram[8][28],    ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[8][29], bancoRegistradores:BancoReg|ram[8][30],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[8][31], bancoRegistradores:BancoReg|ram[9][0],    ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[9][1], bancoRegistradores:BancoReg|ram[9][3],     ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[9][28], bancoRegistradores:BancoReg|ram[9][29],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[9][30], bancoRegistradores:BancoReg|ram[9][31],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[10][0], bancoRegistradores:BancoReg|ram[10][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[10][3], bancoRegistradores:BancoReg|ram[10][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[10][29], bancoRegistradores:BancoReg|ram[10][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[10][31], bancoRegistradores:BancoReg|ram[11][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[11][1], bancoRegistradores:BancoReg|ram[11][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[11][28], bancoRegistradores:BancoReg|ram[11][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[11][30], bancoRegistradores:BancoReg|ram[11][31], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[12][0], bancoRegistradores:BancoReg|ram[12][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[12][3], bancoRegistradores:BancoReg|ram[12][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[12][29], bancoRegistradores:BancoReg|ram[12][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[12][31], bancoRegistradores:BancoReg|ram[13][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[13][1], bancoRegistradores:BancoReg|ram[13][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[13][28], bancoRegistradores:BancoReg|ram[13][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[13][30], bancoRegistradores:BancoReg|ram[13][31], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[14][0], bancoRegistradores:BancoReg|ram[14][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[14][3], bancoRegistradores:BancoReg|ram[14][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[14][29], bancoRegistradores:BancoReg|ram[14][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[14][31], bancoRegistradores:BancoReg|ram[15][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[15][1], bancoRegistradores:BancoReg|ram[15][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[15][28], bancoRegistradores:BancoReg|ram[15][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[15][30], bancoRegistradores:BancoReg|ram[15][31], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[16][0], bancoRegistradores:BancoReg|ram[16][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[16][3], bancoRegistradores:BancoReg|ram[16][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[16][29], bancoRegistradores:BancoReg|ram[16][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[16][31], bancoRegistradores:BancoReg|ram[17][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[17][1], bancoRegistradores:BancoReg|ram[17][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[17][28], bancoRegistradores:BancoReg|ram[17][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[17][30], bancoRegistradores:BancoReg|ram[17][31], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[18][0], bancoRegistradores:BancoReg|ram[18][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[18][3], bancoRegistradores:BancoReg|ram[18][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[18][29], bancoRegistradores:BancoReg|ram[18][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[18][31], bancoRegistradores:BancoReg|ram[19][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[19][1], bancoRegistradores:BancoReg|ram[19][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[19][28], bancoRegistradores:BancoReg|ram[19][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[19][30], bancoRegistradores:BancoReg|ram[19][31], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[20][0], bancoRegistradores:BancoReg|ram[20][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[20][3], bancoRegistradores:BancoReg|ram[20][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[20][29], bancoRegistradores:BancoReg|ram[20][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[20][31], bancoRegistradores:BancoReg|ram[21][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[21][1], bancoRegistradores:BancoReg|ram[21][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[21][28], bancoRegistradores:BancoReg|ram[21][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[21][30], bancoRegistradores:BancoReg|ram[21][31], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[22][0], bancoRegistradores:BancoReg|ram[22][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[22][3], bancoRegistradores:BancoReg|ram[22][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[22][29], bancoRegistradores:BancoReg|ram[22][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[22][31], bancoRegistradores:BancoReg|ram[23][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[23][1], bancoRegistradores:BancoReg|ram[23][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[23][28], bancoRegistradores:BancoReg|ram[23][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[23][30], bancoRegistradores:BancoReg|ram[23][31], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[24][0], bancoRegistradores:BancoReg|ram[24][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[24][3], bancoRegistradores:BancoReg|ram[24][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[24][29], bancoRegistradores:BancoReg|ram[24][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[24][31], bancoRegistradores:BancoReg|ram[25][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[25][1], bancoRegistradores:BancoReg|ram[25][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[25][28], bancoRegistradores:BancoReg|ram[25][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[25][30], bancoRegistradores:BancoReg|ram[25][31], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[26][0], bancoRegistradores:BancoReg|ram[26][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[26][3], bancoRegistradores:BancoReg|ram[26][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[26][29], bancoRegistradores:BancoReg|ram[26][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[26][31], bancoRegistradores:BancoReg|ram[27][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[27][1], bancoRegistradores:BancoReg|ram[27][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[27][28], bancoRegistradores:BancoReg|ram[27][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[27][30], bancoRegistradores:BancoReg|ram[27][31], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[28][0], bancoRegistradores:BancoReg|ram[28][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[28][3], bancoRegistradores:BancoReg|ram[28][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[28][29], bancoRegistradores:BancoReg|ram[28][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[28][31], bancoRegistradores:BancoReg|ram[29][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[29][1], bancoRegistradores:BancoReg|ram[29][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[29][28], bancoRegistradores:BancoReg|ram[29][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[29][30], bancoRegistradores:BancoReg|ram[29][31], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[30][0], bancoRegistradores:BancoReg|ram[30][1],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[30][3], bancoRegistradores:BancoReg|ram[30][28],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[30][29], bancoRegistradores:BancoReg|ram[30][30], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[30][31], bancoRegistradores:BancoReg|ram[31][0],  ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[31][1], bancoRegistradores:BancoReg|ram[31][3],   ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[31][28], bancoRegistradores:BancoReg|ram[31][29], ;
+;                                ;                           ; bancoRegistradores:BancoReg|ram[31][30], bancoRegistradores:BancoReg|ram[31][31], ;
+;                                ;                           ; registradorGenerico:PC|DOUT[27], registradorGenerico:PC|DOUT[28],                 ;
+;                                ;                           ; registradorGenerico:PC|DOUT[29], registradorGenerico:PC|DOUT[30],                 ;
+;                                ;                           ; registradorGenerico:PC|DOUT[31]                                                   ;
++--------------------------------+---------------------------+-----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -220,25 +1404,208 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 96    ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 96    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
 +---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |RAM ;
+; Parameter Settings for User Entity Instance: registradorGenerico:PC ;
 +----------------+-------+--------------------------------------------+
 ; Parameter Name ; Value ; Type                                       ;
 +----------------+-------+--------------------------------------------+
-; DATA_WIDTH     ; 32    ; Signed Integer                             ;
-; ADDR_WIDTH     ; 32    ; Signed Integer                             ;
+; larguradados   ; 32    ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RAM:InstMem            ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; data_width     ; 32                               ; Signed Integer  ;
+; addr_width     ; 32                               ; Signed Integer  ;
+; inst           ; 00000000001000100010000000000000 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX:MuxRtRd ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; data_width     ; 5     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bancoRegistradores:BancoReg ;
++---------------------+-------+--------------------------------------------+
+; Parameter Name      ; Value ; Type                                       ;
++---------------------+-------+--------------------------------------------+
+; larguradados        ; 32    ; Signed Integer                             ;
+; larguraendbancoregs ; 5     ; Signed Integer                             ;
++---------------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX:muxRtImm ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; data_width     ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RAM:MemDados           ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; data_width     ; 32                               ; Signed Integer  ;
+; addr_width     ; 32                               ; Signed Integer  ;
+; inst           ; 00000000001000100010000000000000 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX:MuxULAMem ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; data_width     ; 32    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX:MuxBEQ ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; data_width     ; 32    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: shifter:ShifterImm ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; data_width     ; 32    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX:MuxJUMP ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; data_width     ; 32    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: shifter:ShifterInst ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; data_width     ; 26    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "MUX:MuxJUMP"   ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; b[1..0] ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA:AdderPC"                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; b[31..3]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[1..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[2]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sel[3..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sel[1]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sel[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; zeroflag  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; v         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA:AdderBEQ"                                                                            ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; sel[3..2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sel[1]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; sel[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; zeroflag  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; v         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "MUX:MuxBEQ" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; sel  ; Input ; Info     ; Stuck at GND ;
++------+-------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA:ULA"                                                                                ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; zeroflag ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; v        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "RAM:InstMem"                                                                              ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; data[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; we         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; re         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q[31..26]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:PC" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; enable ; Input ; Info     ; Stuck at VCC           ;
+; rst    ; Input ; Info     ; Stuck at GND           ;
++--------+-------+----------+------------------------+
 
 
 +-----------------------------------------------------+
@@ -246,16 +1613,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 68                          ;
-; cycloneiii_ff         ; 96                          ;
-;     ENA               ; 96                          ;
-; cycloneiii_lcell_comb ; 34                          ;
-;     normal            ; 34                          ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 32                          ;
+; boundary_port         ; 38                          ;
+; cycloneiii_lcell_comb ; 7                           ;
+;     normal            ; 7                           ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 3                           ;
+;         4 data inputs ; 3                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.60                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.83                        ;
 +-----------------------+-----------------------------+
 
 
@@ -274,65 +1640,176 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu Nov 23 19:33:00 2017
+    Info: Processing started: Fri Nov 24 15:21:37 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/ucfd.vhd
-    Info (12022): Found design unit 1: UCULA-UCULAarch File: C:/Users/Rafael/Documents/GitHub/MIPS/UCFD.vhd Line: 21
-    Info (12023): Found entity 1: UCULA File: C:/Users/Rafael/Documents/GitHub/MIPS/UCFD.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/ula.vhd
-    Info (12022): Found design unit 1: ULA-ULAarch File: C:/Users/Rafael/Documents/GitHub/MIPS/ULA.vhd Line: 16
-    Info (12023): Found entity 1: ULA File: C:/Users/Rafael/Documents/GitHub/MIPS/ULA.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/ucula.vhd
-    Info (12022): Found design unit 1: UCFD-UCFDarch File: C:/Users/Rafael/Documents/GitHub/MIPS/UCULA.vhd Line: 14
-    Info (12023): Found entity 1: UCFD File: C:/Users/Rafael/Documents/GitHub/MIPS/UCULA.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/signextend.vhd
-    Info (12022): Found design unit 1: signExtend-signExtendarch File: C:/Users/Rafael/Documents/GitHub/MIPS/signExtend.vhd Line: 13
-    Info (12023): Found entity 1: signExtend File: C:/Users/Rafael/Documents/GitHub/MIPS/signExtend.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/shifter.vhd
-    Info (12022): Found design unit 1: shifter-shifterarch File: C:/Users/Rafael/Documents/GitHub/MIPS/shifter.vhd Line: 15
-    Info (12023): Found entity 1: shifter File: C:/Users/Rafael/Documents/GitHub/MIPS/shifter.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/registradorgenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/Rafael/Documents/GitHub/MIPS/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: C:/Users/Rafael/Documents/GitHub/MIPS/registradorGenerico.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/ram.vhd
-    Info (12022): Found design unit 1: RAM-rtl File: C:/Users/Rafael/Documents/GitHub/MIPS/RAM.vhd Line: 28
-    Info (12023): Found entity 1: RAM File: C:/Users/Rafael/Documents/GitHub/MIPS/RAM.vhd Line: 8
-Warning (12090): Entity "MUX" obtained from "C:/Users/Rafael/Documents/GitHub/MIPS/MUX.vhd" instead of from Quartus Prime megafunction library File: C:/Users/Rafael/Documents/GitHub/MIPS/MUX.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/mux.vhd
-    Info (12022): Found design unit 1: MUX-MUX_ARCH File: C:/Users/Rafael/Documents/GitHub/MIPS/MUX.vhd Line: 19
-    Info (12023): Found entity 1: MUX File: C:/Users/Rafael/Documents/GitHub/MIPS/MUX.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/fluxodedados.vhd
-    Info (12022): Found design unit 1: fluxoDeDados-fluxoDeDadosarch File: C:/Users/Rafael/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 11
-    Info (12023): Found entity 1: fluxoDeDados File: C:/Users/Rafael/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/conversorhex7seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/Rafael/Documents/GitHub/MIPS/conversorHex7Seg.vhd Line: 16
-    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/Rafael/Documents/GitHub/MIPS/conversorHex7Seg.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/comparador.vhd
-    Info (12022): Found design unit 1: comparador-comparadorarc File: C:/Users/Rafael/Documents/GitHub/MIPS/comparador.vhd Line: 14
-    Info (12023): Found entity 1: comparador File: C:/Users/Rafael/Documents/GitHub/MIPS/comparador.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file c:/users/rafael/documents/github/mips/bancoregistradores.vhd
-    Info (12022): Found design unit 1: bancoRegistradores-behaviour File: C:/Users/Rafael/Documents/GitHub/MIPS/bancoRegistradores.vhd Line: 31
-    Info (12023): Found entity 1: bancoRegistradores File: C:/Users/Rafael/Documents/GitHub/MIPS/bancoRegistradores.vhd Line: 6
-Info (12127): Elaborating entity "RAM" for the top level hierarchy
-Warning (10639): VHDL warning at RAM.vhd(19): constant value overflow File: C:/Users/Rafael/Documents/GitHub/MIPS/RAM.vhd Line: 19
-Warning (10445): VHDL Subtype or Type Declaration warning at RAM.vhd(19): subtype or type has null range File: C:/Users/Rafael/Documents/GitHub/MIPS/RAM.vhd Line: 19
-Warning (10639): VHDL warning at RAM.vhd(32): constant value overflow File: C:/Users/Rafael/Documents/GitHub/MIPS/RAM.vhd Line: 32
-Warning (10445): VHDL Subtype or Type Declaration warning at RAM.vhd(32): subtype or type has null range File: C:/Users/Rafael/Documents/GitHub/MIPS/RAM.vhd Line: 32
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "ram" is uninferred due to inappropriate RAM size File: C:/Users/Rafael/Documents/GitHub/MIPS/RAM.vhd Line: 35
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/ULA.vhd
+    Info (12022): Found design unit 1: ULA-ULAarch File: /home/rmolines/Documents/GitHub/MIPS/ULA.vhd Line: 16
+    Info (12023): Found entity 1: ULA File: /home/rmolines/Documents/GitHub/MIPS/ULA.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/UCULA.vhd
+    Info (12022): Found design unit 1: UCFD-UCFDarch File: /home/rmolines/Documents/GitHub/MIPS/UCULA.vhd Line: 14
+    Info (12023): Found entity 1: UCFD File: /home/rmolines/Documents/GitHub/MIPS/UCULA.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/UCFD.vhd
+    Info (12022): Found design unit 1: UCULA-UCULAarch File: /home/rmolines/Documents/GitHub/MIPS/UCFD.vhd Line: 21
+    Info (12023): Found entity 1: UCULA File: /home/rmolines/Documents/GitHub/MIPS/UCFD.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/signExtend.vhd
+    Info (12022): Found design unit 1: signExtend-signExtendarch File: /home/rmolines/Documents/GitHub/MIPS/signExtend.vhd Line: 13
+    Info (12023): Found entity 1: signExtend File: /home/rmolines/Documents/GitHub/MIPS/signExtend.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/shifter.vhd
+    Info (12022): Found design unit 1: shifter-shifterarch File: /home/rmolines/Documents/GitHub/MIPS/shifter.vhd Line: 15
+    Info (12023): Found entity 1: shifter File: /home/rmolines/Documents/GitHub/MIPS/shifter.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/registradorGenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/rmolines/Documents/GitHub/MIPS/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: /home/rmolines/Documents/GitHub/MIPS/registradorGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/RAM.vhd
+    Info (12022): Found design unit 1: RAM-rtl File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 31
+    Info (12023): Found entity 1: RAM File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 9
+Warning (12090): Entity "MUX" obtained from "../MUX.vhd" instead of from Quartus Prime megafunction library File: /home/rmolines/Documents/GitHub/MIPS/MUX.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/MUX.vhd
+    Info (12022): Found design unit 1: MUX-MUX_ARCH File: /home/rmolines/Documents/GitHub/MIPS/MUX.vhd Line: 19
+    Info (12023): Found entity 1: MUX File: /home/rmolines/Documents/GitHub/MIPS/MUX.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd
+    Info (12022): Found design unit 1: fluxoDeDados-fluxoDeDadosarch File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 13
+    Info (12023): Found entity 1: fluxoDeDados File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/conversorHex7Seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/rmolines/Documents/GitHub/MIPS/conversorHex7Seg.vhd Line: 16
+    Info (12023): Found entity 1: conversorHex7Seg File: /home/rmolines/Documents/GitHub/MIPS/conversorHex7Seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/comparador.vhd
+    Info (12022): Found design unit 1: comparador-comparadorarc File: /home/rmolines/Documents/GitHub/MIPS/comparador.vhd Line: 14
+    Info (12023): Found entity 1: comparador File: /home/rmolines/Documents/GitHub/MIPS/comparador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/bancoRegistradores.vhd
+    Info (12022): Found design unit 1: bancoRegistradores-behaviour File: /home/rmolines/Documents/GitHub/MIPS/bancoRegistradores.vhd Line: 35
+    Info (12023): Found entity 1: bancoRegistradores File: /home/rmolines/Documents/GitHub/MIPS/bancoRegistradores.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/rmolines/Documents/GitHub/MIPS/adder.vhd
+    Info (12022): Found design unit 1: ULAMIPS-comportamento File: /home/rmolines/Documents/GitHub/MIPS/adder.vhd Line: 16
+    Info (12023): Found entity 1: ULAMIPS File: /home/rmolines/Documents/GitHub/MIPS/adder.vhd Line: 5
+Info (12127): Elaborating entity "fluxoDeDados" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at fluxoDeDados.vhd(17): object "muxProxPC" assigned a value but never read File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 17
+Warning (10036): Verilog HDL or VHDL warning at fluxoDeDados.vhd(25): object "instFunct" assigned a value but never read File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 25
+Warning (10036): Verilog HDL or VHDL warning at fluxoDeDados.vhd(25): object "instOP" assigned a value but never read File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 25
+Warning (10541): VHDL Signal Declaration warning at fluxoDeDados.vhd(27): used implicit default value for signal "ULACtrl" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 27
+Warning (10541): VHDL Signal Declaration warning at fluxoDeDados.vhd(31): used implicit default value for signal "memReadEnb" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at fluxoDeDados.vhd(31): used implicit default value for signal "memWriteEnb" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at fluxoDeDados.vhd(31): used implicit default value for signal "BEQ" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at fluxoDeDados.vhd(31): used implicit default value for signal "muxRtRdSel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at fluxoDeDados.vhd(31): used implicit default value for signal "muxJumpSel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at fluxoDeDados.vhd(31): used implicit default value for signal "regWriteEnb" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at fluxoDeDados.vhd(31): used implicit default value for signal "muxRtImmSel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at fluxoDeDados.vhd(31): used implicit default value for signal "muxULAMemSel" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 31
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 54
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:InstMem" File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 57
+Info (10041): Inferred latch for "q[0]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[1]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[2]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[3]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[4]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[5]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[6]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[7]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[8]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[9]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[10]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[11]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[12]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[13]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[14]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[15]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[16]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[17]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[18]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[19]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[20]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[21]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[22]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[23]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[24]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[25]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[26]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[27]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[28]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[29]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[30]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (10041): Inferred latch for "q[31]" at RAM.vhd(66) File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Info (12128): Elaborating entity "MUX" for hierarchy "MUX:MuxRtRd" File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 61
+Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "bancoRegistradores:BancoReg" File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 65
+Info (12128): Elaborating entity "MUX" for hierarchy "MUX:muxRtImm" File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 71
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ULA" File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at ULA.vhd(44): signal "sltIn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/rmolines/Documents/GitHub/MIPS/ULA.vhd Line: 44
+Warning (10492): VHDL Process Statement warning at ULA.vhd(58): signal "overflow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/rmolines/Documents/GitHub/MIPS/ULA.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at ULA.vhd(59): signal "overflow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/rmolines/Documents/GitHub/MIPS/ULA.vhd Line: 59
+Info (12128): Elaborating entity "signExtend" for hierarchy "signExtend:SigExt" File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 79
+Info (12128): Elaborating entity "shifter" for hierarchy "shifter:ShifterImm" File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 98
+Info (12128): Elaborating entity "shifter" for hierarchy "shifter:ShifterInst" File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 108
+Warning (14026): LATCH primitive "RAM:InstMem|q[5]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[4]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[3]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[2]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[1]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[0]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[7]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[8]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[9]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[10]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[11]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[12]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[13]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[14]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[15]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[16]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[17]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[18]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[19]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[20]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[21]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[22]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[23]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[24]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[25]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (14026): LATCH primitive "RAM:InstMem|q[6]" is permanently enabled File: /home/rmolines/Documents/GitHub/MIPS/RAM.vhd Line: 66
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "regTestOut[4]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[5]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[6]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[7]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[8]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[9]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[10]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[11]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[12]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[13]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[14]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[15]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[16]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[17]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[18]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[19]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[20]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[21]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[22]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[23]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[24]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[25]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[26]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[27]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[28]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[29]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[30]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
+    Warning (13410): Pin "regTestOut[31]" is stuck at GND File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 9
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 30 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 166 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 36 input pins
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: /home/rmolines/Documents/GitHub/MIPS/fluxoDeDados.vhd Line: 7
+Info (21057): Implemented 44 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 98 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 677 megabytes
-    Info: Processing ended: Thu Nov 23 19:33:09 2017
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:21
+    Info (21061): Implemented 6 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
+    Info: Peak virtual memory: 990 megabytes
+    Info: Processing ended: Fri Nov 24 15:21:48 2017
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:27
 
 

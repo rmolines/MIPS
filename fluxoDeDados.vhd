@@ -4,7 +4,9 @@ use ieee.numeric_std.all;
 
 entity fluxoDeDados is
   port (
-    clk : in std_logic
+    clk : in std_logic;
+    regTestEnd : in std_logic_vector (4 downto 0);
+    regTestOut : out std_logic_vector (31 downto 0)
   );
 end entity;
 
@@ -12,13 +14,13 @@ architecture fluxoDeDadosarch of fluxoDeDados is
 
   signal      dataMemOut, readData1, readData2, extendedSignalOut, readMemData, PCOut,
               muxBEQOut, muxRtImmOut, ULAOut, muxJumpOut, muxULAMemOut, adderPCOut, adderBEQOut,
-              instMemOut, inst, immShifterOut, four, muxJumpIn, muxProxPC: std_logic_vector (31 downto 0);
+              instMemOut, inst, immShifterOut, four, muxJumpIn, muxProxPC, signExtendOut: std_logic_vector (31 downto 0);
 
   signal      instRs, instRt, instRd, muxRtRdOut   : std_logic_vector (4 downto 0);
 
   signal      instImmBig, instShifterOut : std_logic_vector (25 downto 0);
 
-  signal      instImmSmall, signExtendOut : std_logic_vector (15 downto 0);
+  signal      instImmSmall : std_logic_vector (15 downto 0);
 
   signal      instFunct, instOP : std_logic_vector (5 downto 0);
 
@@ -57,13 +59,14 @@ begin
               re => '1', we => '0', q => instMemOut, data => muxJumpIn);
 
   MuxRtRd     : entity work.MUX generic map (DATA_WIDTH => 5)
-                port map (A => instRt, B => instRd, C => muxRtImmOut,
-                SEL => muxRtImmSel);
+                port map (A => instRt, B => instRd, C => muxRtRdOut,
+                SEL => muxRtRdSel);
 
   BancoReg    : entity work.bancoRegistradores port map
               (clk => clk, enderecoA => instRs, enderecoB => instRt,
               enderecoC => muxRtRdOut, dadoEscritaC => muxULAMemOut,
-              escreveC => regWriteEnb, saidaA => readData1, saidaB => readData2);
+              escreveC => regWriteEnb, saidaA => readData1, saidaB => readData2,
+              endTeste => regTestEnd, saidaTeste => regTestOut);
 
   muxRtImm    : entity work.MUX port map
               (SEL => muxRtImmSel, A => readData2, B => signExtendOut,
@@ -92,8 +95,7 @@ begin
               (A => adderPCOut, B => immShifterOut, C => adderBEQOut,
               SEL => "0010");
 
-  ShifterImm  : entity work.shifter generic map (DATA_WIDTH => 26)
-              port map
+  ShifterImm  : entity work.shifter port map
               (A => signExtendOut, B => immShifterOut);
 
   AdderPC     : entity work.ULA port map
@@ -103,7 +105,8 @@ begin
               (SEL => muxJumpSel, A => muxBEQOut,
               B => muxJumpIn, C => muxJumpOut);
 
-  ShifterInst : entity work.shifter port map
+  ShifterInst : entity work.shifter generic map (DATA_WIDTH => 26)
+				  port map
               (A => instImmBig, B => instShifterOut);
 
 
