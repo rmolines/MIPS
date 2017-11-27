@@ -99,115 +99,115 @@ R23
 R17
 R18
 Efluxodedados
-Z24 w1511738048
-Z25 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 N5CzKW88F^ShIK@<7Vek12
-Z26 DPx10 cycloneive 21 cycloneive_components 0 22 K8IbX`K5[Y1gJUKg2X_071
+Z24 w1511786365
+R2
+R3
 R4
-Z27 DPx6 altera 11 dffeas_pack 0 22 ?bDUB9Db2N8iCCALNL;CT3
+R5
 R6
 R7
 R8
-Z28 DPx6 altera 28 altera_primitives_components 0 22 c]VUMXSEi8Z`KM1bem<:B3
-Z29 dC:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim
+R9
+Z25 dC:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim
 R10
 R11
 l0
-L79
-VZJfJkmgPE2>cL[^BdR^ji2
-!s100 @DI2QBe82=TMUabJDG@ji1
+L80
+VP:[N?`DNfJQb;J73dm?BC3
+!s100 k>K>4QTfB<]Mb;[1UnDL[3
 R12
 32
-Z30 !s110 1511738049
+Z26 !s110 1511786368
 !i10b 1
-Z31 !s108 1511738049.000000
+Z27 !s108 1511786367.000000
 R15
 R16
 !i113 1
 R17
 R18
 Astructure
-R25
-R26
+R2
+R3
 R4
-R27
+R5
 R6
 R7
 R8
-R28
-DEx4 work 12 fluxodedados 0 22 ZJfJkmgPE2>cL[^BdR^ji2
-l2311
-L558
-V8<V2OCLT`B=k@6R44]NMP2
-!s100 N:XlO8?jj^ZgGW_446c3X0
+R9
+DEx4 work 12 fluxodedados 0 22 P:[N?`DNfJQb;J73dm?BC3
+l2312
+L559
+VblkQKkk5aNZTDAmB=7VF23
+!s100 6KIK2XRe>NmjHDR8ZTBUZ3
 R12
 32
-Z32 !s110 1511738050
+R26
 !i10b 1
-R31
+R27
 R15
 R16
 !i113 1
 R17
 R18
 Efluxodedados_vhd_vec_tst
-Z33 w1511738047
+Z28 w1511786363
 R7
 R8
-R29
-Z34 8Waveform5.vwf.vht
-Z35 FWaveform5.vwf.vht
+R25
+Z29 8Waveform5.vwf.vht
+Z30 FWaveform5.vwf.vht
 l0
-L31
-VRo5c2><cU<U]kOTC`c7PP3
-!s100 C<lWKWPPH?eMd4S12U>bS3
+L32
+V5Y7ZVLi=E1AC>UCa7Bied3
+!s100 1K_15h58faCGZQebdX4@f2
 R12
 32
-R32
+R26
 !i10b 1
-Z36 !s108 1511738050.000000
-Z37 !s90 -work|work|Waveform5.vwf.vht|
-Z38 !s107 Waveform5.vwf.vht|
+Z31 !s108 1511786368.000000
+Z32 !s90 -work|work|Waveform5.vwf.vht|
+Z33 !s107 Waveform5.vwf.vht|
 !i113 1
 R17
 R18
 Afluxodedados_arch
 R7
 R8
-Z39 DEx4 work 24 fluxodedados_vhd_vec_tst 0 22 Ro5c2><cU<U]kOTC`c7PP3
-l80
-L33
-Z40 V<ERWMK1zXUoJWc`b@Cgol0
-Z41 !s100 LC2bgX:_VYi[DN:O@<l=h2
+DEx4 work 24 fluxodedados_vhd_vec_tst 0 22 5Y7ZVLi=E1AC>UCa7Bied3
+l81
+L34
+V=R[5R;P:``L;LYILzQSBZ1
+!s100 C<FZOQ6KnI]<?C_FJldD=2
 R12
 32
-R32
+R26
 !i10b 1
-R36
-R37
-R38
+R31
+R32
+R33
 !i113 1
 R17
 R18
 Ehard_block
 R24
 R4
-R25
+R2
 R6
 R7
 R8
-R26
-R29
+R3
+R25
 R10
 R11
 l0
-L34
-VOgIg9T_BR7joedFDVM>H13
-!s100 A`ID_i56<Ua56=ZD=[EG=2
+L35
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
 R12
 32
-R30
+R26
 !i10b 1
-R31
+R27
 R15
 R16
 !i113 1
@@ -215,28 +215,28 @@ R17
 R18
 Astructure
 R4
-R25
+R2
 R6
 R7
 R8
-R26
-DEx4 work 10 hard_block 0 22 OgIg9T_BR7joedFDVM>H13
-l64
-L50
-V`^CmQg<48W[ez[JL_5@Yn2
-!s100 2S?JL;LJ@<3:BHXTNcXS]3
+R3
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+l65
+L51
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
 R12
 32
-R30
+R26
 !i10b 1
-R31
+R27
 R15
 R16
 !i113 1
 R17
 R18
 Eram
-Z42 w1511472866
+Z34 w1511472866
 R2
 R3
 R4
@@ -254,9 +254,9 @@ VPPiUGMhhGP^n2JGJAb71L2
 !s100 joGYc`a?De]0gm`gnD@e>1
 R12
 32
-Z43 !s110 1511472867
+Z35 !s110 1511472867
 !i10b 1
-Z44 !s108 1511472867.000000
+Z36 !s108 1511472867.000000
 R15
 R16
 !i113 1
@@ -278,32 +278,32 @@ VgeN0@JVa62N7H>nK=ZA`m0
 !s100 =IY=k=FQXo3cJS:A_i54^0
 R12
 32
-R43
+R35
 !i10b 1
-R44
+R36
 R15
 R16
 !i113 1
 R17
 R18
 Eram_vhd_vec_tst
-Z45 w1511472865
+Z37 w1511472865
 R7
 R8
 R0
-Z46 8Waveform3.vwf.vht
-Z47 FWaveform3.vwf.vht
+Z38 8Waveform3.vwf.vht
+Z39 FWaveform3.vwf.vht
 l0
 L32
 V53DCffb:VQ`C4<CUQXGbY1
 !s100 CEWCXjZXBX5Z?>d;<7B@@3
 R12
 32
-R43
+R35
 !i10b 1
-R44
-Z48 !s90 -work|work|Waveform3.vwf.vht|
-Z49 !s107 Waveform3.vwf.vht|
+R36
+Z40 !s90 -work|work|Waveform3.vwf.vht|
+Z41 !s107 Waveform3.vwf.vht|
 !i113 1
 R17
 R18
@@ -317,16 +317,16 @@ V2=ZJ05n^C4Zc>I7;hY^TZ2
 !s100 A]:<5Ki0dViLz]C4Z8bVW1
 R12
 32
-R43
+R35
 !i10b 1
-R44
-R48
-R49
+R36
+R40
+R41
 !i113 1
 R17
 R18
 Eregistradorgenerico
-Z50 w1511471303
+Z42 w1511471303
 R2
 R3
 R4
@@ -344,9 +344,9 @@ V]=fhNH>?OfZ;fflC1D1EE0
 !s100 FaLfAFId82H=zGa]VHMCb1
 R12
 32
-Z51 !s110 1511471304
+Z43 !s110 1511471304
 !i10b 1
-Z52 !s108 1511471304.000000
+Z44 !s108 1511471304.000000
 R15
 R16
 !i113 1
@@ -368,32 +368,32 @@ V>m1_6L>XTj3KNFD7c0SFX0
 !s100 UV[f>0TJJEC]DNUY38ETX0
 R12
 32
-R51
+R43
 !i10b 1
-R52
+R44
 R15
 R16
 !i113 1
 R17
 R18
 Eregistradorgenerico_vhd_vec_tst
-Z53 w1511471302
+Z45 w1511471302
 R7
 R8
 R0
-Z54 8Waveform.vwf.vht
-Z55 FWaveform.vwf.vht
+Z46 8Waveform.vwf.vht
+Z47 FWaveform.vwf.vht
 l0
 L32
 V2bihSOL48Ke6n40]2kPVC3
 !s100 cFfXg;bbR=i@Q^SlNKCIc2
 R12
 32
-R51
+R43
 !i10b 1
-R52
-Z56 !s90 -work|work|Waveform.vwf.vht|
-Z57 !s107 Waveform.vwf.vht|
+R44
+Z48 !s90 -work|work|Waveform.vwf.vht|
+Z49 !s107 Waveform.vwf.vht|
 !i113 1
 R17
 R18
@@ -407,11 +407,11 @@ VK>9`EPhAX1Yl=Yz::PYhM2
 !s100 OKNH]T<4h2gnlj_k?S>7a2
 R12
 32
-R51
+R43
 !i10b 1
-R52
-R56
-R57
+R44
+R48
+R49
 !i113 1
 R17
 R18

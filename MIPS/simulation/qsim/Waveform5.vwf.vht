@@ -6,11 +6,12 @@
 -- associated documentation or information are expressly subject 
 -- to the terms and conditions of the Intel Program License 
 -- Subscription Agreement, the Intel Quartus Prime License Agreement,
--- the Intel FPGA IP License Agreement, or other applicable license
--- agreement, including, without limitation, that your use is for
--- the sole purpose of programming logic devices manufactured by
--- Intel and sold by Intel or its authorized distributors.  Please
--- refer to the applicable agreement for further details.
+-- the Intel MegaCore Function License Agreement, or other 
+-- applicable license agreement, including, without limitation, 
+-- that your use is for the sole purpose of programming logic 
+-- devices manufactured by Intel and sold by Intel or its 
+-- authorized distributors.  Please refer to the applicable 
+-- agreement for further details.
 
 -- *****************************************************************************
 -- This file contains a Vhdl test bench with test vectors .The test vectors     
@@ -18,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/26/2017 21:14:07"
+-- Generated on "11/27/2017 10:39:23"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          fluxoDeDados
 -- 

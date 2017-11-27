@@ -21,7 +21,8 @@ architecture fluxoDeDadosarch of fluxoDeDados is
 
   signal      dataMemOut, readData1, readData2, extendedSignalOut, readMemData, PCOut,
               muxBEQOut, muxRtImmOut, ULAOut, muxJumpOut, muxULAMemOut, adderPCOut, adderBEQOut,
-              instMemOut, inst, immShifterOut, four, muxJumpIn, signExtendOut: std_logic_vector (31 downto 0);
+              instMemOut, inst, immShifterOut, four, muxJumpIn, signExtendOut,
+              ifid, idex, exmem,  : std_logic_vector (31 downto 0);
 
   signal      instRs, instRt, instRd, muxRtRdOut   : std_logic_vector (4 downto 0);
 
@@ -102,7 +103,7 @@ begin
               (A => instImmSmall, B => signExtendOut);
 
   MemDados    : entity work.RAM port map
-              (clk => clk, addr => to_integer(signed(ULAOut)), data => readData2,
+              (clk => clk, addr => to_integer(signed(ULAOut)), data => readData22,
               re => memReadEnb, we => memWriteEnb, q => readMemData,
               endTeste => memTestEnd, saidaTeste => memTestOut);
 
@@ -125,7 +126,7 @@ begin
               (A => signExtendOut, B => immShifterOut);
 
   AdderPC     : entity work.ULA port map
-              (A => PCOut, B => four, SEL => "0010", C => adderPCOut);
+              (A => PCOut1, B => four, SEL => "0010", C => adderPCOut);
 
   MuxJUMP     : entity work.MUX port map
               (SEL => muxJumpSel, A => muxBEQOut,
@@ -145,5 +146,29 @@ begin
   UCULA       : entity work.UCULA port map
               (clk => clk, OP => ULAOP, funct => instFunct, ctrl => ULACtrl);
 
+  ifid        : entity work.bancoPipeline port map
+              (pc => pctemp, pcout => pcout, inst=> insttemp,
+              instout => instMemOut);
+
+  idex        : entity work.bancoPipeline port map
+              (pc => pcout, pcout => pcout1, readData1 => readData1temp,
+              readData1out => readData1, readData2 => readData2temp,
+              readData2out => readData2, signExtend => signExtendtemp,
+              signExtendOut => signExtendOut, instRt => instRttemp,
+              instRtOut => instRt, instRd => instRdtemp instRdOut => instRd,
+              wb => wbtemp, wbout => wbout, m => mtemp, mout => m,
+              ex => extemp, exout => ex, inst => instMemOut,
+              instout => instMemOut1);
+
+  ex          : entity work.bancoPipeline port map
+              (wb => wb, wbout => wb1, m => m, m => m1, addimm => addimmtemp,
+              addimmout => immShifterOut, zeroFlag => zeroFlagtemp,
+              zeroFlagout => zeroFlag, ulaout => ulaouttemp, ulaoutout => ulaout,
+              readData2 => readData2, readData2out => readData22,
+              muxRtRd => muxRtRdtemp, muxRtRdOut => muxRtRdOut);
+
+  wb          : entity work.bancoPipeline port map
+              (wb => wb1, wbout => wb2, memdata => readMemDatatemp,
+              memdataout => readMemData, ulaout => ulaout, ulaoutout => ulaout1);
 
 end architecture;

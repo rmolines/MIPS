@@ -6,17 +6,18 @@
 -- associated documentation or information are expressly subject 
 -- to the terms and conditions of the Intel Program License 
 -- Subscription Agreement, the Intel Quartus Prime License Agreement,
--- the Intel FPGA IP License Agreement, or other applicable license
--- agreement, including, without limitation, that your use is for
--- the sole purpose of programming logic devices manufactured by
--- Intel and sold by Intel or its authorized distributors.  Please
--- refer to the applicable agreement for further details.
+-- the Intel MegaCore Function License Agreement, or other 
+-- applicable license agreement, including, without limitation, 
+-- that your use is for the sole purpose of programming logic 
+-- devices manufactured by Intel and sold by Intel or its 
+-- authorized distributors.  Please refer to the applicable 
+-- agreement for further details.
 
 -- VENDOR "Altera"
 -- PROGRAM "Quartus Prime"
--- VERSION "Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition"
+-- VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition"
 
--- DATE "11/26/2017 21:14:08"
+-- DATE "11/27/2017 10:39:24"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
