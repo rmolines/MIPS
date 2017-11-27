@@ -6,12 +6,11 @@
  -- associated documentation or information are expressly subject 
  -- to the terms and conditions of the Intel Program License 
  -- Subscription Agreement, the Intel Quartus Prime License Agreement,
- -- the Intel MegaCore Function License Agreement, or other 
- -- applicable license agreement, including, without limitation, 
- -- that your use is for the sole purpose of programming logic 
- -- devices manufactured by Intel and sold by Intel or its 
- -- authorized distributors.  Please refer to the applicable 
- -- agreement for further details.
+ -- the Intel FPGA IP License Agreement, or other applicable license
+ -- agreement, including, without limitation, that your use is for
+ -- the sole purpose of programming logic devices manufactured by
+ -- Intel and sold by Intel or its authorized distributors.  Please
+ -- refer to the applicable agreement for further details.
  -- 
  -- This is a Quartus Prime output file. It is for reporting purposes only, and is
  -- not intended for use as a Quartus Prime input file. This file cannot be used
@@ -64,491 +63,491 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 CHIP  "MIPS"  ASSIGNED TO AN: EP4CE115F29C7
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 VCCIO8                       : A2        : power  :                   : 2.5V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A3        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :         : 8         :                
+beqadder[0]                  : A3        : output : 2.5 V             :         : 8         : N              
+readData1Out[29]             : A4        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : A5        : power  :                   : 2.5V    : 8         :                
-ULAINB[21]                   : A6        : output : 2.5 V             :         : 8         : N              
-instRtOut[0]                 : A7        : output : 2.5 V             :         : 8         : N              
-memTestOut[23]               : A8        : output : 2.5 V             :         : 8         : N              
+ULAOUTTESTE[24]              : A6        : output : 2.5 V             :         : 8         : N              
+readData1Out[5]              : A7        : output : 2.5 V             :         : 8         : N              
+instRtOut[3]                 : A8        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : A9        : power  :                   : 2.5V    : 8         :                
-regTestOut[22]               : A10       : output : 2.5 V             :         : 8         : N              
-PCOutTeste[0]                : A11       : output : 2.5 V             :         : 8         : N              
-regTestOut[18]               : A12       : output : 2.5 V             :         : 8         : N              
+readData2Out[0]              : A10       : output : 2.5 V             :         : 8         : N              
+ULAINB[26]                   : A11       : output : 2.5 V             :         : 8         : N              
+regTestOut[8]                : A12       : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : A13       : power  :                   : 2.5V    : 8         :                
-GND+                         : A14       :        :                   :         : 8         :                
+regTestEnd[4]                : A14       : input  : 2.5 V             :         : 8         : N              
 GND+                         : A15       :        :                   :         : 7         :                
 VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
-PCOutTeste[10]               : A17       : output : 2.5 V             :         : 7         : N              
-ULAINB[18]                   : A18       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A19       :        :                   :         : 7         :                
+writeData[13]                : A17       : output : 2.5 V             :         : 7         : N              
+instRsOut[2]                 : A18       : output : 2.5 V             :         : 7         : N              
+ULAOUTTESTE[1]               : A19       : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : A20       : power  :                   : 2.5V    : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A21       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A22       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A23       :        :                   :         : 7         :                
+regTestEnd[3]                : A21       : input  : 2.5 V             :         : 7         : N              
+beqadder[8]                  : A22       : output : 2.5 V             :         : 7         : N              
+ULAOUTTESTE[28]              : A23       : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : A24       : power  :                   : 2.5V    : 7         :                
-instRsOut[3]                 : A25       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A26       :        :                   :         : 7         :                
+ULAOUTTESTE[7]               : A25       : output : 2.5 V             :         : 7         : N              
+ULAOUTTESTE[10]              : A26       : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : A27       : power  :                   : 2.5V    : 7         :                
 VCCIO2                       : AA1       : power  :                   : 2.5V    : 2         :                
 GND                          : AA2       : gnd    :                   :         :           :                
-writeData[12]                : AA3       : output : 2.5 V             :         : 2         : N              
-readData2Out[12]             : AA4       : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA5       :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA6       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA3       :        :                   :         : 2         :                
+beqadder[17]                 : AA4       : output : 2.5 V             :         : 2         : N              
+beqadder[30]                 : AA5       : output : 2.5 V             :         : 2         : N              
+memTestOut[14]               : AA6       : output : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA7       :        :                   :         : 2         :                
-ULAINB[22]                   : AA8       : output : 2.5 V             :         : 3         : N              
+memTestEnd[20]               : AA8       : input  : 2.5 V             :         : 3         : N              
 GNDA1                        : AA9       : gnd    :                   :         :           :                
-ULAINA[12]                   : AA10      : output : 2.5 V             :         : 3         : N              
+memTestEnd[24]               : AA10      : input  : 2.5 V             :         : 3         : N              
 VCCIO3                       : AA11      : power  :                   : 2.5V    : 3         :                
-readData2Out[21]             : AA12      : output : 2.5 V             :         : 3         : N              
-readData2Out[24]             : AA13      : output : 2.5 V             :         : 3         : N              
-readData2Out[26]             : AA14      : output : 2.5 V             :         : 3         : N              
-writeData[6]                 : AA15      : output : 2.5 V             :         : 4         : N              
-regTestOut[1]                : AA16      : output : 2.5 V             :         : 4         : N              
-ULAINA[29]                   : AA17      : output : 2.5 V             :         : 4         : N              
+ULAINA[10]                   : AA12      : output : 2.5 V             :         : 3         : N              
+readData1Out[1]              : AA13      : output : 2.5 V             :         : 3         : N              
+ULAINB[15]                   : AA14      : output : 2.5 V             :         : 3         : N              
+regTestOut[23]               : AA15      : output : 2.5 V             :         : 4         : N              
+ULAINA[9]                    : AA16      : output : 2.5 V             :         : 4         : N              
+readData2Out[1]              : AA17      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AA18      : power  :                   : 2.5V    : 4         :                
-memTestEnd[26]               : AA19      : input  : 2.5 V             :         : 4         : N              
+regTestOut[0]                : AA19      : output : 2.5 V             :         : 4         : N              
 GNDA4                        : AA20      : gnd    :                   :         :           :                
-memTestOut[14]               : AA21      : output : 2.5 V             :         : 4         : N              
-memTestOut[29]               : AA22      : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA23      :        :                   :         : 5         :                
-memTestOut[19]               : AA24      : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA25      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA26      :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA21      :        :                   :         : 4         :                
+regTestOut[28]               : AA22      : output : 2.5 V             :         : 5         : N              
+ULAOUTTESTE[15]              : AA23      : output : 2.5 V             :         : 5         : N              
+readData2Out[19]             : AA24      : output : 2.5 V             :         : 5         : N              
+PCOutTeste[15]               : AA25      : output : 2.5 V             :         : 5         : N              
+beqadderout[10]              : AA26      : output : 2.5 V             :         : 5         : N              
 GND                          : AA27      : gnd    :                   :         :           :                
 VCCIO5                       : AA28      : power  :                   : 2.5V    : 5         :                
-ULAOUTTESTE[3]               : AB1       : output : 2.5 V             :         : 2         : N              
-ULAINB[11]                   : AB2       : output : 2.5 V             :         : 2         : N              
-readData1Out[18]             : AB3       : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB4       :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB5       :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB6       :        :                   :         : 2         :                
-ULAINA[0]                    : AB7       : output : 2.5 V             :         : 3         : N              
-ULAINA[31]                   : AB8       : output : 2.5 V             :         : 3         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB9       :        :                   :         : 3         :                
-readData2Out[2]              : AB10      : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[26]              : AB11      : output : 2.5 V             :         : 3         : N              
-word[2]                      : AB12      : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[14]              : AB13      : output : 2.5 V             :         : 3         : N              
-readData2Out[23]             : AB14      : output : 2.5 V             :         : 3         : N              
-writeData[0]                 : AB15      : output : 2.5 V             :         : 4         : N              
-readData1Out[1]              : AB16      : output : 2.5 V             :         : 4         : N              
-memTestOut[3]                : AB17      : output : 2.5 V             :         : 4         : N              
-memTestOut[24]               : AB18      : output : 2.5 V             :         : 4         : N              
-regTestOut[11]               : AB19      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB20      :        :                   :         : 4         :                
-memTestEnd[18]               : AB21      : input  : 2.5 V             :         : 4         : N              
-memTestOut[18]               : AB22      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB23      :        :                   :         : 5         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB2       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB3       :        :                   :         : 2         :                
+memTestOut[24]               : AB4       : output : 2.5 V             :         : 2         : N              
+memTestOut[26]               : AB5       : output : 2.5 V             :         : 2         : N              
+memTestOut[18]               : AB6       : output : 2.5 V             :         : 2         : N              
+beqadder[6]                  : AB7       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB8       :        :                   :         : 3         :                
+memTestOut[9]                : AB9       : output : 2.5 V             :         : 3         : N              
+beqadder[18]                 : AB10      : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB11      :        :                   :         : 3         :                
+memTestEnd[21]               : AB12      : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB13      :        :                   :         : 3         :                
+ULAINB[29]                   : AB14      : output : 2.5 V             :         : 3         : N              
+ULAINB[19]                   : AB15      : output : 2.5 V             :         : 4         : N              
+readData1Out[9]              : AB16      : output : 2.5 V             :         : 4         : N              
+beqadderout[29]              : AB17      : output : 2.5 V             :         : 4         : N              
+word[5]                      : AB18      : output : 2.5 V             :         : 4         : N              
+PCOutTeste[6]                : AB19      : output : 2.5 V             :         : 4         : N              
+PCOutTeste[10]               : AB20      : output : 2.5 V             :         : 4         : N              
+beqadder[9]                  : AB21      : output : 2.5 V             :         : 4         : N              
+beqadder[12]                 : AB22      : output : 2.5 V             :         : 4         : N              
+readData1Out[20]             : AB23      : output : 2.5 V             :         : 5         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB24      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB25      :        :                   :         : 5         :                
-instRdOut[0]                 : AB26      : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB27      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB28      :        :                   :         : 5         :                
-readData2Out[6]              : AC1       : output : 2.5 V             :         : 2         : N              
-readData2Out[16]             : AC2       : output : 2.5 V             :         : 2         : N              
-writeData[21]                : AC3       : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC4       :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC5       :        :                   :         : 2         :                
+beqadder[4]                  : AB25      : output : 2.5 V             :         : 5         : N              
+beqadderout[26]              : AB26      : output : 2.5 V             :         : 5         : N              
+PCOutTeste[8]                : AB27      : output : 2.5 V             :         : 5         : N              
+PCOutTeste[18]               : AB28      : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC2       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC3       :        :                   :         : 2         :                
+memTestOut[31]               : AC4       : output : 2.5 V             :         : 2         : N              
+memTestOut[23]               : AC5       : output : 2.5 V             :         : 2         : N              
 GND                          : AC6       : gnd    :                   :         :           :                
-readData1Out[31]             : AC7       : output : 2.5 V             :         : 3         : N              
-readData1Out[12]             : AC8       : output : 2.5 V             :         : 3         : N              
+memTestOut[7]                : AC7       : output : 2.5 V             :         : 3         : N              
+memTestOut[15]               : AC8       : output : 2.5 V             :         : 3         : N              
 GND                          : AC9       : gnd    :                   :         :           :                
-readData2Out[14]             : AC10      : output : 2.5 V             :         : 3         : N              
-regTestOut[28]               : AC11      : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[6]               : AC12      : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC10      :        :                   :         : 3         :                
+readData1Out[15]             : AC11      : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC12      :        :                   :         : 3         :                
 GND                          : AC13      : gnd    :                   :         :           :                
-ULAOUTTESTE[2]               : AC14      : output : 2.5 V             :         : 3         : N              
-PCOutTeste[20]               : AC15      : output : 2.5 V             :         : 4         : N              
+ULAINA[25]                   : AC14      : output : 2.5 V             :         : 3         : N              
+ULAINB[30]                   : AC15      : output : 2.5 V             :         : 4         : N              
 GND                          : AC16      : gnd    :                   :         :           :                
-readData1Out[16]             : AC17      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC18      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC19      :        :                   :         : 4         :                
+ULAOUTTESTE[31]              : AC17      : output : 2.5 V             :         : 4         : N              
+readData2Out[5]              : AC18      : output : 2.5 V             :         : 4         : N              
+PCOutTeste[25]               : AC19      : output : 2.5 V             :         : 4         : N              
 GND                          : AC20      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC21      :        :                   :         : 4         :                
-memTestOut[21]               : AC22      : output : 2.5 V             :         : 4         : N              
+ULAINA[3]                    : AC21      : output : 2.5 V             :         : 4         : N              
+beqadder[11]                 : AC22      : output : 2.5 V             :         : 4         : N              
 GND                          : AC23      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC24      :        :                   :         : 5         :                
-memTestOut[22]               : AC25      : output : 2.5 V             :         : 5         : N              
-memTestEnd[1]                : AC26      : input  : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC27      :        :                   :         : 5         :                
-memTestEnd[25]               : AC28      : input  : 2.5 V             :         : 5         : N              
-ULAINA[18]                   : AD1       : output : 2.5 V             :         : 2         : N              
-readData2Out[22]             : AD2       : output : 2.5 V             :         : 2         : N              
-readData2Out[13]             : AD3       : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD4       :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD5       :        :                   :         : 3         :                
+readData1Out[8]              : AC24      : output : 2.5 V             :         : 5         : N              
+ULAINA[8]                    : AC25      : output : 2.5 V             :         : 5         : N              
+PCOutTeste[31]               : AC26      : output : 2.5 V             :         : 5         : N              
+regTestOut[24]               : AC27      : output : 2.5 V             :         : 5         : N              
+PCOutTeste[26]               : AC28      : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD2       :        :                   :         : 2         :                
+memTestEnd[23]               : AD3       : input  : 2.5 V             :         : 2         : N              
+memTestOut[13]               : AD4       : output : 2.5 V             :         : 3         : N              
+memTestOut[21]               : AD5       : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : AD6       : power  :                   : 2.5V    : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD7       :        :                   :         : 3         :                
-memTestEnd[23]               : AD8       : input  : 2.5 V             :         : 3         : N              
+memTestOut[6]                : AD7       : output : 2.5 V             :         : 3         : N              
+memTestEnd[3]                : AD8       : input  : 2.5 V             :         : 3         : N              
 VCCIO3                       : AD9       : power  :                   : 2.5V    : 3         :                
-ULAINB[12]                   : AD10      : output : 2.5 V             :         : 3         : N              
-readData2Out[1]              : AD11      : output : 2.5 V             :         : 3         : N              
-ULAINB[27]                   : AD12      : output : 2.5 V             :         : 3         : N              
+memTestEnd[10]               : AD10      : input  : 2.5 V             :         : 3         : N              
+ULAINA[15]                   : AD11      : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD12      :        :                   :         : 3         :                
 VCCIO3                       : AD13      : power  :                   : 2.5V    : 3         :                
-readData2Out[30]             : AD14      : output : 2.5 V             :         : 3         : N              
-PCOutTeste[23]               : AD15      : output : 2.5 V             :         : 4         : N              
+readData1Out[25]             : AD14      : output : 2.5 V             :         : 3         : N              
+ULAOUTTESTE[29]              : AD15      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AD16      : power  :                   : 2.5V    : 4         :                
-regTestOut[25]               : AD17      : output : 2.5 V             :         : 4         : N              
-readData1Out[23]             : AD18      : output : 2.5 V             :         : 4         : N              
-memTestEnd[31]               : AD19      : input  : 2.5 V             :         : 4         : N              
+regTestOut[31]               : AD17      : output : 2.5 V             :         : 4         : N              
+readData2Out[27]             : AD18      : output : 2.5 V             :         : 4         : N              
+PCOutTeste[23]               : AD19      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AD20      : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD21      :        :                   :         : 4         :                
-memTestOut[0]                : AD22      : output : 2.5 V             :         : 4         : N              
+readData1Out[28]             : AD21      : output : 2.5 V             :         : 4         : N              
+memTestEnd[31]               : AD22      : input  : 2.5 V             :         : 4         : N              
 VCCIO4                       : AD23      : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD24      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD25      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD26      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD27      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD28      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE1       :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE2       :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE3       :        :                   :         : 2         :                
-ULAINA[6]                    : AE4       : output : 2.5 V             :         : 3         : N              
-memTestEnd[29]               : AE5       : input  : 2.5 V             :         : 3         : N              
-memTestEnd[14]               : AE6       : input  : 2.5 V             :         : 3         : N              
-ULAINA[30]                   : AE7       : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[29]              : AE8       : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[16]              : AE9       : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[0]               : AE10      : output : 2.5 V             :         : 3         : N              
-readData2Out[25]             : AE11      : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[10]              : AE12      : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[12]              : AE13      : output : 2.5 V             :         : 3         : N              
-readData2Out[8]              : AE14      : output : 2.5 V             :         : 3         : N              
-readData2Out[18]             : AE15      : output : 2.5 V             :         : 4         : N              
-ULAOUTTESTE[23]              : AE16      : output : 2.5 V             :         : 4         : N              
-ULAINA[8]                    : AE17      : output : 2.5 V             :         : 4         : N              
-writeData[13]                : AE18      : output : 2.5 V             :         : 4         : N              
-PCOutTeste[7]                : AE19      : output : 2.5 V             :         : 4         : N              
-ULAINA[27]                   : AE20      : output : 2.5 V             :         : 4         : N              
-readData1Out[29]             : AE21      : output : 2.5 V             :         : 4         : N              
-memTestEnd[21]               : AE22      : input  : 2.5 V             :         : 4         : N              
-memTestEnd[13]               : AE23      : input  : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE24      :        :                   :         : 4         :                
-memTestOut[26]               : AE25      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE26      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE27      :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE28      :        :                   :         : 5         :                
+readData1Out[3]              : AD24      : output : 2.5 V             :         : 4         : N              
+word[6]                      : AD25      : output : 2.5 V             :         : 4         : N              
+beqadderout[16]              : AD26      : output : 2.5 V             :         : 5         : N              
+ULAINA[19]                   : AD27      : output : 2.5 V             :         : 5         : N              
+ULAINA[7]                    : AD28      : output : 2.5 V             :         : 5         : N              
+beqadder[28]                 : AE1       : output : 2.5 V             :         : 2         : N              
+memTestEnd[13]               : AE2       : input  : 2.5 V             :         : 2         : N              
+memTestOut[28]               : AE3       : output : 2.5 V             :         : 2         : N              
+memTestOut[3]                : AE4       : output : 2.5 V             :         : 3         : N              
+memTestOut[5]                : AE5       : output : 2.5 V             :         : 3         : N              
+memTestOut[17]               : AE6       : output : 2.5 V             :         : 3         : N              
+memTestEnd[28]               : AE7       : input  : 2.5 V             :         : 3         : N              
+memTestEnd[19]               : AE8       : input  : 2.5 V             :         : 3         : N              
+memTestEnd[16]               : AE9       : input  : 2.5 V             :         : 3         : N              
+memTestEnd[14]               : AE10      : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE11      :        :                   :         : 3         :                
+memTestEnd[12]               : AE12      : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AE13      :        :                   :         : 3         :                
+ULAINA[11]                   : AE14      : output : 2.5 V             :         : 3         : N              
+ULAINB[28]                   : AE15      : output : 2.5 V             :         : 4         : N              
+ULAINA[31]                   : AE16      : output : 2.5 V             :         : 4         : N              
+regTestOut[29]               : AE17      : output : 2.5 V             :         : 4         : N              
+ULAINB[0]                    : AE18      : output : 2.5 V             :         : 4         : N              
+readData2Out[20]             : AE19      : output : 2.5 V             :         : 4         : N              
+readData2Out[16]             : AE20      : output : 2.5 V             :         : 4         : N              
+ULAOUTTESTE[22]              : AE21      : output : 2.5 V             :         : 4         : N              
+ULAINA[28]                   : AE22      : output : 2.5 V             :         : 4         : N              
+beqadder[10]                 : AE23      : output : 2.5 V             :         : 4         : N              
+word[3]                      : AE24      : output : 2.5 V             :         : 4         : N              
+beqadderout[18]              : AE25      : output : 2.5 V             :         : 4         : N              
+regTestOut[6]                : AE26      : output : 2.5 V             :         : 5         : N              
+readData1Out[7]              : AE27      : output : 2.5 V             :         : 5         : N              
+readData2Out[30]             : AE28      : output : 2.5 V             :         : 5         : N              
 GND                          : AF1       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF2       :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF3       :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF4       :        :                   :         : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF5       :        :                   :         : 3         :                
-memTestOut[28]               : AF6       : output : 2.5 V             :         : 3         : N              
-readData1Out[30]             : AF7       : output : 2.5 V             :         : 3         : N              
-ULASEL[2]                    : AF8       : output : 2.5 V             :         : 3         : N              
-ULAINA[24]                   : AF9       : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[24]              : AF10      : output : 2.5 V             :         : 3         : N              
-readData2Out[11]             : AF11      : output : 2.5 V             :         : 3         : N              
-readData2Out[28]             : AF12      : output : 2.5 V             :         : 3         : N              
-readData2Out[27]             : AF13      : output : 2.5 V             :         : 3         : N              
-readData2Out[20]             : AF14      : output : 2.5 V             :         : 3         : N              
-PCOutTeste[24]               : AF15      : output : 2.5 V             :         : 4         : N              
-regTestEnd[2]                : AF16      : input  : 2.5 V             :         : 4         : N              
-PCOutTeste[31]               : AF17      : output : 2.5 V             :         : 4         : N              
-regTestOut[26]               : AF18      : output : 2.5 V             :         : 4         : N              
-PCOutTeste[12]               : AF19      : output : 2.5 V             :         : 4         : N              
-ULAINA[23]                   : AF20      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF21      :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF22      :        :                   :         : 4         :                
-memTestEnd[15]               : AF23      : input  : 2.5 V             :         : 4         : N              
-ULAINB[6]                    : AF24      : output : 2.5 V             :         : 4         : N              
-readData1Out[27]             : AF25      : output : 2.5 V             :         : 4         : N              
-readData1Out[15]             : AF26      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF27      :        :                   :         : 5         :                
+memTestOut[19]               : AF2       : output : 2.5 V             :         : 2         : N              
+memTestOut[16]               : AF3       : output : 2.5 V             :         : 3         : N              
+memTestEnd[1]                : AF4       : input  : 2.5 V             :         : 3         : N              
+memTestOut[2]                : AF5       : output : 2.5 V             :         : 3         : N              
+memTestOut[0]                : AF6       : output : 2.5 V             :         : 3         : N              
+beqadder[22]                 : AF7       : output : 2.5 V             :         : 3         : N              
+beqadder[24]                 : AF8       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF9       :        :                   :         : 3         :                
+word[2]                      : AF10      : output : 2.5 V             :         : 3         : N              
+instRsOut[1]                 : AF11      : output : 2.5 V             :         : 3         : N              
+memTestEnd[6]                : AF12      : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF13      :        :                   :         : 3         :                
+beqadder[3]                  : AF14      : output : 2.5 V             :         : 3         : N              
+regTestOut[26]               : AF15      : output : 2.5 V             :         : 4         : N              
+readData1Out[31]             : AF16      : output : 2.5 V             :         : 4         : N              
+readData2Out[29]             : AF17      : output : 2.5 V             :         : 4         : N              
+ULAINB[23]                   : AF18      : output : 2.5 V             :         : 4         : N              
+ULAOUTTESTE[19]              : AF19      : output : 2.5 V             :         : 4         : N              
+ULAINB[27]                   : AF20      : output : 2.5 V             :         : 4         : N              
+beqadderout[21]              : AF21      : output : 2.5 V             :         : 4         : N              
+beqadderout[8]               : AF22      : output : 2.5 V             :         : 4         : N              
+ULAINA[2]                    : AF23      : output : 2.5 V             :         : 4         : N              
+ULAOUTTESTE[20]              : AF24      : output : 2.5 V             :         : 4         : N              
+regTestOut[15]               : AF25      : output : 2.5 V             :         : 4         : N              
+readData2Out[31]             : AF26      : output : 2.5 V             :         : 4         : N              
+ULAINA[20]                   : AF27      : output : 2.5 V             :         : 5         : N              
 GND                          : AF28      : gnd    :                   :         :           :                
 VCCIO2                       : AG1       : power  :                   : 2.5V    : 2         :                
 GND                          : AG2       : gnd    :                   :         :           :                
-readData1Out[6]              : AG3       : output : 2.5 V             :         : 3         : N              
-readData1Out[25]             : AG4       : output : 2.5 V             :         : 3         : N              
+memTestOut[27]               : AG3       : output : 2.5 V             :         : 3         : N              
+memTestOut[10]               : AG4       : output : 2.5 V             :         : 3         : N              
 GND                          : AG5       : gnd    :                   :         :           :                
-ULAINA[14]                   : AG6       : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[22]              : AG7       : output : 2.5 V             :         : 3         : N              
-readData1Out[24]             : AG8       : output : 2.5 V             :         : 3         : N              
+memTestOut[8]                : AG6       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG7       :        :                   :         : 3         :                
+memTestEnd[18]               : AG8       : input  : 2.5 V             :         : 3         : N              
 GND                          : AG9       : gnd    :                   :         :           :                
-ULAOUTTESTE[18]              : AG10      : output : 2.5 V             :         : 3         : N              
-readData2Out[17]             : AG11      : output : 2.5 V             :         : 3         : N              
-ULAOUTTESTE[4]               : AG12      : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG10      :        :                   :         : 3         :                
+instRdOut[4]                 : AG11      : output : 2.5 V             :         : 3         : N              
+readData1Out[12]             : AG12      : output : 2.5 V             :         : 3         : N              
 GND                          : AG13      : gnd    :                   :         :           :                
 GND+                         : AG14      :        :                   :         : 3         :                
 GND+                         : AG15      :        :                   :         : 4         :                
 GND                          : AG16      : gnd    :                   :         :           :                
-readData2Out[0]              : AG17      : output : 2.5 V             :         : 4         : N              
-readData1Out[8]              : AG18      : output : 2.5 V             :         : 4         : N              
-ULAINB[15]                   : AG19      : output : 2.5 V             :         : 4         : N              
+beqadderout[3]               : AG17      : output : 2.5 V             :         : 4         : N              
+readData2Out[26]             : AG18      : output : 2.5 V             :         : 4         : N              
+regTestOut[25]               : AG19      : output : 2.5 V             :         : 4         : N              
 GND                          : AG20      : gnd    :                   :         :           :                
-regTestOut[9]                : AG21      : output : 2.5 V             :         : 4         : N              
-PCOutTeste[18]               : AG22      : output : 2.5 V             :         : 4         : N              
-PCOutTeste[30]               : AG23      : output : 2.5 V             :         : 4         : N              
+ULAOUTTESTE[23]              : AG21      : output : 2.5 V             :         : 4         : N              
+regTestOut[20]               : AG22      : output : 2.5 V             :         : 4         : N              
+beqadderout[0]               : AG23      : output : 2.5 V             :         : 4         : N              
 GND                          : AG24      : gnd    :                   :         :           :                
-memTestEnd[5]                : AG25      : input  : 2.5 V             :         : 4         : N              
-memTestEnd[10]               : AG26      : input  : 2.5 V             :         : 4         : N              
+beqadderout[15]              : AG25      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AG26      :        :                   :         : 4         :                
 GND                          : AG27      : gnd    :                   :         :           :                
 VCCIO5                       : AG28      : power  :                   : 2.5V    : 5         :                
 VCCIO3                       : AH2       : power  :                   : 2.5V    : 3         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH3       :        :                   :         : 3         :                
-ULAINA[25]                   : AH4       : output : 2.5 V             :         : 3         : N              
+memTestEnd[0]                : AH3       : input  : 2.5 V             :         : 3         : N              
+memTestEnd[9]                : AH4       : input  : 2.5 V             :         : 3         : N              
 VCCIO3                       : AH5       : power  :                   : 2.5V    : 3         :                
-readData1Out[14]             : AH6       : output : 2.5 V             :         : 3         : N              
-readData1Out[0]              : AH7       : output : 2.5 V             :         : 3         : N              
-regTestOut[30]               : AH8       : output : 2.5 V             :         : 3         : N              
+beqadder[25]                 : AH6       : output : 2.5 V             :         : 3         : N              
+beqadder[14]                 : AH7       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH8       :        :                   :         : 3         :                
 VCCIO3                       : AH9       : power  :                   : 2.5V    : 3         :                
-readData2Out[4]              : AH10      : output : 2.5 V             :         : 3         : N              
-readData2Out[29]             : AH11      : output : 2.5 V             :         : 3         : N              
-readData2Out[15]             : AH12      : output : 2.5 V             :         : 3         : N              
+beqadder[19]                 : AH10      : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH11      :        :                   :         : 3         :                
+ULAINA[12]                   : AH12      : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : AH13      : power  :                   : 2.5V    : 3         :                
 GND+                         : AH14      :        :                   :         : 3         :                
 GND+                         : AH15      :        :                   :         : 4         :                
 VCCIO4                       : AH16      : power  :                   : 2.5V    : 4         :                
-readData2Out[5]              : AH17      : output : 2.5 V             :         : 4         : N              
-ULAINA[1]                    : AH18      : output : 2.5 V             :         : 4         : N              
-ULAINB[25]                   : AH19      : output : 2.5 V             :         : 4         : N              
+ULAOUTTESTE[25]              : AH17      : output : 2.5 V             :         : 4         : N              
+writeData[21]                : AH18      : output : 2.5 V             :         : 4         : N              
+ULAINB[21]                   : AH19      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AH20      : power  :                   : 2.5V    : 4         :                
-ULAINA[16]                   : AH21      : output : 2.5 V             :         : 4         : N              
-ULAINB[28]                   : AH22      : output : 2.5 V             :         : 4         : N              
-PCOutTeste[15]               : AH23      : output : 2.5 V             :         : 4         : N              
+readData2Out[18]             : AH21      : output : 2.5 V             :         : 4         : N              
+beqadder[2]                  : AH22      : output : 2.5 V             :         : 4         : N              
+readData2Out[23]             : AH23      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AH24      : power  :                   : 2.5V    : 4         :                
-ULAINA[15]                   : AH25      : output : 2.5 V             :         : 4         : N              
-memTestOut[9]                : AH26      : output : 2.5 V             :         : 4         : N              
+beqadderout[24]              : AH25      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH26      :        :                   :         : 4         :                
 VCCIO4                       : AH27      : power  :                   : 2.5V    : 4         :                
 VCCIO1                       : B1        : power  :                   : 2.5V    : 1         :                
 GND                          : B2        : gnd    :                   :         :           :                
-memTestEnd[2]                : B3        : input  : 2.5 V             :         : 8         : N              
-memTestOut[12]               : B4        : output : 2.5 V             :         : 8         : N              
+instRsOut[4]                 : B3        : output : 2.5 V             :         : 8         : N              
+ULAINA[29]                   : B4        : output : 2.5 V             :         : 8         : N              
 GND                          : B5        : gnd    :                   :         :           :                
-writeData[26]                : B6        : output : 2.5 V             :         : 8         : N              
-instRtOut[2]                 : B7        : output : 2.5 V             :         : 8         : N              
-ULAOUTTESTE[15]              : B8        : output : 2.5 V             :         : 8         : N              
+beqadder[15]                 : B6        : output : 2.5 V             :         : 8         : N              
+ULAINA[5]                    : B7        : output : 2.5 V             :         : 8         : N              
+word[1]                      : B8        : output : 2.5 V             :         : 8         : N              
 GND                          : B9        : gnd    :                   :         :           :                
-regTestOut[16]               : B10       : output : 2.5 V             :         : 8         : N              
-regTestOut[29]               : B11       : output : 2.5 V             :         : 8         : N              
+readData2Out[9]              : B10       : output : 2.5 V             :         : 8         : N              
+ULAINB[11]                   : B11       : output : 2.5 V             :         : 8         : N              
 GND                          : B12       : gnd    :                   :         :           :                
 GND                          : B13       : gnd    :                   :         :           :                
-GND+                         : B14       :        :                   :         : 8         :                
+memTestEnd[4]                : B14       : input  : 2.5 V             :         : 8         : N              
 GND+                         : B15       :        :                   :         : 7         :                
 GND                          : B16       : gnd    :                   :         :           :                
-PCOutTeste[9]                : B17       : output : 2.5 V             :         : 7         : N              
-PCOutTeste[6]                : B18       : output : 2.5 V             :         : 7         : N              
-instRdOut[1]                 : B19       : output : 2.5 V             :         : 7         : N              
+readData2Out[2]              : B17       : output : 2.5 V             :         : 7         : N              
+instRtOut[2]                 : B18       : output : 2.5 V             :         : 7         : N              
+regTestOut[1]                : B19       : output : 2.5 V             :         : 7         : N              
 GND                          : B20       : gnd    :                   :         :           :                
-memTestOut[7]                : B21       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B22       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B23       :        :                   :         : 7         :                
+ULASEL[0]                    : B21       : output : 2.5 V             :         : 7         : N              
+regTestEnd[2]                : B22       : input  : 2.5 V             :         : 7         : N              
+regTestOut[2]                : B23       : output : 2.5 V             :         : 7         : N              
 GND                          : B24       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B25       :        :                   :         : 7         :                
-memTestOut[2]                : B26       : output : 2.5 V             :         : 7         : N              
+word[7]                      : B25       : output : 2.5 V             :         : 7         : N              
+readData1Out[27]             : B26       : output : 2.5 V             :         : 7         : N              
 GND                          : B27       : gnd    :                   :         :           :                
 VCCIO6                       : B28       : power  :                   : 2.5V    : 6         :                
 GND                          : C1        : gnd    :                   :         :           :                
-memTestEnd[4]                : C2        : input  : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8         :                
-memTestEnd[17]               : C4        : input  : 2.5 V             :         : 8         : N              
-memTestEnd[11]               : C5        : input  : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C7        :        :                   :         : 8         :                
-readData1Out[19]             : C8        : output : 2.5 V             :         : 8         : N              
-regTestOut[4]                : C9        : output : 2.5 V             :         : 8         : N              
-ULAOUTTESTE[31]              : C10       : output : 2.5 V             :         : 8         : N              
-ULAINB[31]                   : C11       : output : 2.5 V             :         : 8         : N              
-PCOutTeste[3]                : C12       : output : 2.5 V             :         : 8         : N              
-PCOutTeste[4]                : C13       : output : 2.5 V             :         : 8         : N              
-PCOutTeste[2]                : C14       : output : 2.5 V             :         : 8         : N              
-ULAINB[0]                    : C15       : output : 2.5 V             :         : 7         : N              
-ULAINB[7]                    : C16       : output : 2.5 V             :         : 7         : N              
-ULAINB[23]                   : C17       : output : 2.5 V             :         : 7         : N              
-memTestOut[8]                : C18       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C19       :        :                   :         : 7         :                
-memTestOut[30]               : C20       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C21       :        :                   :         : 7         :                
-word[9]                      : C22       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C23       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C24       :        :                   :         : 7         :                
-instRtOut[3]                 : C25       : output : 2.5 V             :         : 7         : N              
-memTestEnd[7]                : C26       : input  : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : C27       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C2        :        :                   :         : 1         :                
+memTestOut[29]               : C3        : output : 2.5 V             :         : 8         : N              
+beqadder[21]                 : C4        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C5        :        :                   :         : 8         :                
+instRdOut[1]                 : C6        : output : 2.5 V             :         : 8         : N              
+readData1Out[18]             : C7        : output : 2.5 V             :         : 8         : N              
+readData1Out[0]              : C8        : output : 2.5 V             :         : 8         : N              
+ULAOUTTESTE[26]              : C9        : output : 2.5 V             :         : 8         : N              
+ULAINA[21]                   : C10       : output : 2.5 V             :         : 8         : N              
+instRdOut[2]                 : C11       : output : 2.5 V             :         : 8         : N              
+ULAOUTTESTE[21]              : C12       : output : 2.5 V             :         : 8         : N              
+ULAINB[2]                    : C13       : output : 2.5 V             :         : 8         : N              
+regTestOut[18]               : C14       : output : 2.5 V             :         : 8         : N              
+ULAOUTTESTE[2]               : C15       : output : 2.5 V             :         : 7         : N              
+writeData[24]                : C16       : output : 2.5 V             :         : 7         : N              
+writeData[3]                 : C17       : output : 2.5 V             :         : 7         : N              
+regTestOut[16]               : C18       : output : 2.5 V             :         : 7         : N              
+ULAOUTTESTE[14]              : C19       : output : 2.5 V             :         : 7         : N              
+regTestOut[22]               : C20       : output : 2.5 V             :         : 7         : N              
+beqadderout[5]               : C21       : output : 2.5 V             :         : 7         : N              
+readData2Out[4]              : C22       : output : 2.5 V             :         : 7         : N              
+writeData[30]                : C23       : output : 2.5 V             :         : 7         : N              
+PCOutTeste[9]                : C24       : output : 2.5 V             :         : 7         : N              
+readData1Out[24]             : C25       : output : 2.5 V             :         : 7         : N              
+ULAINA[27]                   : C26       : output : 2.5 V             :         : 7         : N              
+beqadderout[20]              : C27       : output : 2.5 V             :         : 6         : N              
 GND                          : C28       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 1         :                
+memTestEnd[17]               : D2        : input  : 2.5 V             :         : 1         : N              
 GND                          : D3        : gnd    :                   :         :           :                
-memTestEnd[8]                : D4        : input  : 2.5 V             :         : 8         : N              
-memTestEnd[30]               : D5        : input  : 2.5 V             :         : 8         : N              
-word[4]                      : D6        : output : 2.5 V             :         : 8         : N              
-memTestEnd[3]                : D7        : input  : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D8        :        :                   :         : 8         :                
-memTestOut[10]               : D9        : output : 2.5 V             :         : 8         : N              
-regTestOut[10]               : D10       : output : 2.5 V             :         : 8         : N              
-ULAINA[19]                   : D11       : output : 2.5 V             :         : 8         : N              
-ULAOUTTESTE[5]               : D12       : output : 2.5 V             :         : 8         : N              
-ULAINB[3]                    : D13       : output : 2.5 V             :         : 8         : N              
-PCOutTeste[11]               : D14       : output : 2.5 V             :         : 8         : N              
-writeData[3]                 : D15       : output : 2.5 V             :         : 7         : N              
-ULAINB[1]                    : D16       : output : 2.5 V             :         : 7         : N              
-PCOutTeste[22]               : D17       : output : 2.5 V             :         : 7         : N              
-memTestOut[15]               : D18       : output : 2.5 V             :         : 7         : N              
-word[7]                      : D19       : output : 2.5 V             :         : 7         : N              
-memTestEnd[28]               : D20       : input  : 2.5 V             :         : 7         : N              
-instRdOut[3]                 : D21       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D23       :        :                   :         : 7         :                
-instRtOut[4]                 : D24       : output : 2.5 V             :         : 7         : N              
-instRsOut[1]                 : D25       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D26       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D27       :        :                   :         : 6         :                
-memTestEnd[20]               : D28       : input  : 2.5 V             :         : 6         : N              
-readData1Out[17]             : E1        : output : 2.5 V             :         : 1         : N              
+memTestOut[11]               : D4        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D5        :        :                   :         : 8         :                
+readData1Out[14]             : D6        : output : 2.5 V             :         : 8         : N              
+readData1Out[16]             : D7        : output : 2.5 V             :         : 8         : N              
+ULAINA[16]                   : D8        : output : 2.5 V             :         : 8         : N              
+ULAINA[18]                   : D9        : output : 2.5 V             :         : 8         : N              
+readData1Out[21]             : D10       : output : 2.5 V             :         : 8         : N              
+readData1Out[13]             : D11       : output : 2.5 V             :         : 8         : N              
+readData2Out[14]             : D12       : output : 2.5 V             :         : 8         : N              
+regTestOut[3]                : D13       : output : 2.5 V             :         : 8         : N              
+ULAINB[12]                   : D14       : output : 2.5 V             :         : 8         : N              
+ULAINB[3]                    : D15       : output : 2.5 V             :         : 7         : N              
+writeData[26]                : D16       : output : 2.5 V             :         : 7         : N              
+ULAOUTTESTE[0]               : D17       : output : 2.5 V             :         : 7         : N              
+regTestOut[30]               : D18       : output : 2.5 V             :         : 7         : N              
+writeData[2]                 : D19       : output : 2.5 V             :         : 7         : N              
+regTestOut[12]               : D20       : output : 2.5 V             :         : 7         : N              
+PCOutTeste[0]                : D21       : output : 2.5 V             :         : 7         : N              
+ULAINB[4]                    : D22       : output : 2.5 V             :         : 7         : N              
+writeData[5]                 : D23       : output : 2.5 V             :         : 7         : N              
+beqadderout[9]               : D24       : output : 2.5 V             :         : 7         : N              
+ULAINA[24]                   : D25       : output : 2.5 V             :         : 7         : N              
+beqadderout[13]              : D26       : output : 2.5 V             :         : 6         : N              
+beqadderout[4]               : D27       : output : 2.5 V             :         : 6         : N              
+PCOutTeste[7]                : D28       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E1        :        :                   :         : 1         :                
 ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : E2        : input  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E5        :        :                   :         : 8         :                
+beqadder[26]                 : E4        : output : 2.5 V             :         : 8         : N              
+memTestEnd[30]               : E5        : input  : 2.5 V             :         : 8         : N              
 VCCIO8                       : E6        : power  :                   : 2.5V    : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E8        :        :                   :         : 8         :                
+readData2Out[25]             : E7        : output : 2.5 V             :         : 8         : N              
+readData1Out[4]              : E8        : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : E9        : power  :                   : 2.5V    : 8         :                
-regTestOut[14]               : E10       : output : 2.5 V             :         : 8         : N              
-ULAINB[26]                   : E11       : output : 2.5 V             :         : 8         : N              
-ULAOUTTESTE[27]              : E12       : output : 2.5 V             :         : 8         : N              
+instRsOut[3]                 : E10       : output : 2.5 V             :         : 8         : N              
+readData1Out[22]             : E11       : output : 2.5 V             :         : 8         : N              
+readData1Out[23]             : E12       : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : E13       : power  :                   : 2.5V    : 8         :                
-ULAOUTTESTE[13]              : E14       : output : 2.5 V             :         : 8         : N              
-regTestOut[0]                : E15       : output : 2.5 V             :         : 7         : N              
+ULAINB[20]                   : E14       : output : 2.5 V             :         : 8         : N              
+ULASEL[2]                    : E15       : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : E16       : power  :                   : 2.5V    : 7         :                
-ULAOUTTESTE[19]              : E17       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E18       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E19       :        :                   :         : 7         :                
+writeData[6]                 : E17       : output : 2.5 V             :         : 7         : N              
+ULASEL[3]                    : E18       : output : 2.5 V             :         : 7         : N              
+PCOutTeste[5]                : E19       : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : E20       : power  :                   : 2.5V    : 7         :                
-instRdOut[4]                 : E21       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E22       :        :                   :         : 7         :                
+ULAOUTTESTE[9]               : E21       : output : 2.5 V             :         : 7         : N              
+ULAINB[5]                    : E22       : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : E23       : power  :                   : 2.5V    : 7         :                
-memTestOut[31]               : E24       : output : 2.5 V             :         : 7         : N              
-memTestOut[20]               : E25       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : E26       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E27       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E28       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F1        :        :                   :         : 1         :                
-ULAINA[21]                   : F2        : output : 2.5 V             :         : 1         : N              
-memTestEnd[0]                : F3        : input  : 2.5 V             :         : 1         : N              
+regTestOut[10]               : E24       : output : 2.5 V             :         : 7         : N              
+ULAOUTTESTE[4]               : E25       : output : 2.5 V             :         : 7         : N              
+writeData[4]                 : E26       : output : 2.5 V             :         : 6         : N              
+beqadder2[14]                : E27       : output : 2.5 V             :         : 6         : N              
+beqadder2[3]                 : E28       : output : 2.5 V             :         : 6         : N              
+memTestEnd[27]               : F1        : input  : 2.5 V             :         : 1         : N              
+beqadder[27]                 : F2        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1         :                
 ~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : F4        : input  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 1         :                
 GND                          : F6        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F7        :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8         :                
+memTestEnd[11]               : F7        : input  : 2.5 V             :         : 8         : N              
+ULAINA[4]                    : F8        : output : 2.5 V             :         : 8         : N              
 GND                          : F9        : gnd    :                   :         :           :                
-readData1Out[7]              : F10       : output : 2.5 V             :         : 8         : N              
-word[6]                      : F11       : output : 2.5 V             :         : 8         : N              
-ULAOUTTESTE[8]               : F12       : output : 2.5 V             :         : 8         : N              
+ULAINA[13]                   : F10       : output : 2.5 V             :         : 8         : N              
+ULAINA[22]                   : F11       : output : 2.5 V             :         : 8         : N              
+ULAINA[23]                   : F12       : output : 2.5 V             :         : 8         : N              
 GND                          : F13       : gnd    :                   :         :           :                
-ULAOUTTESTE[30]              : F14       : output : 2.5 V             :         : 8         : N              
-regTestEnd[1]                : F15       : input  : 2.5 V             :         : 7         : N              
+ULAINB[14]                   : F14       : output : 2.5 V             :         : 8         : N              
+writeData[25]                : F15       : output : 2.5 V             :         : 7         : N              
 GND                          : F16       : gnd    :                   :         :           :                
-regTestOut[17]               : F17       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :         : 7         :                
-memTestOut[5]                : F19       : output : 2.5 V             :         : 7         : N              
+writeData[19]                : F17       : output : 2.5 V             :         : 7         : N              
+writeData[10]                : F18       : output : 2.5 V             :         : 7         : N              
+PCOutTeste[1]                : F19       : output : 2.5 V             :         : 7         : N              
 GND                          : F20       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F21       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F22       :        :                   :         : 7         :                
+writeData[27]                : F21       : output : 2.5 V             :         : 7         : N              
+beqadderout[2]               : F22       : output : 2.5 V             :         : 7         : N              
 GND                          : F23       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F24       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F25       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F26       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F27       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F28       :        :                   :         : 6         :                
-ULAINB[29]                   : G1        : output : 2.5 V             :         : 1         : N              
-readData1Out[13]             : G2        : output : 2.5 V             :         : 1         : N              
-ULAINA[28]                   : G3        : output : 2.5 V             :         : 1         : N              
-readData1Out[28]             : G4        : output : 2.5 V             :         : 1         : N              
-memTestEnd[27]               : G5        : input  : 2.5 V             :         : 1         : N              
-memTestOut[27]               : G6        : output : 2.5 V             :         : 1         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G7        :        :                   :         : 8         :                
-ULAINA[20]                   : G8        : output : 2.5 V             :         : 8         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G9        :        :                   :         : 8         :                
-ULAINA[7]                    : G10       : output : 2.5 V             :         : 8         : N              
-regTestOut[15]               : G11       : output : 2.5 V             :         : 8         : N              
-ULASEL[3]                    : G12       : output : 2.5 V             :         : 8         : N              
-regTestOut[19]               : G13       : output : 2.5 V             :         : 8         : N              
-regTestOut[5]                : G14       : output : 2.5 V             :         : 8         : N              
-word[8]                      : G15       : output : 2.5 V             :         : 7         : N              
-readData1Out[3]              : G16       : output : 2.5 V             :         : 7         : N              
-memTestEnd[12]               : G17       : input  : 2.5 V             :         : 7         : N              
-readData1Out[2]              : G18       : output : 2.5 V             :         : 7         : N              
-ULAINA[2]                    : G19       : output : 2.5 V             :         : 7         : N              
-instRdOut[2]                 : G20       : output : 2.5 V             :         : 7         : N              
-ULAOUTTESTE[25]              : G21       : output : 2.5 V             :         : 7         : N              
-ULAINB[8]                    : G22       : output : 2.5 V             :         : 7         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G23       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G24       :        :                   :         : 6         :                
-memTestEnd[24]               : G25       : input  : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G26       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G27       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G28       :        :                   :         : 6         :                
+beqadderout[6]               : F24       : output : 2.5 V             :         : 6         : N              
+ULAOUTTESTE[16]              : F25       : output : 2.5 V             :         : 6         : N              
+beqadder2[10]                : F26       : output : 2.5 V             :         : 6         : N              
+beqadder[7]                  : F27       : output : 2.5 V             :         : 6         : N              
+regTestOut[27]               : F28       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G4        :        :                   :         : 1         :                
+beqadder[1]                  : G5        : output : 2.5 V             :         : 1         : N              
+memTestEnd[15]               : G6        : input  : 2.5 V             :         : 1         : N              
+memTestEnd[29]               : G7        : input  : 2.5 V             :         : 8         : N              
+ULAINA[0]                    : G8        : output : 2.5 V             :         : 8         : N              
+ULAINA[14]                   : G9        : output : 2.5 V             :         : 8         : N              
+word[8]                      : G10       : output : 2.5 V             :         : 8         : N              
+instRsOut[0]                 : G11       : output : 2.5 V             :         : 8         : N              
+ULAINB[6]                    : G12       : output : 2.5 V             :         : 8         : N              
+readData2Out[7]              : G13       : output : 2.5 V             :         : 8         : N              
+ULAINB[22]                   : G14       : output : 2.5 V             :         : 8         : N              
+writeData[18]                : G15       : output : 2.5 V             :         : 7         : N              
+writeData[15]                : G16       : output : 2.5 V             :         : 7         : N              
+writeData[14]                : G17       : output : 2.5 V             :         : 7         : N              
+writeData[29]                : G18       : output : 2.5 V             :         : 7         : N              
+writeData[17]                : G19       : output : 2.5 V             :         : 7         : N              
+writeData[9]                 : G20       : output : 2.5 V             :         : 7         : N              
+readData2Out[13]             : G21       : output : 2.5 V             :         : 7         : N              
+writeData[23]                : G22       : output : 2.5 V             :         : 7         : N              
+ULAOUTTESTE[27]              : G23       : output : 2.5 V             :         : 6         : N              
+beqadderout[12]              : G24       : output : 2.5 V             :         : 6         : N              
+beqadderout[11]              : G25       : output : 2.5 V             :         : 6         : N              
+regTestOut[17]               : G26       : output : 2.5 V             :         : 6         : N              
+ULASEL[1]                    : G27       : output : 2.5 V             :         : 6         : N              
+PCOutTeste[3]                : G28       : output : 2.5 V             :         : 6         : N              
 VCCIO1                       : H1        : power  :                   : 2.5V    : 1         :                
 GND                          : H2        : gnd    :                   :         :           :                
-ULAINA[5]                    : H3        : output : 2.5 V             :         : 1         : N              
-readData1Out[5]              : H4        : output : 2.5 V             :         : 1         : N              
+memTestEnd[26]               : H3        : input  : 2.5 V             :         : 1         : N              
+memTestEnd[22]               : H4        : input  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H5        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H6        :        :                   :         : 1         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H7        :        :                   :         : 1         :                
-readData1Out[20]             : H8        : output : 2.5 V             :         : 8         : N              
+memTestOut[12]               : H7        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H8        :        :                   :         : 8         :                
 GNDA3                        : H9        : gnd    :                   :         :           :                
-readData1Out[10]             : H10       : output : 2.5 V             :         : 8         : N              
+word[4]                      : H10       : output : 2.5 V             :         : 8         : N              
 VCCIO8                       : H11       : power  :                   : 2.5V    : 8         :                
-PCOutTeste[19]               : H12       : output : 2.5 V             :         : 8         : N              
-ULAOUTTESTE[20]              : H13       : output : 2.5 V             :         : 8         : N              
-ULAOUTTESTE[7]               : H14       : output : 2.5 V             :         : 8         : N              
-PCOutTeste[8]                : H15       : output : 2.5 V             :         : 7         : N              
-PCOutTeste[25]               : H16       : output : 2.5 V             :         : 7         : N              
-ULAINA[3]                    : H17       : output : 2.5 V             :         : 7         : N              
+instRtOut[1]                 : H12       : output : 2.5 V             :         : 8         : N              
+ULAINB[13]                   : H13       : output : 2.5 V             :         : 8         : N              
+regTestOut[11]               : H14       : output : 2.5 V             :         : 8         : N              
+writeData[12]                : H15       : output : 2.5 V             :         : 7         : N              
+writeData[0]                 : H16       : output : 2.5 V             :         : 7         : N              
+writeData[22]                : H17       : output : 2.5 V             :         : 7         : N              
 VCCIO7                       : H18       : power  :                   : 2.5V    : 7         :                
-instRsOut[0]                 : H19       : output : 2.5 V             :         : 7         : N              
+writeData[11]                : H19       : output : 2.5 V             :         : 7         : N              
 GNDA2                        : H20       : gnd    :                   :         :           :                
-PCOutTeste[13]               : H21       : output : 2.5 V             :         : 7         : N              
-memTestEnd[19]               : H22       : input  : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : H23       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H24       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H25       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H26       :        :                   :         : 6         :                
+readData2Out[22]             : H21       : output : 2.5 V             :         : 7         : N              
+beqadderout[1]               : H22       : output : 2.5 V             :         : 6         : N              
+regTestOut[21]               : H23       : output : 2.5 V             :         : 6         : N              
+PCOutTeste[12]               : H24       : output : 2.5 V             :         : 6         : N              
+writeData[28]                : H25       : output : 2.5 V             :         : 6         : N              
+ULAOUTTESTE[12]              : H26       : output : 2.5 V             :         : 6         : N              
 GND                          : H27       : gnd    :                   :         :           :                
 VCCIO6                       : H28       : power  :                   : 2.5V    : 6         :                
 clk                          : J1        : input  : 2.5 V             :         : 1         : N              
 GND                          : J2        : gnd    :                   :         :           :                
-ULAINA[17]                   : J3        : output : 2.5 V             :         : 1         : N              
-regTestOut[2]                : J4        : output : 2.5 V             :         : 1         : N              
-regTestOut[6]                : J5        : output : 2.5 V             :         : 1         : N              
-writeData[4]                 : J6        : output : 2.5 V             :         : 1         : N              
-ULAINB[24]                   : J7        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J3        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J4        :        :                   :         : 1         :                
+readData2Out[10]             : J5        : output : 2.5 V             :         : 1         : N              
+regTestOut[14]               : J6        : output : 2.5 V             :         : 1         : N              
+ULAINA[26]                   : J7        : output : 2.5 V             :         : 1         : N              
 VCCA3                        : J8        : power  :                   : 2.5V    :           :                
 VCCD_PLL3                    : J9        : power  :                   : 1.2V    :           :                
-ULAINA[10]                   : J10       : output : 2.5 V             :         : 8         : N              
+word[0]                      : J10       : output : 2.5 V             :         : 8         : N              
 GND                          : J11       : gnd    :                   :         :           :                
-regTestOut[3]                : J12       : output : 2.5 V             :         : 8         : N              
-regTestOut[7]                : J13       : output : 2.5 V             :         : 8         : N              
-writeData[7]                 : J14       : output : 2.5 V             :         : 8         : N              
-PCOutTeste[16]               : J15       : output : 2.5 V             :         : 7         : N              
-word[1]                      : J16       : output : 2.5 V             :         : 7         : N              
-ULAINB[14]                   : J17       : output : 2.5 V             :         : 7         : N              
+readData1Out[30]             : J12       : output : 2.5 V             :         : 8         : N              
+ULAINA[30]                   : J13       : output : 2.5 V             :         : 8         : N              
+ULAINB[7]                    : J14       : output : 2.5 V             :         : 8         : N              
+writeData[16]                : J15       : output : 2.5 V             :         : 7         : N              
+writeData[20]                : J16       : output : 2.5 V             :         : 7         : N              
+writeData[1]                 : J17       : output : 2.5 V             :         : 7         : N              
 GND                          : J18       : gnd    :                   :         :           :                
-writeData[17]                : J19       : output : 2.5 V             :         : 7         : N              
+regTestOut[9]                : J19       : output : 2.5 V             :         : 7         : N              
 VCCD_PLL2                    : J20       : power  :                   : 1.2V    :           :                
 VCCA2                        : J21       : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J22       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J23       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J24       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J25       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : J26       :        :                   :         : 6         :                
+beqadderout[19]              : J22       : output : 2.5 V             :         : 6         : N              
+regTestOut[7]                : J23       : output : 2.5 V             :         : 6         : N              
+regTestOut[5]                : J24       : output : 2.5 V             :         : 6         : N              
+regTestEnd[0]                : J25       : input  : 2.5 V             :         : 6         : N              
+instRtOut[0]                 : J26       : output : 2.5 V             :         : 6         : N              
 GND+                         : J27       :        :                   :         : 6         :                
 GND+                         : J28       :        :                   :         : 6         :                
-ULAINA[13]                   : K1        : output : 2.5 V             :         : 1         : N              
-readData1Out[21]             : K2        : output : 2.5 V             :         : 1         : N              
-ULAINB[5]                    : K3        : output : 2.5 V             :         : 1         : N              
-ULAINA[26]                   : K4        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K1        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K2        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K3        :        :                   :         : 1         :                
+ULAINB[10]                   : K4        : output : 2.5 V             :         : 1         : N              
 VCCIO1                       : K5        : power  :                   : 2.5V    : 1         :                
 GND                          : K6        : gnd    :                   :         :           :                
-ULAOUTTESTE[28]              : K7        : output : 2.5 V             :         : 1         : N              
-writeData[20]                : K8        : output : 2.5 V             :         : 1         : N              
+readData1Out[26]             : K7        : output : 2.5 V             :         : 1         : N              
+ULAOUTTESTE[11]              : K8        : output : 2.5 V             :         : 1         : N              
 VCCINT                       : K9        : power  :                   : 1.2V    :           :                
 GND                          : K10       : gnd    :                   :         :           :                
 VCCINT                       : K11       : power  :                   : 1.2V    :           :                
@@ -561,22 +560,22 @@ VCCINT                       : K17       : power  :                   : 1.2V    
 GND                          : K18       : gnd    :                   :         :           :                
 VCCINT                       : K19       : power  :                   : 1.2V    :           :                
 GND                          : K20       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K21       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K22       :        :                   :         : 6         :                
+ULAOUTTESTE[8]               : K21       : output : 2.5 V             :         : 6         : N              
+ULAOUTTESTE[30]              : K22       : output : 2.5 V             :         : 6         : N              
 GND                          : K23       : gnd    :                   :         :           :                
 VCCIO6                       : K24       : power  :                   : 2.5V    : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K25       :        :                   :         : 6         :                
-memTestEnd[9]                : K26       : input  : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : K27       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K28       :        :                   :         : 6         :                
-writeData[31]                : L1        : output : 2.5 V             :         : 1         : N              
-instRsOut[2]                 : L2        : output : 2.5 V             :         : 1         : N              
-ULAINA[22]                   : L3        : output : 2.5 V             :         : 1         : N              
-readData1Out[26]             : L4        : output : 2.5 V             :         : 1         : N              
+PCOutTeste[2]                : K25       : output : 2.5 V             :         : 6         : N              
+ULAOUTTESTE[3]               : K26       : output : 2.5 V             :         : 6         : N              
+beqadder2[13]                : K27       : output : 2.5 V             :         : 6         : N              
+beqadder2[4]                 : K28       : output : 2.5 V             :         : 6         : N              
+regTestOut[19]               : L1        : output : 2.5 V             :         : 1         : N              
+ULAINB[9]                    : L2        : output : 2.5 V             :         : 1         : N              
+readData2Out[12]             : L3        : output : 2.5 V             :         : 1         : N              
+beqadder[13]                 : L4        : output : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L5        :        :                   :         : 1         :                
-writeData[8]                 : L6        : output : 2.5 V             :         : 1         : N              
-ULAINB[30]                   : L7        : output : 2.5 V             :         : 1         : N              
-writeData[22]                : L8        : output : 2.5 V             :         : 1         : N              
+readData2Out[11]             : L6        : output : 2.5 V             :         : 1         : N              
+ULAOUTTESTE[13]              : L7        : output : 2.5 V             :         : 1         : N              
+ULAOUTTESTE[18]              : L8        : output : 2.5 V             :         : 1         : N              
 GND                          : L9        : gnd    :                   :         :           :                
 VCCINT                       : L10       : power  :                   : 1.2V    :           :                
 GND                          : L11       : gnd    :                   :         :           :                
@@ -589,22 +588,22 @@ GND                          : L17       : gnd    :                   :         
 VCCINT                       : L18       : power  :                   : 1.2V    :           :                
 GND                          : L19       : gnd    :                   :         :           :                
 VCCINT                       : L20       : power  :                   : 1.2V    :           :                
-memTestOut[6]                : L21       : output : 2.5 V             :         : 6         : N              
-memTestEnd[22]               : L22       : input  : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L23       :        :                   :         : 6         :                
-memTestOut[13]               : L24       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : L25       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L26       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L27       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L28       :        :                   :         : 6         :                
-writeData[24]                : M1        : output : 2.5 V             :         : 1         : N              
-regTestOut[31]               : M2        : output : 2.5 V             :         : 1         : N              
-ULAINB[10]                   : M3        : output : 2.5 V             :         : 1         : N              
-readData1Out[22]             : M4        : output : 2.5 V             :         : 1         : N              
-regTestOut[20]               : M5        : output : 2.5 V             :         : 1         : N              
+beqadder2[0]                 : L21       : output : 2.5 V             :         : 6         : N              
+beqadderout[7]               : L22       : output : 2.5 V             :         : 6         : N              
+beqadder2[9]                 : L23       : output : 2.5 V             :         : 6         : N              
+ULAOUTTESTE[5]               : L24       : output : 2.5 V             :         : 6         : N              
+regTestEnd[1]                : L25       : input  : 2.5 V             :         : 6         : N              
+beqadder2[11]                : L26       : output : 2.5 V             :         : 6         : N              
+writeData[7]                 : L27       : output : 2.5 V             :         : 6         : N              
+word[9]                      : L28       : output : 2.5 V             :         : 6         : N              
+readData2Out[6]              : M1        : output : 2.5 V             :         : 1         : N              
+regTestOut[13]               : M2        : output : 2.5 V             :         : 1         : N              
+readData2Out[3]              : M3        : output : 2.5 V             :         : 1         : N              
+ULAOUTTESTE[17]              : M4        : output : 2.5 V             :         : 1         : N              
+readData2Out[15]             : M5        : output : 2.5 V             :         : 1         : N              
 nSTATUS                      : M6        :        :                   :         : 1         :                
-writeData[19]                : M7        : output : 2.5 V             :         : 1         : N              
-ULAOUTTESTE[9]               : M8        : output : 2.5 V             :         : 1         : N              
+ULAINB[17]                   : M7        : output : 2.5 V             :         : 1         : N              
+writeData[31]                : M8        : output : 2.5 V             :         : 1         : N              
 VCCINT                       : M9        : power  :                   : 1.2V    :           :                
 GND                          : M10       : gnd    :                   :         :           :                
 VCCINT                       : M11       : power  :                   : 1.2V    :           :                
@@ -617,22 +616,22 @@ VCCINT                       : M17       : power  :                   : 1.2V    
 GND                          : M18       : gnd    :                   :         :           :                
 VCCINT                       : M19       : power  :                   : 1.2V    :           :                
 GND                          : M20       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M21       :        :                   :         : 6         :                
+beqadder2[6]                 : M21       : output : 2.5 V             :         : 6         : N              
 MSEL2                        : M22       :        :                   :         : 6         :                
-writeData[30]                : M23       : output : 2.5 V             :         : 6         : N              
-writeData[23]                : M24       : output : 2.5 V             :         : 6         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : M25       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M26       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M27       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M28       :        :                   :         : 6         :                
+beqadder2[24]                : M23       : output : 2.5 V             :         : 6         : N              
+beqadder2[16]                : M24       : output : 2.5 V             :         : 6         : N              
+beqadder2[12]                : M25       : output : 2.5 V             :         : 6         : N              
+ULAINB[24]                   : M26       : output : 2.5 V             :         : 6         : N              
+beqadder2[15]                : M27       : output : 2.5 V             :         : 6         : N              
+beqadder2[23]                : M28       : output : 2.5 V             :         : 6         : N              
 VCCIO1                       : N1        : power  :                   : 2.5V    : 1         :                
 GND                          : N2        : gnd    :                   :         :           :                
-regTestEnd[3]                : N3        : input  : 2.5 V             :         : 1         : N              
-regTestOut[23]               : N4        : output : 2.5 V             :         : 1         : N              
+ULAINB[25]                   : N3        : output : 2.5 V             :         : 1         : N              
+readData2Out[21]             : N4        : output : 2.5 V             :         : 1         : N              
 VCCIO1                       : N5        : power  :                   : 2.5V    : 1         :                
 GND                          : N6        : gnd    :                   :         :           :                
 ~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : N7        : input  : 2.5 V             :         : 1         : N              
-writeData[5]                 : N8        : output : 2.5 V             :         : 1         : N              
+readData2Out[24]             : N8        : output : 2.5 V             :         : 1         : N              
 GND                          : N9        : gnd    :                   :         :           :                
 VCCINT                       : N10       : power  :                   : 1.2V    :           :                
 GND                          : N11       : gnd    :                   :         :           :                
@@ -645,16 +644,16 @@ GND                          : N17       : gnd    :                   :         
 VCCINT                       : N18       : power  :                   : 1.2V    :           :                
 GND                          : N19       : gnd    :                   :         :           :                
 VCCINT                       : N20       : power  :                   : 1.2V    :           :                
-writeData[11]                : N21       : output : 2.5 V             :         : 6         : N              
+beqadder2[8]                 : N21       : output : 2.5 V             :         : 6         : N              
 MSEL0                        : N22       :        :                   :         : 6         :                
 GND                          : N23       : gnd    :                   :         :           :                
 VCCIO6                       : N24       : power  :                   : 2.5V    : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N25       :        :                   :         : 6         :                
-writeData[9]                 : N26       : output : 2.5 V             :         : 6         : N              
+beqadder2[17]                : N25       : output : 2.5 V             :         : 6         : N              
+beqadder2[18]                : N26       : output : 2.5 V             :         : 6         : N              
 GND                          : N27       : gnd    :                   :         :           :                
 VCCIO6                       : N28       : power  :                   : 2.5V    : 6         :                
-writeData[16]                : P1        : output : 2.5 V             :         : 1         : N              
-PCOutTeste[1]                : P2        : output : 2.5 V             :         : 1         : N              
+ULAINB[18]                   : P1        : output : 2.5 V             :         : 1         : N              
+ULAINB[8]                    : P2        : output : 2.5 V             :         : 1         : N              
 ~ALTERA_DCLK~                : P3        : output : 2.5 V             :         : 1         : N              
 nCONFIG                      : P4        :        :                   :         : 1         :                
 TCK                          : P5        : input  :                   :         : 1         :                
@@ -673,21 +672,21 @@ VCCINT                       : P17       : power  :                   : 1.2V    
 GND                          : P18       : gnd    :                   :         :           :                
 VCCINT                       : P19       : power  :                   : 1.2V    :           :                
 GND                          : P20       : gnd    :                   :         :           :                
-regTestOut[12]               : P21       : output : 2.5 V             :         : 5         : N              
+beqadder2[1]                 : P21       : output : 2.5 V             :         : 5         : N              
 MSEL3                        : P22       :        :                   :         : 6         :                
 MSEL1                        : P23       :        :                   :         : 6         :                
 CONF_DONE                    : P24       :        :                   :         : 6         :                
-ULAOUTTESTE[17]              : P25       : output : 2.5 V             :         : 6         : N              
-ULAINB[19]                   : P26       : output : 2.5 V             :         : 6         : N              
-regTestOut[24]               : P27       : output : 2.5 V             :         : 6         : N              
+beqadder2[26]                : P25       : output : 2.5 V             :         : 6         : N              
+beqadder2[22]                : P26       : output : 2.5 V             :         : 6         : N              
+beqadder2[19]                : P27       : output : 2.5 V             :         : 6         : N              
 ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : P28       : output : 2.5 V             :         : 6         : N              
-ULAINB[9]                    : R1        : output : 2.5 V             :         : 2         : N              
-ULAOUTTESTE[11]              : R2        : output : 2.5 V             :         : 2         : N              
-instRtOut[1]                 : R3        : output : 2.5 V             :         : 2         : N              
-regTestEnd[4]                : R4        : input  : 2.5 V             :         : 2         : N              
-regTestEnd[0]                : R5        : input  : 2.5 V             :         : 2         : N              
-writeData[18]                : R6        : output : 2.5 V             :         : 2         : N              
-writeData[15]                : R7        : output : 2.5 V             :         : 2         : N              
+ULAINA[6]                    : R1        : output : 2.5 V             :         : 2         : N              
+readData1Out[6]              : R2        : output : 2.5 V             :         : 2         : N              
+readData1Out[17]             : R3        : output : 2.5 V             :         : 2         : N              
+writeData[8]                 : R4        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 2         :                
+readData2Out[8]              : R6        : output : 2.5 V             :         : 2         : N              
+ULAINB[1]                    : R7        : output : 2.5 V             :         : 2         : N              
 nCE                          : R8        :        :                   :         : 1         :                
 GND                          : R9        : gnd    :                   :         :           :                
 VCCINT                       : R10       : power  :                   : 1.2V    :           :                
@@ -701,22 +700,22 @@ GND                          : R17       : gnd    :                   :         
 VCCINT                       : R18       : power  :                   : 1.2V    :           :                
 GND                          : R19       : gnd    :                   :         :           :                
 VCCINT                       : R20       : power  :                   : 1.2V    :           :                
-PCOutTeste[5]                : R21       : output : 2.5 V             :         : 5         : N              
-PCOutTeste[14]               : R22       : output : 2.5 V             :         : 5         : N              
-PCOutTeste[29]               : R23       : output : 2.5 V             :         : 5         : N              
-PCOutTeste[27]               : R24       : output : 2.5 V             :         : 5         : N              
-ULAINB[20]                   : R25       : output : 2.5 V             :         : 5         : N              
-regTestOut[8]                : R26       : output : 2.5 V             :         : 5         : N              
-ULAINB[13]                   : R27       : output : 2.5 V             :         : 5         : N              
-ULAINB[2]                    : R28       : output : 2.5 V             :         : 5         : N              
+beqadder2[25]                : R21       : output : 2.5 V             :         : 5         : N              
+beqadder2[2]                 : R22       : output : 2.5 V             :         : 5         : N              
+beqadder2[27]                : R23       : output : 2.5 V             :         : 5         : N              
+beqadder2[7]                 : R24       : output : 2.5 V             :         : 5         : N              
+beqadder2[28]                : R25       : output : 2.5 V             :         : 5         : N              
+beqadder2[29]                : R26       : output : 2.5 V             :         : 5         : N              
+beqadder2[21]                : R27       : output : 2.5 V             :         : 5         : N              
+beqadder2[20]                : R28       : output : 2.5 V             :         : 5         : N              
 VCCIO2                       : T1        : power  :                   : 2.5V    : 2         :                
 GND                          : T2        : gnd    :                   :         :           :                
-writeData[29]                : T3        : output : 2.5 V             :         : 2         : N              
-writeData[27]                : T4        : output : 2.5 V             :         : 2         : N              
+memTestOut[25]               : T3        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 2         :                
 VCCIO2                       : T5        : power  :                   : 2.5V    : 2         :                
 GND                          : T6        : gnd    :                   :         :           :                
-writeData[10]                : T7        : output : 2.5 V             :         : 2         : N              
-ULAINA[11]                   : T8        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T7        :        :                   :         : 2         :                
+memTestOut[1]                : T8        : output : 2.5 V             :         : 2         : N              
 VCCINT                       : T9        : power  :                   : 1.2V    :           :                
 GND                          : T10       : gnd    :                   :         :           :                
 VCCINT                       : T11       : power  :                   : 1.2V    :           :                
@@ -729,22 +728,22 @@ VCCINT                       : T17       : power  :                   : 1.2V    
 GND                          : T18       : gnd    :                   :         :           :                
 VCCINT                       : T19       : power  :                   : 1.2V    :           :                
 GND                          : T20       : gnd    :                   :         :           :                
-writeData[28]                : T21       : output : 2.5 V             :         : 5         : N              
-ULAINB[17]                   : T22       : output : 2.5 V             :         : 5         : N              
+beqadder2[5]                 : T21       : output : 2.5 V             :         : 5         : N              
+beqadderout[25]              : T22       : output : 2.5 V             :         : 5         : N              
 GND                          : T23       : gnd    :                   :         :           :                
 VCCIO5                       : T24       : power  :                   : 2.5V    : 5         :                
-PCOutTeste[26]               : T25       : output : 2.5 V             :         : 5         : N              
-PCOutTeste[17]               : T26       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[21]               : T25       : output : 2.5 V             :         : 5         : N              
+beqadder2[30]                : T26       : output : 2.5 V             :         : 5         : N              
 GND                          : T27       : gnd    :                   :         :           :                
 VCCIO5                       : T28       : power  :                   : 2.5V    : 5         :                
-ULASEL[0]                    : U1        : output : 2.5 V             :         : 2         : N              
-ULAOUTTESTE[21]              : U2        : output : 2.5 V             :         : 2         : N              
-ULAINA[4]                    : U3        : output : 2.5 V             :         : 2         : N              
-readData1Out[4]              : U4        : output : 2.5 V             :         : 2         : N              
-ULAOUTTESTE[1]               : U5        : output : 2.5 V             :         : 2         : N              
-readData2Out[7]              : U6        : output : 2.5 V             :         : 2         : N              
-ULAINB[16]                   : U7        : output : 2.5 V             :         : 2         : N              
-readData1Out[11]             : U8        : output : 2.5 V             :         : 2         : N              
+memTestOut[4]                : U1        : output : 2.5 V             :         : 2         : N              
+instRtOut[4]                 : U2        : output : 2.5 V             :         : 2         : N              
+ULAINA[17]                   : U3        : output : 2.5 V             :         : 2         : N              
+readData2Out[17]             : U4        : output : 2.5 V             :         : 2         : N              
+memTestOut[20]               : U5        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U6        :        :                   :         : 2         :                
+memTestEnd[25]               : U7        : input  : 2.5 V             :         : 2         : N              
+beqadder[29]                 : U8        : output : 2.5 V             :         : 2         : N              
 GND                          : U9        : gnd    :                   :         :           :                
 VCCINT                       : U10       : power  :                   : 1.2V    :           :                
 GND                          : U11       : gnd    :                   :         :           :                
@@ -757,22 +756,22 @@ GND                          : U17       : gnd    :                   :         
 VCCINT                       : U18       : power  :                   : 1.2V    :           :                
 GND                          : U19       : gnd    :                   :         :           :                
 VCCINT                       : U20       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U21       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U22       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U23       :        :                   :         : 5         :                
-writeData[14]                : U24       : output : 2.5 V             :         : 5         : N              
-instRsOut[4]                 : U25       : output : 2.5 V             :         : 5         : N              
-PCOutTeste[28]               : U26       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : U27       :        :                   :         : 5         :                
-memTestOut[11]               : U28       : output : 2.5 V             :         : 5         : N              
-readData2Out[10]             : V1        : output : 2.5 V             :         : 2         : N              
-ULASEL[1]                    : V2        : output : 2.5 V             :         : 2         : N              
-word[3]                      : V3        : output : 2.5 V             :         : 2         : N              
-word[5]                      : V4        : output : 2.5 V             :         : 2         : N              
-writeData[25]                : V5        : output : 2.5 V             :         : 2         : N              
-readData1Out[9]              : V6        : output : 2.5 V             :         : 2         : N              
-ULAINA[9]                    : V7        : output : 2.5 V             :         : 2         : N              
-regTestOut[27]               : V8        : output : 2.5 V             :         : 2         : N              
+PCOutTeste[17]               : U21       : output : 2.5 V             :         : 5         : N              
+beqadder[5]                  : U22       : output : 2.5 V             :         : 5         : N              
+beqadderout[23]              : U23       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[19]               : U24       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[22]               : U25       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[13]               : U26       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[27]               : U27       : output : 2.5 V             :         : 5         : N              
+beqadderout[17]              : U28       : output : 2.5 V             :         : 5         : N              
+memTestOut[22]               : V1        : output : 2.5 V             :         : 2         : N              
+memTestEnd[8]                : V2        : input  : 2.5 V             :         : 2         : N              
+beqadder[31]                 : V3        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V4        :        :                   :         : 2         :                
+beqadder[16]                 : V5        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V6        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 2         :                
+instRdOut[0]                 : V8        : output : 2.5 V             :         : 2         : N              
 VCCINT                       : V9        : power  :                   : 1.2V    :           :                
 GND                          : V10       : gnd    :                   :         :           :                
 VCCINT                       : V11       : power  :                   : 1.2V    :           :                
@@ -785,22 +784,22 @@ VCCINT                       : V17       : power  :                   : 1.2V    
 GND                          : V18       : gnd    :                   :         :           :                
 VCCINT                       : V19       : power  :                   : 1.2V    :           :                
 GND                          : V20       : gnd    :                   :         :           :                
-word[0]                      : V21       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : V22       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V23       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V24       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V25       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V26       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V27       :        :                   :         : 5         :                
-memTestEnd[16]               : V28       : input  : 2.5 V             :         : 5         : N              
-readData2Out[9]              : W1        : output : 2.5 V             :         : 2         : N              
-readData2Out[3]              : W2        : output : 2.5 V             :         : 2         : N              
-ULAINB[4]                    : W3        : output : 2.5 V             :         : 2         : N              
+PCOutTeste[29]               : V21       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[20]               : V22       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[14]               : V23       : output : 2.5 V             :         : 5         : N              
+beqadderout[14]              : V24       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[4]                : V25       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[16]               : V26       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[28]               : V27       : output : 2.5 V             :         : 5         : N              
+beqadderout[31]              : V28       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W1        :        :                   :         : 2         :                
+memTestOut[30]               : W2        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W3        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : W4        :        :                   :         : 2         :                
 VCCIO2                       : W5        : power  :                   : 2.5V    : 2         :                
 GND                          : W6        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W7        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W8        :        :                   :         : 2         :                
+instRdOut[3]                 : W7        : output : 2.5 V             :         : 2         : N              
+memTestEnd[5]                : W8        : input  : 2.5 V             :         : 2         : N              
 GND                          : W9        : gnd    :                   :         :           :                
 VCCINT                       : W10       : power  :                   : 1.2V    :           :                
 GND                          : W11       : gnd    :                   :         :           :                
@@ -813,39 +812,39 @@ GND                          : W17       : gnd    :                   :         
 VCCINT                       : W18       : power  :                   : 1.2V    :           :                
 GND                          : W19       : gnd    :                   :         :           :                
 VCCINT                       : W20       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W21       :        :                   :         : 5         :                
-regTestOut[13]               : W22       : output : 2.5 V             :         : 5         : N              
+beqadderout[30]              : W21       : output : 2.5 V             :         : 5         : N              
+beqadder2[31]                : W22       : output : 2.5 V             :         : 5         : N              
 GND                          : W23       : gnd    :                   :         :           :                
 VCCIO5                       : W24       : power  :                   : 2.5V    : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : W25       :        :                   :         : 5         :                
-memTestOut[16]               : W26       : output : 2.5 V             :         : 5         : N              
-memTestOut[1]                : W27       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : W28       :        :                   :         : 5         :                
+ULAOUTTESTE[6]               : W25       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[11]               : W26       : output : 2.5 V             :         : 5         : N              
+beqadderout[28]              : W27       : output : 2.5 V             :         : 5         : N              
+beqadderout[27]              : W28       : output : 2.5 V             :         : 5         : N              
 GND+                         : Y1        :        :                   :         : 2         :                
 GND+                         : Y2        :        :                   :         : 2         :                
-writeData[1]                 : Y3        : output : 2.5 V             :         : 2         : N              
-writeData[2]                 : Y4        : output : 2.5 V             :         : 2         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y5        :        :                   :         : 2         :                
+beqadder[23]                 : Y3        : output : 2.5 V             :         : 2         : N              
+beqadder[20]                 : Y4        : output : 2.5 V             :         : 2         : N              
+memTestEnd[7]                : Y5        : input  : 2.5 V             :         : 2         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y6        :        :                   :         : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : Y7        :        :                   :         : 2         :                
 VCCA1                        : Y8        : power  :                   : 2.5V    :           :                
 VCCD_PLL1                    : Y9        : power  :                   : 1.2V    :           :                
-memTestEnd[6]                : Y10       : input  : 2.5 V             :         : 3         : N              
+memTestEnd[2]                : Y10       : input  : 2.5 V             :         : 3         : N              
 GND                          : Y11       : gnd    :                   :         :           :                
-readData2Out[31]             : Y12       : output : 2.5 V             :         : 3         : N              
-readData2Out[19]             : Y13       : output : 2.5 V             :         : 3         : N              
-regTestOut[21]               : Y14       : output : 2.5 V             :         : 3         : N              
-PCOutTeste[21]               : Y15       : output : 2.5 V             :         : 3         : N              
-memTestOut[25]               : Y16       : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y17       :        :                   :         : 4         :                
+ULAINA[1]                    : Y12       : output : 2.5 V             :         : 3         : N              
+readData1Out[10]             : Y13       : output : 2.5 V             :         : 3         : N              
+readData1Out[11]             : Y14       : output : 2.5 V             :         : 3         : N              
+ULAINB[31]                   : Y15       : output : 2.5 V             :         : 3         : N              
+regTestOut[4]                : Y16       : output : 2.5 V             :         : 4         : N              
+PCOutTeste[24]               : Y17       : output : 2.5 V             :         : 4         : N              
 GND                          : Y18       : gnd    :                   :         :           :                
-memTestOut[17]               : Y19       : output : 2.5 V             :         : 4         : N              
+readData1Out[2]              : Y19       : output : 2.5 V             :         : 4         : N              
 VCCD_PLL4                    : Y20       : power  :                   : 1.2V    :           :                
 VCCA4                        : Y21       : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y22       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y23       :        :                   :         : 5         :                
-memTestOut[4]                : Y24       : output : 2.5 V             :         : 5         : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y25       :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : Y26       :        :                   :         : 5         :                
+ULAINB[16]                   : Y22       : output : 2.5 V             :         : 5         : N              
+readData2Out[28]             : Y23       : output : 2.5 V             :         : 5         : N              
+readData1Out[19]             : Y24       : output : 2.5 V             :         : 5         : N              
+beqadderout[22]              : Y25       : output : 2.5 V             :         : 5         : N              
+PCOutTeste[30]               : Y26       : output : 2.5 V             :         : 5         : N              
 GND+                         : Y27       :        :                   :         : 5         :                
 GND+                         : Y28       :        :                   :         : 5         :                

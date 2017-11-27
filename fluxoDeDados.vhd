@@ -6,11 +6,12 @@ entity fluxoDeDados is
   port (
     clk : in std_logic;
     regTestEnd : in std_logic_vector (4 downto 0);
-	 memTestEnd : in std_logic_vector (31 downto 0);
+	  memTestEnd : in std_logic_vector (31 downto 0);
     regTestOut, memTestOut : out std_logic_vector (31 downto 0);
     instRsOut, instRtOut, instRdOut : out std_logic_vector(4 downto 0);
     readData1Out, readData2Out, writeData,
-    PCOutTeste, ULAINA, ULAINB, ULAOUTTESTE : out std_logic_vector(31 downto 0);
+    PCOutTeste, ULAINA, ULAINB, ULAOUTTESTE, beqadder,
+    beqadder2, beqadderout : out std_logic_vector(31 downto 0);
     word : out std_logic_vector(9 downto 0);
 	  ULASEL : out std_logic_vector(3 downto 0)
   );
@@ -114,8 +115,11 @@ begin
               C => muxBEQOut);
 
   AdderBEQ    : entity work.ULA port map
-              (A => adderPCOut, B => immShifterOut, C => adderBEQOut,
+              (A => adderPCOut, B => signExtendOut, C => adderBEQOut,
               SEL => "0010");
+  beqadder <= immShifterOut;
+  beqadder2 <= adderPCOut;
+  beqadderout <= adderBEQOut;
 
   ShifterImm  : entity work.shifter port map
               (A => signExtendOut, B => immShifterOut);
