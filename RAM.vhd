@@ -49,8 +49,8 @@ architecture behaviour of RAM is
 		variable tmp : mt := (others => (others => '0'));
 	begin
 		-- Initialize each address with the address itself
-		tmp(0) := (others => '0');
-		tmp(1) := INSTTWO;
+		tmp(0) := INSTTWO;
+		tmp(1) := (others => '0');
 		tmp(2) := (others => '0');
 		tmp(3) := (others => '0');
 		tmp(4) := (others => '0');

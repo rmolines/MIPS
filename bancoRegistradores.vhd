@@ -89,7 +89,7 @@ begin
 
 	saidaB <= ram(to_integer(unsigned (enderecoB)));
 
-   saidaTeste <= ram(to_integer(unsigned (endTeste)));
+  saidaTeste <= ram(to_integer(unsigned (endTeste)));
 
 
 

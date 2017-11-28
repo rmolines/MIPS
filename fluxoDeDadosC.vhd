@@ -2,7 +2,7 @@ library IEEE;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity fluxoDeDados is
+entity fluxoDeDadosC is
   port (
     clk : in std_logic;
     regTestEnd : in std_logic_vector (4 downto 0);
@@ -17,7 +17,7 @@ entity fluxoDeDados is
   );
 end entity;
 
-architecture fluxoDeDadosarch of fluxoDeDados is
+architecture fluxoDeDadosCarch of fluxoDeDadosC is
 
   signal      dataMemOut, readData1, readData2, extendedSignalOut, readMemData, PCOut,
               muxBEQOut, muxRtImmOut, ULAOut, muxJumpOut, muxULAMemOut, adderPCOut, adderBEQOut,

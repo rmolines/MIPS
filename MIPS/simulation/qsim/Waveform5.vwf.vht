@@ -19,9 +19,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/27/2017 22:34:49"
+-- Generated on "11/28/2017 12:05:28"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          fluxoDeDados
+-- Vhdl Test Bench(with test vectors) for design  :          fluxoDeDadosC
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -29,92 +29,77 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY fluxoDeDados_vhd_vec_tst IS
-END fluxoDeDados_vhd_vec_tst;
-ARCHITECTURE fluxoDeDados_arch OF fluxoDeDados_vhd_vec_tst IS
+ENTITY fluxoDeDadosC_vhd_vec_tst IS
+END fluxoDeDadosC_vhd_vec_tst;
+ARCHITECTURE fluxoDeDadosC_arch OF fluxoDeDadosC_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL beqadder : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL beqadder2 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL beqadderout : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
-SIGNAL EXTESTE : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL instRdOut : STD_LOGIC_VECTOR(4 DOWNTO 0);
+SIGNAL instRsOut : STD_LOGIC_VECTOR(4 DOWNTO 0);
+SIGNAL instRtOut : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL memTestEnd : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL memTestOut : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL MTESTE : STD_LOGIC_VECTOR(2 DOWNTO 0);
 SIGNAL PCOutTeste : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL rd : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL readData1Out : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL readData2Out : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL regTestEnd : STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL regTestOut : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL rs : STD_LOGIC_VECTOR(4 DOWNTO 0);
-SIGNAL rt : STD_LOGIC_VECTOR(4 DOWNTO 0);
-SIGNAL signExtendOutteste : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ULAINA : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ULAINB : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ULAOUTTESTE : STD_LOGIC_VECTOR(31 DOWNTO 0);
-SIGNAL ULAOUTTESTE1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL ULASEL : STD_LOGIC_VECTOR(3 DOWNTO 0);
-SIGNAL WBTESTE : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL word : STD_LOGIC_VECTOR(9 DOWNTO 0);
 SIGNAL writeData : STD_LOGIC_VECTOR(31 DOWNTO 0);
-COMPONENT fluxoDeDados
+COMPONENT fluxoDeDadosC
 	PORT (
 	beqadder : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	beqadder2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	beqadderout : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	clk : IN STD_LOGIC;
-	EXTESTE : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	instRdOut : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+	instRsOut : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+	instRtOut : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 	memTestEnd : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 	memTestOut : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	MTESTE : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
 	PCOutTeste : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	rd : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
 	readData1Out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	readData2Out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	regTestEnd : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
 	regTestOut : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	rs : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-	rt : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-	signExtendOutteste : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	ULAINA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	ULAINB : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	ULAOUTTESTE : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-	ULAOUTTESTE1 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
 	ULASEL : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-	WBTESTE : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
 	word : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 	writeData : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
-	i1 : fluxoDeDados
+	i1 : fluxoDeDadosC
 	PORT MAP (
 -- list connections between master ports and signals
 	beqadder => beqadder,
 	beqadder2 => beqadder2,
 	beqadderout => beqadderout,
 	clk => clk,
-	EXTESTE => EXTESTE,
+	instRdOut => instRdOut,
+	instRsOut => instRsOut,
+	instRtOut => instRtOut,
 	memTestEnd => memTestEnd,
 	memTestOut => memTestOut,
-	MTESTE => MTESTE,
 	PCOutTeste => PCOutTeste,
-	rd => rd,
 	readData1Out => readData1Out,
 	readData2Out => readData2Out,
 	regTestEnd => regTestEnd,
 	regTestOut => regTestOut,
-	rs => rs,
-	rt => rt,
-	signExtendOutteste => signExtendOutteste,
 	ULAINA => ULAINA,
 	ULAINB => ULAINB,
 	ULAOUTTESTE => ULAOUTTESTE,
-	ULAOUTTESTE1 => ULAOUTTESTE1,
 	ULASEL => ULASEL,
-	WBTESTE => WBTESTE,
 	word => word,
 	writeData => writeData
 	);
@@ -354,4 +339,4 @@ BEGIN
 	memTestEnd(0) <= '0';
 WAIT;
 END PROCESS t_prcs_memTestEnd_0;
-END fluxoDeDados_arch;
+END fluxoDeDadosC_arch;
