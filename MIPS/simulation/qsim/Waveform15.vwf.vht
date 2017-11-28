@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/28/2017 12:34:50"
+-- Generated on "11/28/2017 15:08:27"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          MIPSC
 -- 
@@ -35,6 +35,8 @@ ARCHITECTURE MIPSC_arch OF MIPSC_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL clk : STD_LOGIC;
+SIGNAL HEX2 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX4 : STD_LOGIC_VECTOR(6 DOWNTO 0);
 SIGNAL key : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL memEnd : STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL memTestEndOut : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -45,6 +47,8 @@ SIGNAL regTestOut2 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 COMPONENT MIPSC
 	PORT (
 	clk : IN STD_LOGIC;
+	HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX4 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
 	key : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 	memEnd : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 	memTestEndOut : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -59,6 +63,8 @@ BEGIN
 	PORT MAP (
 -- list connections between master ports and signals
 	clk => clk,
+	HEX2 => HEX2,
+	HEX4 => HEX4,
 	key => key,
 	memEnd => memEnd,
 	memTestEndOut => memTestEndOut,

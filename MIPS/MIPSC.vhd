@@ -11,6 +11,7 @@ entity MIPSC is
 
     --saidas
     -- HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : OUT STD_LOGIC_VECTOR(6 downto 0);
+    HEX2, HEX4, HEX5 : OUT STD_LOGIC_VECTOR(6 downto 0);
     regTestOut2, memTestOut : out std_logic_vector(31 downto 0);
     regTestEndOut, memTestEndOut : out std_logic_vector(31 downto 0)
   );
@@ -18,7 +19,7 @@ end entity;
 
 architecture MIPSCarch of MIPSC is
 
-  -- signal regDataAUX, memDataAUX : std_logic_vector(31 downto 0);
+  signal regDataAUX, memDataAUX : std_logic_vector(31 downto 0);
   signal regTemp : natural := to_integer(unsigned(regEnd));
   signal memTemp : natural := to_integer(unsigned(memEnd));
 
@@ -30,7 +31,8 @@ begin
 --  memTemp <= to_integer(unsigned(memEnd));
   regTestEndOut <= std_logic_vector(to_unsigned(regTemp, 32));
   memTestEndOut <= std_logic_vector(to_unsigned(memTemp, 32));
-
+  regTestOut2 <= regDataAUX;
+  memTestOut <= memDataAUX;
   -- regTestEndOut <= memEnd;
   -- memTestEndOut <= regEnd;
   -- regTestEndOut <= std_logic_vector(to_unsigned(regEnd, 5));
@@ -38,17 +40,17 @@ begin
   FD : entity work.fluxoDeDadosC port map
   (clk => not(key(0)), regTestEnd => std_logic_vector(to_unsigned(regTemp, 5)),
   memTestEnd => std_logic_vector(to_unsigned(memTemp, 32)),
-  regTestOut => regTestOut2, memTestOut => memTestOut);
+  regTestOut => regDataAUX, memTestOut => memDataAUX);
 
 
-  -- display2 : entity work.conversorHex7seg
-  --   Port map (saida7seg => HEX2, dadoHex => regDataAUX(3 downto 0));
-  -- display4 : entity work.conversorHex7seg
-  --   Port map (saida7seg => HEX4, dadoHex => memDataAUX(3 downto 0));
+  display2 : entity work.conversorHex7seg
+    Port map (saida7seg => HEX2, dadoHex => regDataAUX(3 downto 0));
+  display4 : entity work.conversorHex7seg
+    Port map (saida7seg => HEX4, dadoHex => memDataAUX(3 downto 0));
   -- display4 : entity work.conversorHex7seg
   --   Port map (saida7seg => HEX4, dadoHex => auxSh_u);
-  -- display5 : entity work.conversorHex7seg
-  --   Port map (saida7seg => HEX5, dadoHex => auxSh_d);
+  display5 : entity work.conversorHex7seg
+    Port map (saida7seg => HEX5, dadoHex => std_logic_vector(to_unsigned(8, 4));
 
   process(key)
   begin

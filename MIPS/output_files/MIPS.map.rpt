@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPS
-Tue Nov 28 12:33:07 2017
+Tue Nov 28 15:07:13 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -35,16 +35,18 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
  27. Parameter Settings for Inferred Entity Instance: fluxoDeDadosC:FD|bancoRegistradores:BancoReg|altsyncram:ram_rtl_0
  28. Parameter Settings for Inferred Entity Instance: fluxoDeDadosC:FD|RAM:MemDados|altsyncram:ram_rtl_0
  29. altsyncram Parameter Settings by Entity Instance
- 30. Port Connectivity Checks: "fluxoDeDadosC:FD|MUX:MuxJUMP"
- 31. Port Connectivity Checks: "fluxoDeDadosC:FD|ULA:AdderPC"
- 32. Port Connectivity Checks: "fluxoDeDadosC:FD|ULA:AdderBEQ"
- 33. Port Connectivity Checks: "fluxoDeDadosC:FD|ULA:ULA"
- 34. Port Connectivity Checks: "fluxoDeDadosC:FD|RAM:InstMem"
- 35. Port Connectivity Checks: "fluxoDeDadosC:FD|registradorGenerico:PC"
- 36. Port Connectivity Checks: "fluxoDeDadosC:FD"
- 37. Post-Synthesis Netlist Statistics for Top Partition
- 38. Elapsed Time Per Partition
- 39. Analysis & Synthesis Messages
+ 30. Port Connectivity Checks: "conversorHex7Seg:display4"
+ 31. Port Connectivity Checks: "conversorHex7Seg:display2"
+ 32. Port Connectivity Checks: "fluxoDeDadosC:FD|MUX:MuxJUMP"
+ 33. Port Connectivity Checks: "fluxoDeDadosC:FD|ULA:AdderPC"
+ 34. Port Connectivity Checks: "fluxoDeDadosC:FD|ULA:AdderBEQ"
+ 35. Port Connectivity Checks: "fluxoDeDadosC:FD|ULA:ULA"
+ 36. Port Connectivity Checks: "fluxoDeDadosC:FD|RAM:InstMem"
+ 37. Port Connectivity Checks: "fluxoDeDadosC:FD|registradorGenerico:PC"
+ 38. Port Connectivity Checks: "fluxoDeDadosC:FD"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
 
 
 
@@ -71,16 +73,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 28 12:33:07 2017       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 28 15:07:13 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; MIPS                                        ;
 ; Top-level Entity Name              ; MIPSC                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 378                                         ;
-;     Total combinational functions  ; 348                                         ;
+; Total logic elements               ; 392                                         ;
+;     Total combinational functions  ; 362                                         ;
 ;     Dedicated logic registers      ; 130                                         ;
 ; Total registers                    ; 130                                         ;
-; Total pins                         ; 197                                         ;
+; Total pins                         ; 211                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 976                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -207,6 +209,7 @@ agreement for further details.
 ; ../registradorGenerico.vhd        ; yes             ; User VHDL File                                        ; C:/Users/Rafael/Documents/GitHub/MIPS/registradorGenerico.vhd                ;         ;
 ; ../RAM.vhd                        ; yes             ; User VHDL File                                        ; C:/Users/Rafael/Documents/GitHub/MIPS/RAM.vhd                                ;         ;
 ; ../MUX.vhd                        ; yes             ; User VHDL File                                        ; C:/Users/Rafael/Documents/GitHub/MIPS/MUX.vhd                                ;         ;
+; ../conversorHex7Seg.vhd           ; yes             ; User VHDL File                                        ; C:/Users/Rafael/Documents/GitHub/MIPS/conversorHex7Seg.vhd                   ;         ;
 ; ../bancoRegistradores.vhd         ; yes             ; User VHDL File                                        ; C:/Users/Rafael/Documents/GitHub/MIPS/bancoRegistradores.vhd                 ;         ;
 ; altsyncram.tdf                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
@@ -228,31 +231,31 @@ agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 378          ;
+; Estimated Total logic elements              ; 392          ;
 ;                                             ;              ;
-; Total combinational functions               ; 348          ;
+; Total combinational functions               ; 362          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 106          ;
-;     -- 3 input functions                    ; 132          ;
+;     -- 4 input functions                    ; 119          ;
+;     -- 3 input functions                    ; 133          ;
 ;     -- <=2 input functions                  ; 110          ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 192          ;
+;     -- normal mode                          ; 206          ;
 ;     -- arithmetic mode                      ; 156          ;
 ;                                             ;              ;
 ; Total registers                             ; 130          ;
 ;     -- Dedicated logic registers            ; 130          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 197          ;
+; I/O pins                                    ; 211          ;
 ; Total memory bits                           ; 976          ;
 ;                                             ;              ;
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; key[0]~input ;
 ; Maximum fan-out                             ; 129          ;
-; Total fan-out                               ; 2293         ;
-; Average fan-out                             ; 2.46         ;
+; Total fan-out                               ; 2376         ;
+; Average fan-out                             ; 2.44         ;
 +---------------------------------------------+--------------+
 
 
@@ -261,16 +264,18 @@ agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |MIPSC                                       ; 348 (89)            ; 130 (62)                  ; 976         ; 0            ; 0       ; 0         ; 197  ; 0            ; |MIPSC                                                                                                  ; MIPSC               ; work         ;
+; |MIPSC                                       ; 362 (89)            ; 130 (62)                  ; 976         ; 0            ; 0       ; 0         ; 211  ; 0            ; |MIPSC                                                                                                  ; MIPSC               ; work         ;
+;    |conversorHex7Seg:display2|               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|conversorHex7Seg:display2                                                                        ; conversorHex7Seg    ; work         ;
+;    |conversorHex7Seg:display4|               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|conversorHex7Seg:display4                                                                        ; conversorHex7Seg    ; work         ;
 ;    |fluxoDeDadosC:FD|                        ; 259 (0)             ; 68 (0)                    ; 976         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD                                                                                 ; fluxoDeDadosC       ; work         ;
 ;       |MUX:MuxULAMem|                        ; 65 (65)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|MUX:MuxULAMem                                                                   ; MUX                 ; work         ;
 ;       |MUX:muxRtImm|                         ; 29 (29)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|MUX:muxRtImm                                                                    ; MUX                 ; work         ;
 ;       |RAM:InstMem|                          ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|RAM:InstMem                                                                     ; RAM                 ; work         ;
-;       |RAM:MemDados|                         ; 3 (3)               ; 0 (0)                     ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|RAM:MemDados                                                                    ; RAM                 ; work         ;
+;       |RAM:MemDados|                         ; 1 (1)               ; 0 (0)                     ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|RAM:MemDados                                                                    ; RAM                 ; work         ;
 ;          |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|RAM:MemDados|altsyncram:ram_rtl_0                                               ; altsyncram          ; work         ;
 ;             |altsyncram_35g1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 512         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|RAM:MemDados|altsyncram:ram_rtl_0|altsyncram_35g1:auto_generated                ; altsyncram_35g1     ; work         ;
 ;       |UCULA:UCULA|                          ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|UCULA:UCULA                                                                     ; UCULA               ; work         ;
-;       |ULA:ULA|                              ; 105 (105)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|ULA:ULA                                                                         ; ULA                 ; work         ;
+;       |ULA:ULA|                              ; 107 (107)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|ULA:ULA                                                                         ; ULA                 ; work         ;
 ;       |bancoRegistradores:BancoReg|          ; 46 (46)             ; 64 (64)                   ; 464         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|bancoRegistradores:BancoReg                                                     ; bancoRegistradores  ; work         ;
 ;          |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 464         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|bancoRegistradores:BancoReg|altsyncram:ram_rtl_0                                ; altsyncram          ; work         ;
 ;             |altsyncram_20d1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 464         ; 0            ; 0       ; 0         ; 0    ; 0            ; |MIPSC|fluxoDeDadosC:FD|bancoRegistradores:BancoReg|altsyncram:ram_rtl_0|altsyncram_20d1:auto_generated ; altsyncram_20d1     ; work         ;
@@ -1038,18 +1043,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[13][31] ; Lost fanout                                 ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[14][31] ; Lost fanout                                 ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[15][31] ; Lost fanout                                 ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[2][0]   ; Stuck at GND due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[3][0]   ; Stuck at VCC due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[6][0]   ; Stuck at GND due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[7][0]   ; Stuck at GND due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[8][0]   ; Stuck at GND due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[9][0]   ; Stuck at VCC due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[10][0]  ; Stuck at GND due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[11][0]  ; Stuck at GND due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[12][0]  ; Stuck at GND due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[13][0]  ; Stuck at GND due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[14][0]  ; Stuck at GND due to stuck port clock_enable ;
-; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[15][0]  ; Stuck at GND due to stuck port clock_enable ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[2][1]   ; Stuck at VCC due to stuck port clock_enable ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[3][1]   ; Stuck at VCC due to stuck port clock_enable ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[6][1]   ; Stuck at GND due to stuck port clock_enable ;
@@ -1074,6 +1067,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[13][2]  ; Stuck at GND due to stuck port clock_enable ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[14][2]  ; Stuck at GND due to stuck port clock_enable ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[15][2]  ; Stuck at GND due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[2][0]   ; Stuck at GND due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[3][0]   ; Stuck at VCC due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[6][0]   ; Stuck at GND due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[7][0]   ; Stuck at GND due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[8][0]   ; Stuck at GND due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[9][0]   ; Stuck at VCC due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[10][0]  ; Stuck at GND due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[11][0]  ; Stuck at GND due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[12][0]  ; Stuck at GND due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[13][0]  ; Stuck at GND due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[14][0]  ; Stuck at GND due to stuck port clock_enable ;
+; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[15][0]  ; Stuck at GND due to stuck port clock_enable ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[2][3]   ; Lost fanout                                 ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[3][3]   ; Lost fanout                                 ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[6][3]   ; Lost fanout                                 ;
@@ -1654,22 +1659,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fluxoDeDadosC:FD|RAM:MemDados|ram~457                    ; Stuck at GND due to stuck port data_in      ;
 ; fluxoDeDadosC:FD|RAM:MemDados|ram~489                    ; Stuck at GND due to stuck port data_in      ;
 ; fluxoDeDadosC:FD|RAM:MemDados|ram~521                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~37                     ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~69                     ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~101                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~133                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~165                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~197                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~229                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~261                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~293                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~325                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~357                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~389                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~421                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~453                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~485                    ; Stuck at GND due to stuck port data_in      ;
-; fluxoDeDadosC:FD|RAM:MemDados|ram~517                    ; Stuck at GND due to stuck port data_in      ;
 ; fluxoDeDadosC:FD|RAM:MemDados|ram~38                     ; Stuck at GND due to stuck port data_in      ;
 ; fluxoDeDadosC:FD|RAM:MemDados|ram~70                     ; Stuck at GND due to stuck port data_in      ;
 ; fluxoDeDadosC:FD|RAM:MemDados|ram~102                    ; Stuck at GND due to stuck port data_in      ;
@@ -1702,6 +1691,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; fluxoDeDadosC:FD|RAM:MemDados|ram~455                    ; Stuck at GND due to stuck port data_in      ;
 ; fluxoDeDadosC:FD|RAM:MemDados|ram~487                    ; Stuck at GND due to stuck port data_in      ;
 ; fluxoDeDadosC:FD|RAM:MemDados|ram~519                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~37                     ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~69                     ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~101                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~133                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~165                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~197                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~229                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~261                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~293                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~325                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~357                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~389                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~421                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~453                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~485                    ; Stuck at GND due to stuck port data_in      ;
+; fluxoDeDadosC:FD|RAM:MemDados|ram~517                    ; Stuck at GND due to stuck port data_in      ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[1][3]   ; Lost fanout                                 ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[1][4]   ; Lost fanout                                 ;
 ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[1][5]   ; Lost fanout                                 ;
@@ -2008,14 +2013,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~361, fluxoDeDadosC:FD|RAM:MemDados|ram~393, ;
 ;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~425, fluxoDeDadosC:FD|RAM:MemDados|ram~457, ;
 ;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~489, fluxoDeDadosC:FD|RAM:MemDados|ram~521, ;
-;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~37, fluxoDeDadosC:FD|RAM:MemDados|ram~69,   ;
-;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~101, fluxoDeDadosC:FD|RAM:MemDados|ram~133, ;
-;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~165, fluxoDeDadosC:FD|RAM:MemDados|ram~197, ;
-;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~229, fluxoDeDadosC:FD|RAM:MemDados|ram~261, ;
-;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~293, fluxoDeDadosC:FD|RAM:MemDados|ram~325, ;
-;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~357, fluxoDeDadosC:FD|RAM:MemDados|ram~389, ;
-;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~421, fluxoDeDadosC:FD|RAM:MemDados|ram~453, ;
-;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~485, fluxoDeDadosC:FD|RAM:MemDados|ram~517, ;
 ;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~38, fluxoDeDadosC:FD|RAM:MemDados|ram~70,   ;
 ;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~102, fluxoDeDadosC:FD|RAM:MemDados|ram~134, ;
 ;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~166, fluxoDeDadosC:FD|RAM:MemDados|ram~198, ;
@@ -2032,6 +2029,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~359, fluxoDeDadosC:FD|RAM:MemDados|ram~391, ;
 ;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~423, fluxoDeDadosC:FD|RAM:MemDados|ram~455, ;
 ;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~487, fluxoDeDadosC:FD|RAM:MemDados|ram~519, ;
+;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~37, fluxoDeDadosC:FD|RAM:MemDados|ram~69,   ;
+;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~101, fluxoDeDadosC:FD|RAM:MemDados|ram~133, ;
+;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~165, fluxoDeDadosC:FD|RAM:MemDados|ram~197, ;
+;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~229, fluxoDeDadosC:FD|RAM:MemDados|ram~261, ;
+;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~293, fluxoDeDadosC:FD|RAM:MemDados|ram~325, ;
+;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~357, fluxoDeDadosC:FD|RAM:MemDados|ram~389, ;
+;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~421, fluxoDeDadosC:FD|RAM:MemDados|ram~453, ;
+;                                     ;                           ; fluxoDeDadosC:FD|RAM:MemDados|ram~485, fluxoDeDadosC:FD|RAM:MemDados|ram~517, ;
 ;                                     ;                           ; fluxoDeDadosC:FD|registradorGenerico:PC|DOUT[28],                             ;
 ;                                     ;                           ; fluxoDeDadosC:FD|registradorGenerico:PC|DOUT[29],                             ;
 ;                                     ;                           ; fluxoDeDadosC:FD|registradorGenerico:PC|DOUT[30]                              ;
@@ -2123,20 +2128,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[1][30],                      ;
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[1][31],                      ;
 ;                                     ;                           ; fluxoDeDadosC:FD|registradorGenerico:PC|DOUT[31]                              ;
-; fluxoDeDadosC:FD|RAM:InstMem|ram~68 ; Stuck at GND              ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[2][0],                       ;
-;                                     ; due to stuck port data_in ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[3][0],                       ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[6][0],                       ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[7][0],                       ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[8][0],                       ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[9][0],                       ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[10][0],                      ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[11][0],                      ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[12][0],                      ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[13][0],                      ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[14][0],                      ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[15][0],                      ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[2][1],                       ;
-;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[3][1],                       ;
+; fluxoDeDadosC:FD|RAM:InstMem|ram~68 ; Stuck at GND              ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[2][1],                       ;
+;                                     ; due to stuck port data_in ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[3][1],                       ;
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[6][1],                       ;
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[7][1],                       ;
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[8][1],                       ;
@@ -2159,6 +2152,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[13][2],                      ;
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[14][2],                      ;
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[15][2],                      ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[2][0],                       ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[3][0],                       ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[6][0],                       ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[7][0],                       ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[8][0],                       ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[9][0],                       ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[10][0],                      ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[11][0],                      ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[12][0],                      ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[13][0],                      ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[14][0],                      ;
+;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[15][0],                      ;
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[4][31],                      ;
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[4][3],                       ;
 ;                                     ;                           ; fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram[4][30],                      ;
@@ -2228,14 +2233,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MIPSC|fluxoDeDadosC:FD|registradorGenerico:PC|DOUT[1]    ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |MIPSC|fluxoDeDadosC:FD|registradorGenerico:PC|DOUT[24]   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MIPSC|fluxoDeDadosC:FD|registradorGenerico:PC|DOUT[0]    ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |MIPSC|fluxoDeDadosC:FD|registradorGenerico:PC|DOUT[7]    ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPSC|fluxoDeDadosC:FD|ULA:ULA|Mux28                     ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPSC|fluxoDeDadosC:FD|UCULA:UCULA|Mux5                  ;
-; 5:1                ; 28 bits   ; 84 LEs        ; 56 LEs               ; 28 LEs                 ; No         ; |MIPSC|fluxoDeDadosC:FD|MUX:MuxULAMem|C[19]               ;
-; 16:1               ; 3 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |MIPSC|fluxoDeDadosC:FD|bancoRegistradores:BancoReg|Mux95 ;
-; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |MIPSC|fluxoDeDadosC:FD|bancoRegistradores:BancoReg|Mux60 ;
-; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |MIPSC|fluxoDeDadosC:FD|bancoRegistradores:BancoReg|Mux3  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |MIPSC|fluxoDeDadosC:FD|UCULA:UCULA|Mux4                  ;
+; 5:1                ; 28 bits   ; 84 LEs        ; 56 LEs               ; 28 LEs                 ; No         ; |MIPSC|fluxoDeDadosC:FD|MUX:MuxULAMem|C[12]               ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |MIPSC|fluxoDeDadosC:FD|bancoRegistradores:BancoReg|Mux93 ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |MIPSC|fluxoDeDadosC:FD|bancoRegistradores:BancoReg|Mux35 ;
+; 16:1               ; 32 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |MIPSC|fluxoDeDadosC:FD|bancoRegistradores:BancoReg|Mux28 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
@@ -2533,6 +2538,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------------------+
 
 
++-------------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:display4" ;
++----------+-------+----------+-------------------------+
+; Port     ; Type  ; Severity ; Details                 ;
++----------+-------+----------+-------------------------+
+; negativo ; Input ; Info     ; Stuck at GND            ;
+; overflow ; Input ; Info     ; Stuck at GND            ;
++----------+-------+----------+-------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:display2" ;
++----------+-------+----------+-------------------------+
+; Port     ; Type  ; Severity ; Details                 ;
++----------+-------+----------+-------------------------+
+; negativo ; Input ; Info     ; Stuck at GND            ;
+; overflow ; Input ; Info     ; Stuck at GND            ;
++----------+-------+----------+-------------------------+
+
+
 +----------------------------------------------------------+
 ; Port Connectivity Checks: "fluxoDeDadosC:FD|MUX:MuxJUMP" ;
 +---------+-------+----------+-----------------------------+
@@ -2631,24 +2656,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 197                         ;
+; boundary_port         ; 211                         ;
 ; cycloneiii_ff         ; 130                         ;
 ;     ENA               ; 64                          ;
 ;     plain             ; 66                          ;
-; cycloneiii_lcell_comb ; 348                         ;
+; cycloneiii_lcell_comb ; 362                         ;
 ;     arith             ; 156                         ;
 ;         2 data inputs ; 63                          ;
 ;         3 data inputs ; 93                          ;
-;     normal            ; 192                         ;
+;     normal            ; 206                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 5                           ;
 ;         2 data inputs ; 41                          ;
-;         3 data inputs ; 39                          ;
-;         4 data inputs ; 106                         ;
+;         3 data inputs ; 40                          ;
+;         4 data inputs ; 119                         ;
 ; cycloneiii_ram_block  ; 61                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 12.10                       ;
-; Average LUT depth     ; 6.40                        ;
+; Average LUT depth     ; 6.34                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2657,7 +2682,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -2667,11 +2692,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Nov 28 12:32:54 2017
+    Info: Processing started: Tue Nov 28 15:06:57 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file mipsc.vhd
-    Info (12022): Found design unit 1: MIPSC-MIPSCarch File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 19
+    Info (12022): Found design unit 1: MIPSC-MIPSCarch File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 20
     Info (12023): Found entity 1: MIPSC File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file /users/rafael/documents/github/mips/fluxodedadosc.vhd
     Info (12022): Found design unit 1: fluxoDeDadosC-fluxoDeDadosCarch File: C:/Users/Rafael/Documents/GitHub/MIPS/fluxoDeDadosC.vhd Line: 20
@@ -2723,7 +2748,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
     Info (12022): Found design unit 1: ULAMIPS-comportamento File: C:/Users/Rafael/Documents/GitHub/MIPS/adder.vhd Line: 16
     Info (12023): Found entity 1: ULAMIPS File: C:/Users/Rafael/Documents/GitHub/MIPS/adder.vhd Line: 5
 Info (12127): Elaborating entity "MIPSC" for the top level hierarchy
-Info (12128): Elaborating entity "fluxoDeDadosC" for hierarchy "fluxoDeDadosC:FD" File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 38
+Info (12128): Elaborating entity "fluxoDeDadosC" for hierarchy "fluxoDeDadosC:FD" File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 40
 Info (12128): Elaborating entity "registradorGenerico" for hierarchy "fluxoDeDadosC:FD|registradorGenerico:PC" File: C:/Users/Rafael/Documents/GitHub/MIPS/fluxoDeDadosC.vhd Line: 74
 Info (12128): Elaborating entity "RAM" for hierarchy "fluxoDeDadosC:FD|RAM:InstMem" File: C:/Users/Rafael/Documents/GitHub/MIPS/fluxoDeDadosC.vhd Line: 79
 Info (12128): Elaborating entity "MUX" for hierarchy "fluxoDeDadosC:FD|MUX:MuxRtRd" File: C:/Users/Rafael/Documents/GitHub/MIPS/fluxoDeDadosC.vhd Line: 83
@@ -2736,6 +2761,7 @@ Info (12128): Elaborating entity "shifter" for hierarchy "fluxoDeDadosC:FD|shift
 Info (12128): Elaborating entity "shifter" for hierarchy "fluxoDeDadosC:FD|shifter:ShifterInst" File: C:/Users/Rafael/Documents/GitHub/MIPS/fluxoDeDadosC.vhd Line: 134
 Info (12128): Elaborating entity "UCFD" for hierarchy "fluxoDeDadosC:FD|UCFD:UCFD" File: C:/Users/Rafael/Documents/GitHub/MIPS/fluxoDeDadosC.vhd Line: 138
 Info (12128): Elaborating entity "UCULA" for hierarchy "fluxoDeDadosC:FD|UCULA:UCULA" File: C:/Users/Rafael/Documents/GitHub/MIPS/fluxoDeDadosC.vhd Line: 145
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:display2" File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 46
 Warning (276027): Inferred dual-clock RAM node "fluxoDeDadosC:FD|bancoRegistradores:BancoReg|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "fluxoDeDadosC:FD|RAM:MemDados|ram_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (276014): Found 2 instances of uninferred RAM logic
@@ -2811,8 +2837,8 @@ Info (12133): Instantiated megafunction "fluxoDeDadosC:FD|RAM:MemDados|altsyncra
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_35g1.tdf
     Info (12023): Found entity 1: altsyncram_35g1 File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/db/altsyncram_35g1.tdf Line: 28
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "regTestEndOut[31]" is stuck at GND File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 15
-    Warning (13410): Pin "memTestEndOut[31]" is stuck at GND File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 15
+    Warning (13410): Pin "regTestEndOut[31]" is stuck at GND File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 16
+    Warning (13410): Pin "memTestEndOut[31]" is stuck at GND File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 421 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -2884,15 +2910,15 @@ Warning (21074): Design contains 66 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "memEnd[29]" File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 10
     Warning (15610): No output dependent on input pin "memEnd[30]" File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 10
     Warning (15610): No output dependent on input pin "memEnd[31]" File: C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/MIPSC.vhd Line: 10
-Info (21057): Implemented 676 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 704 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 69 input pins
-    Info (21059): Implemented 128 output pins
-    Info (21061): Implemented 418 logic cells
+    Info (21059): Implemented 142 output pins
+    Info (21061): Implemented 432 logic cells
     Info (21064): Implemented 61 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
-    Info: Peak virtual memory: 706 megabytes
-    Info: Processing ended: Tue Nov 28 12:33:07 2017
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Peak virtual memory: 705 megabytes
+    Info: Processing ended: Tue Nov 28 15:07:13 2017
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:30
 
 
