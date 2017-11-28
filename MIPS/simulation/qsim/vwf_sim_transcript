@@ -1,6 +1,6 @@
 Determining the location of the ModelSim executable...
 
-Using: c:/intelfpga_lite/17.0/modelsim_ase/win32aloem/
+Using: f:/intelfpga_lite/17.0/modelsim_ase/win32aloem/
 
 To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
 Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
@@ -26,10 +26,10 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Mon Nov 27 10:39:22 2017
+    Info: Processing started: Mon Nov 27 22:34:49 2017
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPS -c MIPS --vector_source=C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/Waveform5.vwf --testbench_file=C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/Waveform5.vwf.vht
 
-ng output pin "beqadderout[17]" in vector source file when writing test bench files
+Outteste[4]" in vector source file when writing test bench files
 
 Completed successfully. 
 
@@ -54,13 +54,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Mon Nov 27 10:39:23 2017
+    Info: Processing started: Mon Nov 27 22:34:49 2017
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/ MIPS -c MIPS
 Info (204019): Generated file MIPS.vho in folder "C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 536 megabytes
-    Info: Processing ended: Mon Nov 27 10:39:25 2017
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Mon Nov 27 22:34:50 2017
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -73,24 +73,19 @@ Completed successfully.
 
 **** Running the ModelSim simulation ****
 
-c:/intelfpga_lite/17.0/modelsim_ase/win32aloem//vsim -c -do MIPS.do
+f:/intelfpga_lite/17.0/modelsim_ase/win32aloem//vsim -c -do MIPS.do
 
-Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
-
+Reading F:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 
 # 10.5b
 
-
 # do MIPS.do
-
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 10:39:27 on Nov 27,2017
+# Start time: 22:34:51 on Nov 27,2017
 # vcom -work work MIPS.vho 
-
 # -- Loading package STANDARD
-
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package VITAL_Timing
@@ -99,16 +94,15 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package cycloneive_components
 # -- Compiling entity hard_block
 # -- Compiling architecture structure of hard_block
-
 # -- Loading package dffeas_pack
 # -- Loading package altera_primitives_components
 # -- Compiling entity fluxoDeDados
 # -- Compiling architecture structure of fluxoDeDados
 
-# End time: 10:39:28 on Nov 27,2017, Elapsed time: 0:00:01
+# End time: 22:34:51 on Nov 27,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 10:39:28 on Nov 27,2017
+# Start time: 22:34:51 on Nov 27,2017
 # vcom -work work Waveform5.vwf.vht 
 # -- Loading package STANDARD
 
@@ -116,12 +110,11 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package std_logic_1164
 # -- Compiling entity fluxoDeDados_vhd_vec_tst
 # -- Compiling architecture fluxoDeDados_arch of fluxoDeDados_vhd_vec_tst
-
-# End time: 10:39:29 on Nov 27,2017, Elapsed time: 0:00:01
+# End time: 22:34:51 on Nov 27,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.fluxoDeDados_vhd_vec_tst 
-# Start time: 10:39:30 on Nov 27,2017
+# Start time: 22:34:51 on Nov 27,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -141,12 +134,14 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # Loading cycloneive.cycloneive_ena_reg(behave)
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 162324 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Loading cycloneive.cycloneive_ram_block(block_arch)
+# Loading cycloneive.cycloneive_ram_register(reg_arch)
+# Loading cycloneive.cycloneive_ram_pulse_generator(pgen_arch)
+# ** Warning: Design size of 173930 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
-
 # after#35
 
-# End time: 10:39:31 on Nov 27,2017, Elapsed time: 0:00:01
+# End time: 22:34:52 on Nov 27,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -159,7 +154,45 @@ Reading C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/MIPS.msim.vcd
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/MIPS_20171127103931.sim.vwf
+Warning: instRdOut[4] - signal not found in VCD.
+
+Warning: instRdOut[3] - signal not found in VCD.
+
+Warning: instRdOut[2] - signal not found in VCD.
+
+Warning: instRdOut[1] - signal not found in VCD.
+
+Warning: instRdOut[0] - signal not found in VCD.
+
+Warning: instRsOut[4] - signal not found in VCD.
+
+Warning: instRsOut[3] - signal not found in VCD.
+
+Warning: instRsOut[2] - signal not found in VCD.
+
+Warning: instRsOut[1] - signal not found in VCD.
+
+Warning: instRsOut[0] - signal not found in VCD.
+
+Warning: instRtOut[4] - signal not found in VCD.
+
+Warning: instRtOut[3] - signal not found in VCD.
+
+Warning: instRtOut[2] - signal not found in VCD.
+
+Warning: instRtOut[1] - signal not found in VCD.
+
+Warning: instRtOut[0] - signal not found in VCD.
+
+Warning: muxRtImmSelteste[3] - signal not found in VCD.
+
+Warning: muxRtImmSelteste[2] - signal not found in VCD.
+
+Warning: muxRtImmSelteste[1] - signal not found in VCD.
+
+Warning: muxRtImmSelteste[0] - signal not found in VCD.
+
+Writing the resulting VWF to C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/MIPS_20171127223452.sim.vwf
 
 Finished VCD to VWF conversion.
 

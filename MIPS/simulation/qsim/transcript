@@ -1,7 +1,7 @@
 # do MIPS.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 10:39:27 on Nov 27,2017
+# Start time: 22:34:51 on Nov 27,2017
 # vcom -work work MIPS.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -16,20 +16,20 @@
 # -- Loading package altera_primitives_components
 # -- Compiling entity fluxoDeDados
 # -- Compiling architecture structure of fluxoDeDados
-# End time: 10:39:28 on Nov 27,2017, Elapsed time: 0:00:01
+# End time: 22:34:51 on Nov 27,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 10:39:28 on Nov 27,2017
+# Start time: 22:34:51 on Nov 27,2017
 # vcom -work work Waveform5.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity fluxoDeDados_vhd_vec_tst
 # -- Compiling architecture fluxoDeDados_arch of fluxoDeDados_vhd_vec_tst
-# End time: 10:39:29 on Nov 27,2017, Elapsed time: 0:00:01
+# End time: 22:34:51 on Nov 27,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.fluxoDeDados_vhd_vec_tst 
-# Start time: 10:39:30 on Nov 27,2017
+# Start time: 22:34:51 on Nov 27,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -49,8 +49,11 @@
 # Loading cycloneive.cycloneive_ena_reg(behave)
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 162324 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Loading cycloneive.cycloneive_ram_block(block_arch)
+# Loading cycloneive.cycloneive_ram_register(reg_arch)
+# Loading cycloneive.cycloneive_ram_pulse_generator(pgen_arch)
+# ** Warning: Design size of 173930 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#35
-# End time: 10:39:31 on Nov 27,2017, Elapsed time: 0:00:01
+# End time: 22:34:52 on Nov 27,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1

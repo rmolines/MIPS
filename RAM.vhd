@@ -49,16 +49,16 @@ architecture behaviour of RAM is
 		variable tmp : mt := (others => (others => '0'));
 	begin
 		-- Initialize each address with the address itself
-		tmp(0) := INST;
+		tmp(0) := (others => '0');
 		tmp(1) := INSTTWO;
-		tmp(2) := INSTFOUR;
-		tmp(3) := std_logic_vector(to_signed(97, DATA_WIDTH));
-		tmp(4) := INSTFIVE;
-		tmp(5) := std_logic_vector(to_signed(108, DATA_WIDTH));
-		tmp(6) := std_logic_vector(to_signed(1965, DATA_WIDTH));
+		tmp(2) := (others => '0');
+		tmp(3) := (others => '0');
+		tmp(4) := (others => '0');
+		tmp(5) := std_logic_vector(to_signed(8, DATA_WIDTH));
+		tmp(6) := std_logic_vector(to_signed(9, DATA_WIDTH));
 		tmp(7) := std_logic_vector(to_signed(8, DATA_WIDTH));
 		tmp(8) := std_logic_vector(to_signed(4, DATA_WIDTH));
-		tmp(9) := std_logic_vector(to_signed(4, DATA_WIDTH));
+		tmp(9) := std_logic_vector(to_signed(2, DATA_WIDTH));
 		return tmp;
 	end coco;
 

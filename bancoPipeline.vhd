@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 -- Baseado no apendice C (Register Files) do COD (Patterson & Hennessy).
-entity bancoRegistradores is
+entity bancoPipeline is
     generic
     (
         larguraDados        : natural := 32;
@@ -15,47 +15,49 @@ entity bancoRegistradores is
     (
         clk        : in std_logic;
 
-        inst       : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
-        readData1   : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
-        readData2   : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
-        signExtend   : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
-        wb   : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
-        m   : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
-        ex   : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
-        pc   : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
+        inst       : in std_logic_vector((larguraDados-1) downto 0) := (others => '0');
+        readData1   : in std_logic_vector((larguraDados-1) downto 0) := (others => '0');
+        readData2   : in std_logic_vector((larguraDados-1) downto 0) := (others => '0');
+        signExtend   : in std_logic_vector((larguraDados-1) downto 0) := (others => '0');
+        wb   : in std_logic_vector(1 downto 0) := (others => '0');
+        m   : in std_logic_vector(2 downto 0) := (others => '0');
+        ex   : in std_logic_vector(3 downto 0) := (others => '0');
+        pc   : in std_logic_vector((larguraDados-1) downto 0) := (others => '0');
         instRt   : in std_logic_vector(4 downto 0) := (others => '0');
         instRd   : in std_logic_vector(4 downto 0) := (others => '0');
-        addimm   : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
-        zeroFlag   : in std_logic := (others => '0');
-        ulaout   : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
+        addimm   : in std_logic_vector((larguraDados-1) downto 0) := (others => '0');
+        zeroFlag   : in std_logic := '0';
+        ulaout   : in std_logic_vector((larguraDados-1) downto 0) := (others => '0');
         muxrtrd   : in std_logic_vector(4 downto 0) := (others => '0');
-        memdata   : in std_logic_vector((larguraEndBancoRegs-1) downto 0) := (others => '0');
+        memdata   : in std_logic_vector((larguraDados-1) downto 0) := (others => '0');
 
 
-        instout   : out std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        readData1out   : out std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        readData2out   : out std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        signExtendout   : out std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        wbout   : out std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        mout   : out std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        exout   : out std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        pcout   : out std_logic_vector((larguraEndBancoRegs-1) downto 0);
+        instout   : out std_logic_vector((larguraDados-1) downto 0);
+        readData1out   : out std_logic_vector((larguraDados-1) downto 0);
+        readData2out   : out std_logic_vector((larguraDados-1) downto 0);
+        signExtendout   : out std_logic_vector((larguraDados-1) downto 0);
+        wbout   : out std_logic_vector(1 downto 0);
+        mout   : out std_logic_vector(2 downto 0);
+        exout   : out std_logic_vector(3 downto 0);
+        pcout   : out std_logic_vector((larguraDados-1) downto 0);
         instRtout   : out std_logic_vector(4 downto 0);
         instRdout   : out std_logic_vector(4 downto 0);
-        addimmout   : out std_logic_vector((larguraEndBancoRegs-1) downto 0);
+        addimmout   : out std_logic_vector((larguraDados-1) downto 0);
         zeroFlagout   : out std_logic;
-        ulaoutout   : out std_logic_vector((larguraEndBancoRegs-1) downto 0);
+        ulaoutout   : out std_logic_vector((larguraDados-1) downto 0);
         muxrtrdout   : out std_logic_vector(4 downto 0);
-        memdataout   : out std_logic_vector((larguraEndBancoRegs-1) downto 0)
+        memdataout   : out std_logic_vector((larguraDados-1) downto 0)
 
 
     );
 end entity;
 
-architecture behaviour of bancoRegistradores is
+architecture behaviour of bancoPipeline is
   signal insttemp, readData1temp, readData2temp, pctemp, addimmtemp,
-         ulaouttemp, memdatatemp : std_logic_vector(31 downto 0);
-  signal wbtemp, m, ex : std_logic_vector;
+         ulaouttemp, memdatatemp, signExtendtemp : std_logic_vector(31 downto 0);
+  signal extemp : std_logic_vector(3 downto 0);
+  signal wbtemp : std_logic_vector(1 downto 0);
+  signal mtemp : std_logic_vector(2 downto 0);
   signal instRttemp, instRdtemp, muxRtRdtemp : std_logic_vector(4 downto 0);
   signal zeroFlagtemp : std_logic;
 

@@ -50,13 +50,13 @@ architecture behaviour of bancoRegistradores is
 	begin
 		-- Initialize each address with the address itself
 		tmp(0) := std_logic_vector(to_signed(0, larguraDados));
-		tmp(1) := std_logic_vector(to_signed(8, larguraDados));
-		tmp(2) := std_logic_vector(to_signed(-3, larguraDados));
+		tmp(1) := std_logic_vector(to_signed(1, larguraDados));
+		tmp(2) := std_logic_vector(to_signed(2, larguraDados));
 		tmp(3) := std_logic_vector(to_signed(3, larguraDados));
-		tmp(4) := std_logic_vector(to_signed(15, larguraDados));
-		tmp(5) := std_logic_vector(to_signed(404, larguraDados));
-		tmp(8) := std_logic_vector(to_signed(97, larguraDados));
-		tmp(9) := std_logic_vector(to_signed(97, larguraDados));
+		tmp(4) := std_logic_vector(to_signed(4, larguraDados));
+		tmp(5) := std_logic_vector(to_signed(5, larguraDados));
+		tmp(8) := std_logic_vector(to_signed(6, larguraDados));
+		tmp(9) := std_logic_vector(to_signed(7, larguraDados));
 		return tmp;
 	end;
 
@@ -73,11 +73,17 @@ begin
 	begin
 		if (rising_edge(clk)) then
 			if (escreveC = '1') then
-				ram(to_integer(signed (enderecoC))) <= dadoEscritaC;
-			end if;
+        if (enderecoC = std_logic_vector(to_signed(0, larguraDados))) then
+          ram(to_integer(signed (enderecoC))) <= (others => '0');
+        else
+          ram(to_integer(signed (enderecoC))) <= dadoEscritaC;
+        end if;
+      end if;
 		end if;
 
 	end process;
+
+   --ram(0) <= (others => '0');
 
 	saidaA <= ram(to_integer(unsigned (enderecoA)));
 

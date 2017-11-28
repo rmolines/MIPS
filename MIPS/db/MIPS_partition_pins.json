@@ -136,6 +136,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "memTestOut[1]",
+					"strict" : false
+				},
+				{
 					"name" : "memTestOut[2]",
 					"strict" : false
 				},
@@ -144,39 +148,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "memTestOut[5]",
-					"strict" : false
-				},
-				{
-					"name" : "memTestOut[6]",
-					"strict" : false
-				},
-				{
-					"name" : "memTestOut[7]",
-					"strict" : false
-				},
-				{
-					"name" : "memTestOut[8]",
-					"strict" : false
-				},
-				{
-					"name" : "memTestOut[9]",
-					"strict" : false
-				},
-				{
-					"name" : "memTestOut[10]",
-					"strict" : false
-				},
-				{
-					"name" : "memTestOut[13]",
-					"strict" : false
-				},
-				{
 					"name" : "memTestOut[16]",
-					"strict" : false
-				},
-				{
-					"name" : "memTestOut[17]",
 					"strict" : false
 				},
 				{
@@ -184,19 +156,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "memTestOut[19]",
-					"strict" : false
-				},
-				{
-					"name" : "memTestOut[21]",
-					"strict" : false
-				},
-				{
 					"name" : "memTestOut[23]",
-					"strict" : false
-				},
-				{
-					"name" : "memTestOut[24]",
 					"strict" : false
 				},
 				{
@@ -208,43 +168,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "memTestOut[28]",
-					"strict" : false
-				},
-				{
 					"name" : "memTestOut[31]",
-					"strict" : false
-				},
-				{
-					"name" : "instRsOut[0]",
-					"strict" : false
-				},
-				{
-					"name" : "instRsOut[2]",
-					"strict" : false
-				},
-				{
-					"name" : "instRsOut[3]",
-					"strict" : false
-				},
-				{
-					"name" : "instRtOut[0]",
-					"strict" : false
-				},
-				{
-					"name" : "instRtOut[1]",
-					"strict" : false
-				},
-				{
-					"name" : "instRtOut[2]",
-					"strict" : false
-				},
-				{
-					"name" : "instRtOut[3]",
-					"strict" : false
-				},
-				{
-					"name" : "instRdOut[2]",
 					"strict" : false
 				},
 				{
@@ -1144,7 +1068,139 @@
 					"strict" : false
 				},
 				{
+					"name" : "ULAOUTTESTE1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[16]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[17]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[18]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[19]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[20]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[21]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[22]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[23]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[24]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[25]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[26]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[27]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[28]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[29]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[30]",
+					"strict" : false
+				},
+				{
+					"name" : "ULAOUTTESTE1[31]",
+					"strict" : false
+				},
+				{
 					"name" : "beqadder[2]",
+					"strict" : false
+				},
+				{
+					"name" : "beqadder[3]",
 					"strict" : false
 				},
 				{
@@ -1153,34 +1209,6 @@
 				},
 				{
 					"name" : "beqadder[5]",
-					"strict" : false
-				},
-				{
-					"name" : "beqadder[7]",
-					"strict" : false
-				},
-				{
-					"name" : "beqadder[8]",
-					"strict" : false
-				},
-				{
-					"name" : "beqadder[9]",
-					"strict" : false
-				},
-				{
-					"name" : "beqadder[10]",
-					"strict" : false
-				},
-				{
-					"name" : "beqadder[11]",
-					"strict" : false
-				},
-				{
-					"name" : "beqadder[12]",
-					"strict" : false
-				},
-				{
-					"name" : "beqadder[15]",
 					"strict" : false
 				},
 				{
@@ -1440,7 +1468,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "word[0]",
+					"name" : "signExtendOutteste[0]",
+					"strict" : false
+				},
+				{
+					"name" : "signExtendOutteste[1]",
+					"strict" : false
+				},
+				{
+					"name" : "signExtendOutteste[2]",
+					"strict" : false
+				},
+				{
+					"name" : "signExtendOutteste[3]",
 					"strict" : false
 				},
 				{
@@ -1452,10 +1492,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "word[4]",
-					"strict" : false
-				},
-				{
 					"name" : "word[5]",
 					"strict" : false
 				},
@@ -1464,15 +1500,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "word[7]",
-					"strict" : false
-				},
-				{
 					"name" : "word[8]",
-					"strict" : false
-				},
-				{
-					"name" : "word[9]",
 					"strict" : false
 				},
 				{
@@ -1492,11 +1520,47 @@
 					"strict" : false
 				},
 				{
-					"name" : "regTestEnd[0]",
+					"name" : "EXTESTE[0]",
 					"strict" : false
 				},
 				{
-					"name" : "regTestEnd[1]",
+					"name" : "EXTESTE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "EXTESTE[3]",
+					"strict" : false
+				},
+				{
+					"name" : "WBTESTE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MTESTE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rt[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rt[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rs[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "regTestEnd[0]",
 					"strict" : false
 				},
 				{
@@ -1508,15 +1572,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "regTestEnd[1]",
+					"strict" : false
+				},
+				{
 					"name" : "memTestEnd[1]",
 					"strict" : false
 				},
 				{
-					"name" : "memTestEnd[0]",
+					"name" : "memTestEnd[2]",
 					"strict" : false
 				},
 				{
-					"name" : "memTestEnd[2]",
+					"name" : "memTestEnd[0]",
 					"strict" : false
 				},
 				{
