@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPS -c MIPS --vector_source="C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/Waveform5.vwf" --testbench_file="C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/Waveform5.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPS -c MIPS --vector_source="F:/intelFPGA_lite/17.0/MIPS/Waveform3.vwf" --testbench_file="F:/intelFPGA_lite/17.0/MIPS/simulation/qsim/Waveform3.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,16 +26,16 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Mon Nov 27 22:34:49 2017
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPS -c MIPS --vector_source=C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/Waveform5.vwf --testbench_file=C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/Waveform5.vwf.vht
+    Info: Processing started: Mon Nov 27 23:46:34 2017
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPS -c MIPS --vector_source=F:/intelFPGA_lite/17.0/MIPS/Waveform3.vwf --testbench_file=F:/intelFPGA_lite/17.0/MIPS/simulation/qsim/Waveform3.vwf.vht
 
-Outteste[4]" in vector source file when writing test bench files
+gnoring output pin "q[24]" in vector source file when writing test bench files
 
 Completed successfully. 
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/" MIPS -c MIPS
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="F:/intelFPGA_lite/17.0/MIPS/simulation/qsim/" MIPS -c MIPS
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -54,13 +54,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Mon Nov 27 22:34:49 2017
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/ MIPS -c MIPS
-Info (204019): Generated file MIPS.vho in folder "C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim//" for EDA simulation tool
+    Info: Processing started: Mon Nov 27 23:46:35 2017
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=F:/intelFPGA_lite/17.0/MIPS/simulation/qsim/ MIPS -c MIPS
+Info (204019): Generated file MIPS.vho in folder "F:/intelFPGA_lite/17.0/MIPS/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 536 megabytes
-    Info: Processing ended: Mon Nov 27 22:34:50 2017
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 533 megabytes
+    Info: Processing ended: Mon Nov 27 23:46:35 2017
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -83,7 +83,7 @@ Reading F:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:34:51 on Nov 27,2017
+# Start time: 23:46:36 on Nov 27,2017
 # vcom -work work MIPS.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -99,33 +99,33 @@ Reading F:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # -- Compiling entity fluxoDeDados
 # -- Compiling architecture structure of fluxoDeDados
 
-# End time: 22:34:51 on Nov 27,2017, Elapsed time: 0:00:00
+# End time: 23:46:36 on Nov 27,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:34:51 on Nov 27,2017
-# vcom -work work Waveform5.vwf.vht 
+# Start time: 23:46:36 on Nov 27,2017
+# vcom -work work Waveform3.vwf.vht 
 # -- Loading package STANDARD
 
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity fluxoDeDados_vhd_vec_tst
-# -- Compiling architecture fluxoDeDados_arch of fluxoDeDados_vhd_vec_tst
-# End time: 22:34:51 on Nov 27,2017, Elapsed time: 0:00:00
+# -- Compiling entity RAM_vhd_vec_tst
+# -- Compiling architecture RAM_arch of RAM_vhd_vec_tst
+# End time: 23:46:36 on Nov 27,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.fluxoDeDados_vhd_vec_tst 
-# Start time: 22:34:51 on Nov 27,2017
+# vsim -novopt -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.RAM_vhd_vec_tst 
+# Start time: 23:46:36 on Nov 27,2017
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.fluxodedados_vhd_vec_tst(fluxodedados_arch)
+# Loading work.ram_vhd_vec_tst(ram_arch)
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading altera.dffeas_pack
 # Loading altera.altera_primitives_components
 # Loading cycloneive.cycloneive_atom_pack(body)
 # Loading cycloneive.cycloneive_components
-# Loading work.fluxodedados(structure)
+# Loading work.ram(structure)
 # Loading work.hard_block(structure)
 # Loading ieee.std_logic_arith(body)
 # Loading cycloneive.cycloneive_io_obuf(arch)
@@ -134,65 +134,474 @@ Reading F:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # Loading cycloneive.cycloneive_ena_reg(behave)
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
-# Loading cycloneive.cycloneive_ram_block(block_arch)
-# Loading cycloneive.cycloneive_ram_register(reg_arch)
-# Loading cycloneive.cycloneive_ram_pulse_generator(pgen_arch)
-# ** Warning: Design size of 173930 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 28590 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#35
 
-# End time: 22:34:52 on Nov 27,2017, Elapsed time: 0:00:01
+# End time: 23:46:37 on Nov 27,2017, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/Waveform5.vwf...
+Reading C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/Waveform3.vwf...
 
 Reading C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/MIPS.msim.vcd...
 
 Processing channel transitions... 
 
-Warning: instRdOut[4] - signal not found in VCD.
+Warning: clk - signal not found in VCD.
 
-Warning: instRdOut[3] - signal not found in VCD.
+Warning: HEX0[6] - signal not found in VCD.
 
-Warning: instRdOut[2] - signal not found in VCD.
+Warning: HEX0[5] - signal not found in VCD.
 
-Warning: instRdOut[1] - signal not found in VCD.
+Warning: HEX0[4] - signal not found in VCD.
 
-Warning: instRdOut[0] - signal not found in VCD.
+Warning: HEX0[3] - signal not found in VCD.
 
-Warning: instRsOut[4] - signal not found in VCD.
+Warning: HEX0[2] - signal not found in VCD.
 
-Warning: instRsOut[3] - signal not found in VCD.
+Warning: HEX0[1] - signal not found in VCD.
 
-Warning: instRsOut[2] - signal not found in VCD.
+Warning: HEX0[0] - signal not found in VCD.
 
-Warning: instRsOut[1] - signal not found in VCD.
+Warning: HEX1[6] - signal not found in VCD.
 
-Warning: instRsOut[0] - signal not found in VCD.
+Warning: HEX1[5] - signal not found in VCD.
 
-Warning: instRtOut[4] - signal not found in VCD.
+Warning: HEX1[4] - signal not found in VCD.
 
-Warning: instRtOut[3] - signal not found in VCD.
+Warning: HEX1[3] - signal not found in VCD.
 
-Warning: instRtOut[2] - signal not found in VCD.
+Warning: HEX1[2] - signal not found in VCD.
 
-Warning: instRtOut[1] - signal not found in VCD.
+Warning: HEX1[1] - signal not found in VCD.
 
-Warning: instRtOut[0] - signal not found in VCD.
+Warning: HEX1[0] - signal not found in VCD.
 
-Warning: muxRtImmSelteste[3] - signal not found in VCD.
+Warning: HEX2[6] - signal not found in VCD.
 
-Warning: muxRtImmSelteste[2] - signal not found in VCD.
+Warning: HEX2[5] - signal not found in VCD.
 
-Warning: muxRtImmSelteste[1] - signal not found in VCD.
+Warning: HEX2[4] - signal not found in VCD.
 
-Warning: muxRtImmSelteste[0] - signal not found in VCD.
+Warning: HEX2[3] - signal not found in VCD.
 
-Writing the resulting VWF to C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/MIPS_20171127223452.sim.vwf
+Warning: HEX2[2] - signal not found in VCD.
+
+Warning: HEX2[1] - signal not found in VCD.
+
+Warning: HEX2[0] - signal not found in VCD.
+
+Warning: HEX3[6] - signal not found in VCD.
+
+Warning: HEX3[5] - signal not found in VCD.
+
+Warning: HEX3[4] - signal not found in VCD.
+
+Warning: HEX3[3] - signal not found in VCD.
+
+Warning: HEX3[2] - signal not found in VCD.
+
+Warning: HEX3[1] - signal not found in VCD.
+
+Warning: HEX3[0] - signal not found in VCD.
+
+Warning: HEX4[6] - signal not found in VCD.
+
+Warning: HEX4[5] - signal not found in VCD.
+
+Warning: HEX4[4] - signal not found in VCD.
+
+Warning: HEX4[3] - signal not found in VCD.
+
+Warning: HEX4[2] - signal not found in VCD.
+
+Warning: HEX4[1] - signal not found in VCD.
+
+Warning: HEX4[0] - signal not found in VCD.
+
+Warning: HEX5[6] - signal not found in VCD.
+
+Warning: HEX5[5] - signal not found in VCD.
+
+Warning: HEX5[4] - signal not found in VCD.
+
+Warning: HEX5[3] - signal not found in VCD.
+
+Warning: HEX5[2] - signal not found in VCD.
+
+Warning: HEX5[1] - signal not found in VCD.
+
+Warning: HEX5[0] - signal not found in VCD.
+
+Warning: HEX6[6] - signal not found in VCD.
+
+Warning: HEX6[5] - signal not found in VCD.
+
+Warning: HEX6[4] - signal not found in VCD.
+
+Warning: HEX6[3] - signal not found in VCD.
+
+Warning: HEX6[2] - signal not found in VCD.
+
+Warning: HEX6[1] - signal not found in VCD.
+
+Warning: HEX6[0] - signal not found in VCD.
+
+Warning: HEX7[6] - signal not found in VCD.
+
+Warning: HEX7[5] - signal not found in VCD.
+
+Warning: HEX7[4] - signal not found in VCD.
+
+Warning: HEX7[3] - signal not found in VCD.
+
+Warning: HEX7[2] - signal not found in VCD.
+
+Warning: HEX7[1] - signal not found in VCD.
+
+Warning: HEX7[0] - signal not found in VCD.
+
+Warning: key[3] - signal not found in VCD.
+
+Warning: key[2] - signal not found in VCD.
+
+Warning: key[1] - signal not found in VCD.
+
+Warning: key[0] - signal not found in VCD.
+
+Warning: memTestOut[31] - signal not found in VCD.
+
+Warning: memTestOut[30] - signal not found in VCD.
+
+Warning: memTestOut[29] - signal not found in VCD.
+
+Warning: memTestOut[28] - signal not found in VCD.
+
+Warning: memTestOut[27] - signal not found in VCD.
+
+Warning: memTestOut[26] - signal not found in VCD.
+
+Warning: memTestOut[25] - signal not found in VCD.
+
+Warning: memTestOut[24] - signal not found in VCD.
+
+Warning: memTestOut[23] - signal not found in VCD.
+
+Warning: memTestOut[22] - signal not found in VCD.
+
+Warning: memTestOut[21] - signal not found in VCD.
+
+Warning: memTestOut[20] - signal not found in VCD.
+
+Warning: memTestOut[19] - signal not found in VCD.
+
+Warning: memTestOut[18] - signal not found in VCD.
+
+Warning: memTestOut[17] - signal not found in VCD.
+
+Warning: memTestOut[16] - signal not found in VCD.
+
+Warning: memTestOut[15] - signal not found in VCD.
+
+Warning: memTestOut[14] - signal not found in VCD.
+
+Warning: memTestOut[13] - signal not found in VCD.
+
+Warning: memTestOut[12] - signal not found in VCD.
+
+Warning: memTestOut[11] - signal not found in VCD.
+
+Warning: memTestOut[10] - signal not found in VCD.
+
+Warning: memTestOut[9] - signal not found in VCD.
+
+Warning: memTestOut[8] - signal not found in VCD.
+
+Warning: memTestOut[7] - signal not found in VCD.
+
+Warning: memTestOut[6] - signal not found in VCD.
+
+Warning: memTestOut[5] - signal not found in VCD.
+
+Warning: memTestOut[4] - signal not found in VCD.
+
+Warning: memTestOut[3] - signal not found in VCD.
+
+Warning: memTestOut[2] - signal not found in VCD.
+
+Warning: memTestOut[1] - signal not found in VCD.
+
+Warning: memTestOut[0] - signal not found in VCD.
+
+Warning: regTestOut[31] - signal not found in VCD.
+
+Warning: regTestOut[30] - signal not found in VCD.
+
+Warning: regTestOut[29] - signal not found in VCD.
+
+Warning: regTestOut[28] - signal not found in VCD.
+
+Warning: regTestOut[27] - signal not found in VCD.
+
+Warning: regTestOut[26] - signal not found in VCD.
+
+Warning: regTestOut[25] - signal not found in VCD.
+
+Warning: regTestOut[24] - signal not found in VCD.
+
+Warning: regTestOut[23] - signal not found in VCD.
+
+Warning: regTestOut[22] - signal not found in VCD.
+
+Warning: regTestOut[21] - signal not found in VCD.
+
+Warning: regTestOut[20] - signal not found in VCD.
+
+Warning: regTestOut[19] - signal not found in VCD.
+
+Warning: regTestOut[18] - signal not found in VCD.
+
+Warning: regTestOut[17] - signal not found in VCD.
+
+Warning: regTestOut[16] - signal not found in VCD.
+
+Warning: regTestOut[15] - signal not found in VCD.
+
+Warning: regTestOut[14] - signal not found in VCD.
+
+Warning: regTestOut[13] - signal not found in VCD.
+
+Warning: regTestOut[12] - signal not found in VCD.
+
+Warning: regTestOut[11] - signal not found in VCD.
+
+Warning: regTestOut[10] - signal not found in VCD.
+
+Warning: regTestOut[9] - signal not found in VCD.
+
+Warning: regTestOut[8] - signal not found in VCD.
+
+Warning: regTestOut[7] - signal not found in VCD.
+
+Warning: regTestOut[6] - signal not found in VCD.
+
+Warning: regTestOut[5] - signal not found in VCD.
+
+Warning: regTestOut[4] - signal not found in VCD.
+
+Warning: regTestOut[3] - signal not found in VCD.
+
+Warning: regTestOut[2] - signal not found in VCD.
+
+Warning: regTestOut[1] - signal not found in VCD.
+
+Warning: regTestOut[0] - signal not found in VCD.
+
+Warning: memTestEndOut[31] - signal not found in VCD.
+
+Warning: memTestEndOut[30] - signal not found in VCD.
+
+Warning: memTestEndOut[29] - signal not found in VCD.
+
+Warning: memTestEndOut[28] - signal not found in VCD.
+
+Warning: memTestEndOut[27] - signal not found in VCD.
+
+Warning: memTestEndOut[26] - signal not found in VCD.
+
+Warning: memTestEndOut[25] - signal not found in VCD.
+
+Warning: memTestEndOut[24] - signal not found in VCD.
+
+Warning: memTestEndOut[23] - signal not found in VCD.
+
+Warning: memTestEndOut[22] - signal not found in VCD.
+
+Warning: memTestEndOut[21] - signal not found in VCD.
+
+Warning: memTestEndOut[20] - signal not found in VCD.
+
+Warning: memTestEndOut[19] - signal not found in VCD.
+
+Warning: memTestEndOut[18] - signal not found in VCD.
+
+Warning: memTestEndOut[17] - signal not found in VCD.
+
+Warning: memTestEndOut[16] - signal not found in VCD.
+
+Warning: memTestEndOut[15] - signal not found in VCD.
+
+Warning: memTestEndOut[14] - signal not found in VCD.
+
+Warning: memTestEndOut[13] - signal not found in VCD.
+
+Warning: memTestEndOut[12] - signal not found in VCD.
+
+Warning: memTestEndOut[11] - signal not found in VCD.
+
+Warning: memTestEndOut[10] - signal not found in VCD.
+
+Warning: memTestEndOut[9] - signal not found in VCD.
+
+Warning: memTestEndOut[8] - signal not found in VCD.
+
+Warning: memTestEndOut[7] - signal not found in VCD.
+
+Warning: memTestEndOut[6] - signal not found in VCD.
+
+Warning: memTestEndOut[5] - signal not found in VCD.
+
+Warning: memTestEndOut[4] - signal not found in VCD.
+
+Warning: memTestEndOut[3] - signal not found in VCD.
+
+Warning: memTestEndOut[2] - signal not found in VCD.
+
+Warning: memTestEndOut[1] - signal not found in VCD.
+
+Warning: memTestEndOut[0] - signal not found in VCD.
+
+Warning: regTestEndOut[4] - signal not found in VCD.
+
+Warning: regTestEndOut[3] - signal not found in VCD.
+
+Warning: regTestEndOut[2] - signal not found in VCD.
+
+Warning: regTestEndOut[1] - signal not found in VCD.
+
+Warning: regTestEndOut[0] - signal not found in VCD.
+
+Warning: memEnd[31] - signal not found in VCD.
+
+Warning: memEnd[30] - signal not found in VCD.
+
+Warning: memEnd[29] - signal not found in VCD.
+
+Warning: memEnd[28] - signal not found in VCD.
+
+Warning: memEnd[27] - signal not found in VCD.
+
+Warning: memEnd[26] - signal not found in VCD.
+
+Warning: memEnd[25] - signal not found in VCD.
+
+Warning: memEnd[24] - signal not found in VCD.
+
+Warning: memEnd[23] - signal not found in VCD.
+
+Warning: memEnd[22] - signal not found in VCD.
+
+Warning: memEnd[21] - signal not found in VCD.
+
+Warning: memEnd[20] - signal not found in VCD.
+
+Warning: memEnd[19] - signal not found in VCD.
+
+Warning: memEnd[18] - signal not found in VCD.
+
+Warning: memEnd[17] - signal not found in VCD.
+
+Warning: memEnd[16] - signal not found in VCD.
+
+Warning: memEnd[15] - signal not found in VCD.
+
+Warning: memEnd[14] - signal not found in VCD.
+
+Warning: memEnd[13] - signal not found in VCD.
+
+Warning: memEnd[12] - signal not found in VCD.
+
+Warning: memEnd[11] - signal not found in VCD.
+
+Warning: memEnd[10] - signal not found in VCD.
+
+Warning: memEnd[9] - signal not found in VCD.
+
+Warning: memEnd[8] - signal not found in VCD.
+
+Warning: memEnd[7] - signal not found in VCD.
+
+Warning: memEnd[6] - signal not found in VCD.
+
+Warning: memEnd[5] - signal not found in VCD.
+
+Warning: memEnd[4] - signal not found in VCD.
+
+Warning: memEnd[3] - signal not found in VCD.
+
+Warning: memEnd[2] - signal not found in VCD.
+
+Warning: memEnd[1] - signal not found in VCD.
+
+Warning: memEnd[0] - signal not found in VCD.
+
+Warning: regEnd[30] - signal not found in VCD.
+
+Warning: regEnd[29] - signal not found in VCD.
+
+Warning: regEnd[28] - signal not found in VCD.
+
+Warning: regEnd[27] - signal not found in VCD.
+
+Warning: regEnd[26] - signal not found in VCD.
+
+Warning: regEnd[25] - signal not found in VCD.
+
+Warning: regEnd[24] - signal not found in VCD.
+
+Warning: regEnd[23] - signal not found in VCD.
+
+Warning: regEnd[22] - signal not found in VCD.
+
+Warning: regEnd[21] - signal not found in VCD.
+
+Warning: regEnd[20] - signal not found in VCD.
+
+Warning: regEnd[19] - signal not found in VCD.
+
+Warning: regEnd[18] - signal not found in VCD.
+
+Warning: regEnd[17] - signal not found in VCD.
+
+Warning: regEnd[16] - signal not found in VCD.
+
+Warning: regEnd[15] - signal not found in VCD.
+
+Warning: regEnd[14] - signal not found in VCD.
+
+Warning: regEnd[13] - signal not found in VCD.
+
+Warning: regEnd[12] - signal not found in VCD.
+
+Warning: regEnd[11] - signal not found in VCD.
+
+Warning: regEnd[10] - signal not found in VCD.
+
+Warning: regEnd[9] - signal not found in VCD.
+
+Warning: regEnd[8] - signal not found in VCD.
+
+Warning: regEnd[7] - signal not found in VCD.
+
+Warning: regEnd[6] - signal not found in VCD.
+
+Warning: regEnd[5] - signal not found in VCD.
+
+Warning: regEnd[4] - signal not found in VCD.
+
+Warning: regEnd[3] - signal not found in VCD.
+
+Warning: regEnd[2] - signal not found in VCD.
+
+Warning: regEnd[1] - signal not found in VCD.
+
+Warning: regEnd[0] - signal not found in VCD.
+
+Writing the resulting VWF to C:/Users/Rafael/Documents/GitHub/MIPS/MIPS/simulation/qsim/MIPS_20171127234637.sim.vwf
 
 Finished VCD to VWF conversion.
 

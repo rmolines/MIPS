@@ -7,22 +7,31 @@ entity MIPS is
   --entradas
     clk : in std_logic;
     key: in std_logic_vector(3 downto 0);
+    regEnd : in natural;
+    memEnd : in std_logic_vector(31 downto 0);
 
     --saidas
-    HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : OUT STD_LOGIC_VECTOR(6 downto 0)
+    HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : OUT STD_LOGIC_VECTOR(6 downto 0);
+    regTestOut, memTestOut : out std_logic_vector(31 downto 0);
+    regTestEndOut : out std_logic_vector(4 downto 0);
+    memTestEndOut : out std_logic_vector(31 downto 0)
   );
 end entity;
 
 architecture MIPSarch of MIPS is
 
   signal regDataAUX, memDataAUX : std_logic_vector(31 downto 0);
-  variable regTest, memTest : natural;
+  signal regTest, memTest : natural := 0;
 
 begin
+  memTestOut <= memDataAUX;
+  regTestOut <= regDataAUX;
+  memTestEndOut <= memEnd;
+  regTestEndOut <= std_logic_vector(to_unsigned(regEnd, 5));
 
   FD : entity work.fluxoDeDados port map
-  (clk => key(0), regTestEnd => std_logic_vector(to_unsigned(regTest, 5)),
-  memTestEnd => std_logic_vector(to_unsigned(memTest, 32)),
+  (clk => clk, regTestEnd => std_logic_vector(to_unsigned(regEnd, 5)),
+  memTestEnd => memEnd,
   regTestOut => regDataAUX, memTestOut => memDataAUX);
 
 
@@ -35,19 +44,19 @@ begin
   -- display5 : entity work.conversorHex7seg
   --   Port map (saida7seg => HEX5, dadoHex => auxSh_d);
 
-  process(key)
-  begin
-    if (rising_edge(key(3))) then
-      regTest := regTest+1;
-      if (regTest = 10) then
-        regTest := 0;
-      end if;
-    end if;
-    if (rising_edge(key(2))) then
-      memTest := memTest+1;
-      if (memTest = 10) then
-        memTest := 0;
-      end if;
-    end if;
-	end process;
+  -- process(key)
+  -- begin
+  --   if (rising_edge(key(3))) then
+  --     regTest <= regTest+1;
+  --     if (regTest = 10) then
+  --       regTest <= 0;
+  --     end if;
+  --   end if;
+  --   if (rising_edge(key(2))) then
+  --     memTest <= memTest+1;
+  --     if (memTest = 10) then
+  --       memTest <= 0;
+  --     end if;
+  --   end if;
+	-- end process;
 end architecture;

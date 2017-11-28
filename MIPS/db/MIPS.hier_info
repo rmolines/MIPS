@@ -1,4 +1,269 @@
-|fluxoDeDados
+|MIPS
+clk => fluxodedados:FD.clk
+key[0] => ~NO_FANOUT~
+key[1] => ~NO_FANOUT~
+key[2] => ~NO_FANOUT~
+key[3] => ~NO_FANOUT~
+regEnd[0] => fluxodedados:FD.regTestEnd[0]
+regEnd[0] => regTestEndOut[0].DATAIN
+regEnd[1] => fluxodedados:FD.regTestEnd[1]
+regEnd[1] => regTestEndOut[1].DATAIN
+regEnd[2] => fluxodedados:FD.regTestEnd[2]
+regEnd[2] => regTestEndOut[2].DATAIN
+regEnd[3] => fluxodedados:FD.regTestEnd[3]
+regEnd[3] => regTestEndOut[3].DATAIN
+regEnd[4] => fluxodedados:FD.regTestEnd[4]
+regEnd[4] => regTestEndOut[4].DATAIN
+regEnd[5] => ~NO_FANOUT~
+regEnd[6] => ~NO_FANOUT~
+regEnd[7] => ~NO_FANOUT~
+regEnd[8] => ~NO_FANOUT~
+regEnd[9] => ~NO_FANOUT~
+regEnd[10] => ~NO_FANOUT~
+regEnd[11] => ~NO_FANOUT~
+regEnd[12] => ~NO_FANOUT~
+regEnd[13] => ~NO_FANOUT~
+regEnd[14] => ~NO_FANOUT~
+regEnd[15] => ~NO_FANOUT~
+regEnd[16] => ~NO_FANOUT~
+regEnd[17] => ~NO_FANOUT~
+regEnd[18] => ~NO_FANOUT~
+regEnd[19] => ~NO_FANOUT~
+regEnd[20] => ~NO_FANOUT~
+regEnd[21] => ~NO_FANOUT~
+regEnd[22] => ~NO_FANOUT~
+regEnd[23] => ~NO_FANOUT~
+regEnd[24] => ~NO_FANOUT~
+regEnd[25] => ~NO_FANOUT~
+regEnd[26] => ~NO_FANOUT~
+regEnd[27] => ~NO_FANOUT~
+regEnd[28] => ~NO_FANOUT~
+regEnd[29] => ~NO_FANOUT~
+regEnd[30] => ~NO_FANOUT~
+memEnd[0] => fluxodedados:FD.memTestEnd[0]
+memEnd[0] => memTestEndOut[0].DATAIN
+memEnd[1] => fluxodedados:FD.memTestEnd[1]
+memEnd[1] => memTestEndOut[1].DATAIN
+memEnd[2] => fluxodedados:FD.memTestEnd[2]
+memEnd[2] => memTestEndOut[2].DATAIN
+memEnd[3] => fluxodedados:FD.memTestEnd[3]
+memEnd[3] => memTestEndOut[3].DATAIN
+memEnd[4] => fluxodedados:FD.memTestEnd[4]
+memEnd[4] => memTestEndOut[4].DATAIN
+memEnd[5] => fluxodedados:FD.memTestEnd[5]
+memEnd[5] => memTestEndOut[5].DATAIN
+memEnd[6] => fluxodedados:FD.memTestEnd[6]
+memEnd[6] => memTestEndOut[6].DATAIN
+memEnd[7] => fluxodedados:FD.memTestEnd[7]
+memEnd[7] => memTestEndOut[7].DATAIN
+memEnd[8] => fluxodedados:FD.memTestEnd[8]
+memEnd[8] => memTestEndOut[8].DATAIN
+memEnd[9] => fluxodedados:FD.memTestEnd[9]
+memEnd[9] => memTestEndOut[9].DATAIN
+memEnd[10] => fluxodedados:FD.memTestEnd[10]
+memEnd[10] => memTestEndOut[10].DATAIN
+memEnd[11] => fluxodedados:FD.memTestEnd[11]
+memEnd[11] => memTestEndOut[11].DATAIN
+memEnd[12] => fluxodedados:FD.memTestEnd[12]
+memEnd[12] => memTestEndOut[12].DATAIN
+memEnd[13] => fluxodedados:FD.memTestEnd[13]
+memEnd[13] => memTestEndOut[13].DATAIN
+memEnd[14] => fluxodedados:FD.memTestEnd[14]
+memEnd[14] => memTestEndOut[14].DATAIN
+memEnd[15] => fluxodedados:FD.memTestEnd[15]
+memEnd[15] => memTestEndOut[15].DATAIN
+memEnd[16] => fluxodedados:FD.memTestEnd[16]
+memEnd[16] => memTestEndOut[16].DATAIN
+memEnd[17] => fluxodedados:FD.memTestEnd[17]
+memEnd[17] => memTestEndOut[17].DATAIN
+memEnd[18] => fluxodedados:FD.memTestEnd[18]
+memEnd[18] => memTestEndOut[18].DATAIN
+memEnd[19] => fluxodedados:FD.memTestEnd[19]
+memEnd[19] => memTestEndOut[19].DATAIN
+memEnd[20] => fluxodedados:FD.memTestEnd[20]
+memEnd[20] => memTestEndOut[20].DATAIN
+memEnd[21] => fluxodedados:FD.memTestEnd[21]
+memEnd[21] => memTestEndOut[21].DATAIN
+memEnd[22] => fluxodedados:FD.memTestEnd[22]
+memEnd[22] => memTestEndOut[22].DATAIN
+memEnd[23] => fluxodedados:FD.memTestEnd[23]
+memEnd[23] => memTestEndOut[23].DATAIN
+memEnd[24] => fluxodedados:FD.memTestEnd[24]
+memEnd[24] => memTestEndOut[24].DATAIN
+memEnd[25] => fluxodedados:FD.memTestEnd[25]
+memEnd[25] => memTestEndOut[25].DATAIN
+memEnd[26] => fluxodedados:FD.memTestEnd[26]
+memEnd[26] => memTestEndOut[26].DATAIN
+memEnd[27] => fluxodedados:FD.memTestEnd[27]
+memEnd[27] => memTestEndOut[27].DATAIN
+memEnd[28] => fluxodedados:FD.memTestEnd[28]
+memEnd[28] => memTestEndOut[28].DATAIN
+memEnd[29] => fluxodedados:FD.memTestEnd[29]
+memEnd[29] => memTestEndOut[29].DATAIN
+memEnd[30] => fluxodedados:FD.memTestEnd[30]
+memEnd[30] => memTestEndOut[30].DATAIN
+memEnd[31] => fluxodedados:FD.memTestEnd[31]
+memEnd[31] => memTestEndOut[31].DATAIN
+HEX0[0] <= HEX0[0].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[1] <= HEX0[1].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[2] <= HEX0[2].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[3] <= HEX0[3].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[4] <= HEX0[4].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[5] <= HEX0[5].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[6] <= HEX0[6].DB_MAX_OUTPUT_PORT_TYPE
+HEX1[0] <= HEX1[0].DB_MAX_OUTPUT_PORT_TYPE
+HEX1[1] <= HEX1[1].DB_MAX_OUTPUT_PORT_TYPE
+HEX1[2] <= HEX1[2].DB_MAX_OUTPUT_PORT_TYPE
+HEX1[3] <= HEX1[3].DB_MAX_OUTPUT_PORT_TYPE
+HEX1[4] <= HEX1[4].DB_MAX_OUTPUT_PORT_TYPE
+HEX1[5] <= HEX1[5].DB_MAX_OUTPUT_PORT_TYPE
+HEX1[6] <= HEX1[6].DB_MAX_OUTPUT_PORT_TYPE
+HEX2[0] <= conversorhex7seg:display2.saida7seg[0]
+HEX2[1] <= conversorhex7seg:display2.saida7seg[1]
+HEX2[2] <= conversorhex7seg:display2.saida7seg[2]
+HEX2[3] <= conversorhex7seg:display2.saida7seg[3]
+HEX2[4] <= conversorhex7seg:display2.saida7seg[4]
+HEX2[5] <= conversorhex7seg:display2.saida7seg[5]
+HEX2[6] <= conversorhex7seg:display2.saida7seg[6]
+HEX3[0] <= HEX3[0].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[1] <= HEX3[1].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[2] <= HEX3[2].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[3] <= HEX3[3].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[4] <= HEX3[4].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[5] <= HEX3[5].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[6] <= HEX3[6].DB_MAX_OUTPUT_PORT_TYPE
+HEX4[0] <= conversorhex7seg:display4.saida7seg[0]
+HEX4[1] <= conversorhex7seg:display4.saida7seg[1]
+HEX4[2] <= conversorhex7seg:display4.saida7seg[2]
+HEX4[3] <= conversorhex7seg:display4.saida7seg[3]
+HEX4[4] <= conversorhex7seg:display4.saida7seg[4]
+HEX4[5] <= conversorhex7seg:display4.saida7seg[5]
+HEX4[6] <= conversorhex7seg:display4.saida7seg[6]
+HEX5[0] <= HEX5[0].DB_MAX_OUTPUT_PORT_TYPE
+HEX5[1] <= HEX5[1].DB_MAX_OUTPUT_PORT_TYPE
+HEX5[2] <= HEX5[2].DB_MAX_OUTPUT_PORT_TYPE
+HEX5[3] <= HEX5[3].DB_MAX_OUTPUT_PORT_TYPE
+HEX5[4] <= HEX5[4].DB_MAX_OUTPUT_PORT_TYPE
+HEX5[5] <= HEX5[5].DB_MAX_OUTPUT_PORT_TYPE
+HEX5[6] <= HEX5[6].DB_MAX_OUTPUT_PORT_TYPE
+HEX6[0] <= HEX6[0].DB_MAX_OUTPUT_PORT_TYPE
+HEX6[1] <= HEX6[1].DB_MAX_OUTPUT_PORT_TYPE
+HEX6[2] <= HEX6[2].DB_MAX_OUTPUT_PORT_TYPE
+HEX6[3] <= HEX6[3].DB_MAX_OUTPUT_PORT_TYPE
+HEX6[4] <= HEX6[4].DB_MAX_OUTPUT_PORT_TYPE
+HEX6[5] <= HEX6[5].DB_MAX_OUTPUT_PORT_TYPE
+HEX6[6] <= HEX6[6].DB_MAX_OUTPUT_PORT_TYPE
+HEX7[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+HEX7[1] <= HEX7[1].DB_MAX_OUTPUT_PORT_TYPE
+HEX7[2] <= HEX7[2].DB_MAX_OUTPUT_PORT_TYPE
+HEX7[3] <= HEX7[3].DB_MAX_OUTPUT_PORT_TYPE
+HEX7[4] <= HEX7[4].DB_MAX_OUTPUT_PORT_TYPE
+HEX7[5] <= HEX7[5].DB_MAX_OUTPUT_PORT_TYPE
+HEX7[6] <= HEX7[6].DB_MAX_OUTPUT_PORT_TYPE
+regTestOut[0] <= fluxodedados:FD.regTestOut[0]
+regTestOut[1] <= fluxodedados:FD.regTestOut[1]
+regTestOut[2] <= fluxodedados:FD.regTestOut[2]
+regTestOut[3] <= fluxodedados:FD.regTestOut[3]
+regTestOut[4] <= fluxodedados:FD.regTestOut[4]
+regTestOut[5] <= fluxodedados:FD.regTestOut[5]
+regTestOut[6] <= fluxodedados:FD.regTestOut[6]
+regTestOut[7] <= fluxodedados:FD.regTestOut[7]
+regTestOut[8] <= fluxodedados:FD.regTestOut[8]
+regTestOut[9] <= fluxodedados:FD.regTestOut[9]
+regTestOut[10] <= fluxodedados:FD.regTestOut[10]
+regTestOut[11] <= fluxodedados:FD.regTestOut[11]
+regTestOut[12] <= fluxodedados:FD.regTestOut[12]
+regTestOut[13] <= fluxodedados:FD.regTestOut[13]
+regTestOut[14] <= fluxodedados:FD.regTestOut[14]
+regTestOut[15] <= fluxodedados:FD.regTestOut[15]
+regTestOut[16] <= fluxodedados:FD.regTestOut[16]
+regTestOut[17] <= fluxodedados:FD.regTestOut[17]
+regTestOut[18] <= fluxodedados:FD.regTestOut[18]
+regTestOut[19] <= fluxodedados:FD.regTestOut[19]
+regTestOut[20] <= fluxodedados:FD.regTestOut[20]
+regTestOut[21] <= fluxodedados:FD.regTestOut[21]
+regTestOut[22] <= fluxodedados:FD.regTestOut[22]
+regTestOut[23] <= fluxodedados:FD.regTestOut[23]
+regTestOut[24] <= fluxodedados:FD.regTestOut[24]
+regTestOut[25] <= fluxodedados:FD.regTestOut[25]
+regTestOut[26] <= fluxodedados:FD.regTestOut[26]
+regTestOut[27] <= fluxodedados:FD.regTestOut[27]
+regTestOut[28] <= fluxodedados:FD.regTestOut[28]
+regTestOut[29] <= fluxodedados:FD.regTestOut[29]
+regTestOut[30] <= fluxodedados:FD.regTestOut[30]
+regTestOut[31] <= fluxodedados:FD.regTestOut[31]
+memTestOut[0] <= fluxodedados:FD.memTestOut[0]
+memTestOut[1] <= fluxodedados:FD.memTestOut[1]
+memTestOut[2] <= fluxodedados:FD.memTestOut[2]
+memTestOut[3] <= fluxodedados:FD.memTestOut[3]
+memTestOut[4] <= fluxodedados:FD.memTestOut[4]
+memTestOut[5] <= fluxodedados:FD.memTestOut[5]
+memTestOut[6] <= fluxodedados:FD.memTestOut[6]
+memTestOut[7] <= fluxodedados:FD.memTestOut[7]
+memTestOut[8] <= fluxodedados:FD.memTestOut[8]
+memTestOut[9] <= fluxodedados:FD.memTestOut[9]
+memTestOut[10] <= fluxodedados:FD.memTestOut[10]
+memTestOut[11] <= fluxodedados:FD.memTestOut[11]
+memTestOut[12] <= fluxodedados:FD.memTestOut[12]
+memTestOut[13] <= fluxodedados:FD.memTestOut[13]
+memTestOut[14] <= fluxodedados:FD.memTestOut[14]
+memTestOut[15] <= fluxodedados:FD.memTestOut[15]
+memTestOut[16] <= fluxodedados:FD.memTestOut[16]
+memTestOut[17] <= fluxodedados:FD.memTestOut[17]
+memTestOut[18] <= fluxodedados:FD.memTestOut[18]
+memTestOut[19] <= fluxodedados:FD.memTestOut[19]
+memTestOut[20] <= fluxodedados:FD.memTestOut[20]
+memTestOut[21] <= fluxodedados:FD.memTestOut[21]
+memTestOut[22] <= fluxodedados:FD.memTestOut[22]
+memTestOut[23] <= fluxodedados:FD.memTestOut[23]
+memTestOut[24] <= fluxodedados:FD.memTestOut[24]
+memTestOut[25] <= fluxodedados:FD.memTestOut[25]
+memTestOut[26] <= fluxodedados:FD.memTestOut[26]
+memTestOut[27] <= fluxodedados:FD.memTestOut[27]
+memTestOut[28] <= fluxodedados:FD.memTestOut[28]
+memTestOut[29] <= fluxodedados:FD.memTestOut[29]
+memTestOut[30] <= fluxodedados:FD.memTestOut[30]
+memTestOut[31] <= fluxodedados:FD.memTestOut[31]
+regTestEndOut[0] <= regEnd[0].DB_MAX_OUTPUT_PORT_TYPE
+regTestEndOut[1] <= regEnd[1].DB_MAX_OUTPUT_PORT_TYPE
+regTestEndOut[2] <= regEnd[2].DB_MAX_OUTPUT_PORT_TYPE
+regTestEndOut[3] <= regEnd[3].DB_MAX_OUTPUT_PORT_TYPE
+regTestEndOut[4] <= regEnd[4].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[0] <= memEnd[0].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[1] <= memEnd[1].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[2] <= memEnd[2].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[3] <= memEnd[3].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[4] <= memEnd[4].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[5] <= memEnd[5].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[6] <= memEnd[6].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[7] <= memEnd[7].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[8] <= memEnd[8].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[9] <= memEnd[9].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[10] <= memEnd[10].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[11] <= memEnd[11].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[12] <= memEnd[12].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[13] <= memEnd[13].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[14] <= memEnd[14].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[15] <= memEnd[15].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[16] <= memEnd[16].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[17] <= memEnd[17].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[18] <= memEnd[18].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[19] <= memEnd[19].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[20] <= memEnd[20].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[21] <= memEnd[21].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[22] <= memEnd[22].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[23] <= memEnd[23].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[24] <= memEnd[24].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[25] <= memEnd[25].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[26] <= memEnd[26].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[27] <= memEnd[27].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[28] <= memEnd[28].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[29] <= memEnd[29].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[30] <= memEnd[30].DB_MAX_OUTPUT_PORT_TYPE
+memTestEndOut[31] <= memEnd[31].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|fluxoDeDados:FD
 clk => registradorgenerico:PC.CLK
 clk => ram:InstMem.clk
 clk => bancoregistradores:BancoReg.clk
@@ -534,7 +799,7 @@ rd[3] <= bancopipeline:memwb.muxrtrdout[3]
 rd[4] <= bancopipeline:memwb.muxrtrdout[4]
 
 
-|fluxoDeDados|registradorGenerico:PC
+|MIPS|fluxoDeDados:FD|registradorGenerico:PC
 DIN[0] => DOUT.DATAB
 DIN[1] => DOUT.DATAB
 DIN[2] => DOUT.DATAB
@@ -697,7 +962,7 @@ RST => DOUT.OUTPUTSELECT
 RST => DOUT.OUTPUTSELECT
 
 
-|fluxoDeDados|RAM:InstMem
+|MIPS|fluxoDeDados:FD|RAM:InstMem
 clk => ram~36.CLK
 clk => ram~0.CLK
 clk => ram~1.CLK
@@ -971,7 +1236,7 @@ saidaTeste[30] <= ram.PORTBDATAOUT30
 saidaTeste[31] <= ram.PORTBDATAOUT31
 
 
-|fluxoDeDados|MUX:MuxRtRd
+|MIPS|fluxoDeDados:FD|MUX:MuxRtRd
 SEL => C.OUTPUTSELECT
 SEL => C.OUTPUTSELECT
 SEL => C.OUTPUTSELECT
@@ -994,7 +1259,7 @@ C[3] <= C.DB_MAX_OUTPUT_PORT_TYPE
 C[4] <= C.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|bancoRegistradores:BancoReg
+|MIPS|fluxoDeDados:FD|bancoRegistradores:BancoReg
 clk => ram[0][0].CLK
 clk => ram[0][1].CLK
 clk => ram[0][2].CLK
@@ -3021,7 +3286,7 @@ saidaTeste[30] <= Mux65.DB_MAX_OUTPUT_PORT_TYPE
 saidaTeste[31] <= Mux64.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|MUX:muxRtImm
+|MIPS|fluxoDeDados:FD|MUX:muxRtImm
 SEL => C.OUTPUTSELECT
 SEL => C.OUTPUTSELECT
 SEL => C.OUTPUTSELECT
@@ -3152,7 +3417,7 @@ C[30] <= C.DB_MAX_OUTPUT_PORT_TYPE
 C[31] <= C.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|ULA:ULA
+|MIPS|fluxoDeDados:FD|ULA:ULA
 A[0] => tempA[0].DATAA
 A[0] => Add0.IN66
 A[1] => tempA[1].DATAA
@@ -3447,7 +3712,7 @@ zeroFlag <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 v <= Mux32.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|signExtend:SigExt
+|MIPS|fluxoDeDados:FD|signExtend:SigExt
 A[0] => B[0].DATAIN
 A[1] => B[1].DATAIN
 A[2] => B[2].DATAIN
@@ -3514,7 +3779,7 @@ B[30] <= A[15].DB_MAX_OUTPUT_PORT_TYPE
 B[31] <= A[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|RAM:MemDados
+|MIPS|fluxoDeDados:FD|RAM:MemDados
 clk => ram~36.CLK
 clk => ram~0.CLK
 clk => ram~1.CLK
@@ -3788,7 +4053,7 @@ saidaTeste[30] <= ram.PORTBDATAOUT30
 saidaTeste[31] <= ram.PORTBDATAOUT31
 
 
-|fluxoDeDados|MUX:MuxULAMem
+|MIPS|fluxoDeDados:FD|MUX:MuxULAMem
 SEL => C.OUTPUTSELECT
 SEL => C.OUTPUTSELECT
 SEL => C.OUTPUTSELECT
@@ -3919,7 +4184,7 @@ C[30] <= C.DB_MAX_OUTPUT_PORT_TYPE
 C[31] <= C.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|MUX:MuxBEQ
+|MIPS|fluxoDeDados:FD|MUX:MuxBEQ
 SEL => C.OUTPUTSELECT
 SEL => C.OUTPUTSELECT
 SEL => C.OUTPUTSELECT
@@ -4050,7 +4315,7 @@ C[30] <= C.DB_MAX_OUTPUT_PORT_TYPE
 C[31] <= C.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|ULA:AdderBEQ
+|MIPS|fluxoDeDados:FD|ULA:AdderBEQ
 A[0] => tempA[0].DATAA
 A[0] => Add0.IN66
 A[1] => tempA[1].DATAA
@@ -4345,7 +4610,7 @@ zeroFlag <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 v <= Mux32.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|shifter:ShifterImm
+|MIPS|fluxoDeDados:FD|shifter:ShifterImm
 A[0] => B[2].DATAIN
 A[1] => B[3].DATAIN
 A[2] => B[4].DATAIN
@@ -4412,7 +4677,7 @@ B[30] <= A[28].DB_MAX_OUTPUT_PORT_TYPE
 B[31] <= A[29].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|ULA:AdderPC
+|MIPS|fluxoDeDados:FD|ULA:AdderPC
 A[0] => tempA[0].DATAA
 A[0] => Add0.IN66
 A[1] => tempA[1].DATAA
@@ -4707,7 +4972,7 @@ zeroFlag <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 v <= Mux32.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|MUX:MuxJUMP
+|MIPS|fluxoDeDados:FD|MUX:MuxJUMP
 SEL => C.OUTPUTSELECT
 SEL => C.OUTPUTSELECT
 SEL => C.OUTPUTSELECT
@@ -4838,7 +5103,7 @@ C[30] <= C.DB_MAX_OUTPUT_PORT_TYPE
 C[31] <= C.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|shifter:ShifterInst
+|MIPS|fluxoDeDados:FD|shifter:ShifterInst
 A[0] => B[2].DATAIN
 A[1] => B[3].DATAIN
 A[2] => B[4].DATAIN
@@ -4893,7 +5158,7 @@ B[24] <= A[22].DB_MAX_OUTPUT_PORT_TYPE
 B[25] <= A[23].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|UCFD:UCFD
+|MIPS|fluxoDeDados:FD|UCFD:UCFD
 clk => ~NO_FANOUT~
 OP[0] => Mux0.IN69
 OP[0] => Mux1.IN69
@@ -4966,7 +5231,7 @@ memReadEnb <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
 memWriteEnb <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|UCULA:UCULA
+|MIPS|fluxoDeDados:FD|UCULA:UCULA
 clk => ~NO_FANOUT~
 OP[0] => Mux4.IN5
 OP[0] => Mux5.IN5
@@ -4999,7 +5264,7 @@ ctrl[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
 ctrl[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|bancoPipeline:ifid
+|MIPS|fluxoDeDados:FD|bancoPipeline:ifid
 clk => zeroFlagtemp.CLK
 clk => memdatatemp[0].CLK
 clk => memdatatemp[1].CLK
@@ -5845,7 +6110,7 @@ memdataout[30] <= memdatatemp[30].DB_MAX_OUTPUT_PORT_TYPE
 memdataout[31] <= memdatatemp[31].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|bancoPipeline:idex
+|MIPS|fluxoDeDados:FD|bancoPipeline:idex
 clk => zeroFlagtemp.CLK
 clk => memdatatemp[0].CLK
 clk => memdatatemp[1].CLK
@@ -6691,7 +6956,7 @@ memdataout[30] <= memdatatemp[30].DB_MAX_OUTPUT_PORT_TYPE
 memdataout[31] <= memdatatemp[31].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|bancoPipeline:exmem
+|MIPS|fluxoDeDados:FD|bancoPipeline:exmem
 clk => zeroFlagtemp.CLK
 clk => memdatatemp[0].CLK
 clk => memdatatemp[1].CLK
@@ -7537,7 +7802,7 @@ memdataout[30] <= memdatatemp[30].DB_MAX_OUTPUT_PORT_TYPE
 memdataout[31] <= memdatatemp[31].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|fluxoDeDados|bancoPipeline:memwb
+|MIPS|fluxoDeDados:FD|bancoPipeline:memwb
 clk => zeroFlagtemp.CLK
 clk => memdatatemp[0].CLK
 clk => memdatatemp[1].CLK
@@ -8381,5 +8646,169 @@ memdataout[28] <= memdatatemp[28].DB_MAX_OUTPUT_PORT_TYPE
 memdataout[29] <= memdatatemp[29].DB_MAX_OUTPUT_PORT_TYPE
 memdataout[30] <= memdatatemp[30].DB_MAX_OUTPUT_PORT_TYPE
 memdataout[31] <= memdatatemp[31].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|conversorHex7Seg:display2
+dadoHex[0] => Equal0.IN3
+dadoHex[0] => Equal1.IN0
+dadoHex[0] => Equal2.IN3
+dadoHex[0] => Equal3.IN1
+dadoHex[0] => Equal4.IN3
+dadoHex[0] => Equal5.IN1
+dadoHex[0] => Equal6.IN3
+dadoHex[0] => Equal7.IN2
+dadoHex[0] => Equal8.IN3
+dadoHex[0] => Equal9.IN1
+dadoHex[0] => Equal10.IN3
+dadoHex[0] => Equal11.IN2
+dadoHex[0] => Equal12.IN3
+dadoHex[0] => Equal13.IN2
+dadoHex[0] => Equal14.IN3
+dadoHex[0] => Equal15.IN3
+dadoHex[1] => Equal0.IN2
+dadoHex[1] => Equal1.IN3
+dadoHex[1] => Equal2.IN0
+dadoHex[1] => Equal3.IN0
+dadoHex[1] => Equal4.IN2
+dadoHex[1] => Equal5.IN3
+dadoHex[1] => Equal6.IN1
+dadoHex[1] => Equal7.IN1
+dadoHex[1] => Equal8.IN2
+dadoHex[1] => Equal9.IN3
+dadoHex[1] => Equal10.IN1
+dadoHex[1] => Equal11.IN1
+dadoHex[1] => Equal12.IN2
+dadoHex[1] => Equal13.IN3
+dadoHex[1] => Equal14.IN2
+dadoHex[1] => Equal15.IN2
+dadoHex[2] => Equal0.IN1
+dadoHex[2] => Equal1.IN2
+dadoHex[2] => Equal2.IN2
+dadoHex[2] => Equal3.IN3
+dadoHex[2] => Equal4.IN0
+dadoHex[2] => Equal5.IN0
+dadoHex[2] => Equal6.IN0
+dadoHex[2] => Equal7.IN0
+dadoHex[2] => Equal8.IN1
+dadoHex[2] => Equal9.IN2
+dadoHex[2] => Equal10.IN2
+dadoHex[2] => Equal11.IN3
+dadoHex[2] => Equal12.IN1
+dadoHex[2] => Equal13.IN1
+dadoHex[2] => Equal14.IN1
+dadoHex[2] => Equal15.IN1
+dadoHex[3] => Equal0.IN0
+dadoHex[3] => Equal1.IN1
+dadoHex[3] => Equal2.IN1
+dadoHex[3] => Equal3.IN2
+dadoHex[3] => Equal4.IN1
+dadoHex[3] => Equal5.IN2
+dadoHex[3] => Equal6.IN2
+dadoHex[3] => Equal7.IN3
+dadoHex[3] => Equal8.IN0
+dadoHex[3] => Equal9.IN0
+dadoHex[3] => Equal10.IN0
+dadoHex[3] => Equal11.IN0
+dadoHex[3] => Equal12.IN0
+dadoHex[3] => Equal13.IN0
+dadoHex[3] => Equal14.IN0
+dadoHex[3] => Equal15.IN0
+negativo => ~NO_FANOUT~
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+saida7seg[0] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[1] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[2] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[3] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[4] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[5] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|MIPS|conversorHex7Seg:display4
+dadoHex[0] => Equal0.IN3
+dadoHex[0] => Equal1.IN0
+dadoHex[0] => Equal2.IN3
+dadoHex[0] => Equal3.IN1
+dadoHex[0] => Equal4.IN3
+dadoHex[0] => Equal5.IN1
+dadoHex[0] => Equal6.IN3
+dadoHex[0] => Equal7.IN2
+dadoHex[0] => Equal8.IN3
+dadoHex[0] => Equal9.IN1
+dadoHex[0] => Equal10.IN3
+dadoHex[0] => Equal11.IN2
+dadoHex[0] => Equal12.IN3
+dadoHex[0] => Equal13.IN2
+dadoHex[0] => Equal14.IN3
+dadoHex[0] => Equal15.IN3
+dadoHex[1] => Equal0.IN2
+dadoHex[1] => Equal1.IN3
+dadoHex[1] => Equal2.IN0
+dadoHex[1] => Equal3.IN0
+dadoHex[1] => Equal4.IN2
+dadoHex[1] => Equal5.IN3
+dadoHex[1] => Equal6.IN1
+dadoHex[1] => Equal7.IN1
+dadoHex[1] => Equal8.IN2
+dadoHex[1] => Equal9.IN3
+dadoHex[1] => Equal10.IN1
+dadoHex[1] => Equal11.IN1
+dadoHex[1] => Equal12.IN2
+dadoHex[1] => Equal13.IN3
+dadoHex[1] => Equal14.IN2
+dadoHex[1] => Equal15.IN2
+dadoHex[2] => Equal0.IN1
+dadoHex[2] => Equal1.IN2
+dadoHex[2] => Equal2.IN2
+dadoHex[2] => Equal3.IN3
+dadoHex[2] => Equal4.IN0
+dadoHex[2] => Equal5.IN0
+dadoHex[2] => Equal6.IN0
+dadoHex[2] => Equal7.IN0
+dadoHex[2] => Equal8.IN1
+dadoHex[2] => Equal9.IN2
+dadoHex[2] => Equal10.IN2
+dadoHex[2] => Equal11.IN3
+dadoHex[2] => Equal12.IN1
+dadoHex[2] => Equal13.IN1
+dadoHex[2] => Equal14.IN1
+dadoHex[2] => Equal15.IN1
+dadoHex[3] => Equal0.IN0
+dadoHex[3] => Equal1.IN1
+dadoHex[3] => Equal2.IN1
+dadoHex[3] => Equal3.IN2
+dadoHex[3] => Equal4.IN1
+dadoHex[3] => Equal5.IN2
+dadoHex[3] => Equal6.IN2
+dadoHex[3] => Equal7.IN3
+dadoHex[3] => Equal8.IN0
+dadoHex[3] => Equal9.IN0
+dadoHex[3] => Equal10.IN0
+dadoHex[3] => Equal11.IN0
+dadoHex[3] => Equal12.IN0
+dadoHex[3] => Equal13.IN0
+dadoHex[3] => Equal14.IN0
+dadoHex[3] => Equal15.IN0
+negativo => ~NO_FANOUT~
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+saida7seg[0] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[1] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[2] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[3] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[4] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[5] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
 
 
