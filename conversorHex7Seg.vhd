@@ -8,6 +8,7 @@ entity conversorHex7Seg is
     dadoHex  : in  std_logic_vector(3 downto 0);
     negativo : in  std_logic := '0';
     overFlow : in  std_logic := '0';
+    Apaga    : in std_logic := '0';
     -- Output ports
     saida7seg : out std_logic_vector(6 downto 0)
   );
@@ -49,5 +50,6 @@ begin
                    "1111111"; -- Apaga todos segmentos.
   --
   saida7seg <=    "0100011" when (overFlow='1') else
+                  "1111111" when (apaga='1') else
                   rascSaida7seg;
 end architecture;

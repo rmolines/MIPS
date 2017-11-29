@@ -55,8 +55,11 @@ architecture behaviour of bancoRegistradores is
 		tmp(3) := std_logic_vector(to_signed(3, larguraDados));
 		tmp(4) := std_logic_vector(to_signed(4, larguraDados));
 		tmp(5) := std_logic_vector(to_signed(5, larguraDados));
-		tmp(8) := std_logic_vector(to_signed(6, larguraDados));
-		tmp(9) := std_logic_vector(to_signed(7, larguraDados));
+		tmp(6) := std_logic_vector(to_signed(6, larguraDados));
+		tmp(7) := std_logic_vector(to_signed(7, larguraDados));
+		tmp(8) := std_logic_vector(to_signed(8, larguraDados));
+		tmp(9) := std_logic_vector(to_signed(9, larguraDados));
+		tmp(10) := std_logic_vector(to_signed(10, larguraDados));
 		return tmp;
 	end;
 

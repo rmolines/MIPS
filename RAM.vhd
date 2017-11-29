@@ -13,15 +13,19 @@ entity RAM is
 		DATA_WIDTH : natural := 32;
 		ADDR_WIDTH : natural := 32;
 		INST		  : std_logic_vector(31 downto 0) :=
-		"000000" & "00001" & "00010" & "00100" & "00000000000";
+		"000000" & "00001" & "00010" & "00101" & "00000100101"; -- R
 		INSTTWO		  : std_logic_vector(31 downto 0) :=
-		"100011" & "00100" & "00101" & "0000000000000001";
+		"100011" & "00101" & "00111" & "0000000000010001"; -- LW R3, 17(R5)
 		INSTTHREE		  : std_logic_vector(31 downto 0) :=
-		"101011" & "00100" & "00101" & "0000000000000011";
+		"101011" & "00101" & "01010" & "0000000000000010"; -- SW R10, 2(R5)
 		INSTFOUR		  : std_logic_vector(31 downto 0) :=
-		"000100" & "01000" & "01001" & "0000000000000001";
+		"000100" & "00011" & "00101" & "0000000000000111"; -- BEQ R3, R2, 7
 		INSTFIVE		  : std_logic_vector(31 downto 0) :=
-		"000010" & "00000000000000000000000001"
+		"000010" & "00000000000000000000010111"; -- J 23
+		INSTSIX		  : std_logic_vector(31 downto 0) :=
+		"000000" & "00101" & "00110" & "01001" & "00000101010"; -- R SLT R5, R6, R5
+		INSTSEVEN		  : std_logic_vector(31 downto 0) :=
+    "000010" & "00000000000000000000011011" -- J 27
 	);
 
 	port
@@ -43,22 +47,40 @@ architecture behaviour of RAM is
 
 	-- Build a 2-D array type for the RAM
 	subtype wt is std_logic_vector(31 downto 0);
-	type mt is array(15 downto 0) of wt;
+	type mt is array(27 downto 0) of wt;
 
 	function coco return mt is
 		variable tmp : mt := (others => (others => '0'));
 	begin
 		-- Initialize each address with the address itself
-		tmp(0) := INSTTWO;
+		tmp(0) := INST;
 		tmp(1) := (others => '0');
 		tmp(2) := (others => '0');
 		tmp(3) := (others => '0');
-		tmp(4) := (others => '0');
-		tmp(5) := std_logic_vector(to_signed(8, DATA_WIDTH));
-		tmp(6) := std_logic_vector(to_signed(9, DATA_WIDTH));
-		tmp(7) := std_logic_vector(to_signed(8, DATA_WIDTH));
-		tmp(8) := std_logic_vector(to_signed(4, DATA_WIDTH));
-		tmp(9) := std_logic_vector(to_signed(2, DATA_WIDTH));
+		tmp(4) := INSTFOUR;
+		tmp(5) := (others => '0');
+		tmp(6) := (others => '0');
+		tmp(7) := (others => '0');
+		tmp(8) := INSTTWO;
+		tmp(9) := (others => '0');
+		tmp(10) := (others => '0');
+		tmp(11) := (others => '0');
+		tmp(12) := INSTTWO;
+		tmp(13) := (others => '0');
+		tmp(14) := (others => '0');
+		tmp(15) := (others => '0');
+		tmp(16) := INSTFIVE;
+		tmp(17) := (others => '0');
+		tmp(18) := (others => '0');
+		tmp(19) := (others => '0');
+		tmp(20) := std_logic_vector(to_signed(15, DATA_WIDTH));
+		tmp(21) := std_logic_vector(to_signed(4, DATA_WIDTH));
+		tmp(22) := std_logic_vector(to_signed(2, DATA_WIDTH));
+		tmp(23) := INSTSIX;
+		tmp(24) := (others => '0');
+		tmp(25) := (others => '0');
+		tmp(26) := (others => '0');
+		tmp(27) := INSTSEVEN;
 		return tmp;
 	end coco;
 

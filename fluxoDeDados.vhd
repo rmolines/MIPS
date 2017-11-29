@@ -52,7 +52,7 @@ architecture fluxoDeDadosarch of fluxoDeDados is
 
 begin
 
-  muxJumpIn <= adderPCOut(31 downto 28) & instShifterOut(25 downto 0) & "00";
+  muxJumpIn <= adderPCOut(31 downto 28) & "00" & instImmBig(25 downto 0);
   instRttemp <= instMemOut(20 downto 16);
   instRdtemp <= instMemOut(15 downto 11);
   instRstemp <= instMemOut(25 downto 21);

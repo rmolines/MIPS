@@ -42,7 +42,7 @@ architecture fluxoDeDadosCarch of fluxoDeDadosC is
 
 begin
 
-  muxJumpIn <= adderPCOut(31 downto 28) & instShifterOut(25 downto 0) & "00";
+  muxJumpIn <= adderPCOut(31 downto 28) & "00" & instImmBig(25 downto 0);
   instRt <= instMemOut(20 downto 16);
   instRd <= instMemOut(15 downto 11);
   instRs <= instMemOut(25 downto 21);
@@ -76,7 +76,7 @@ begin
 
   PCOutTeste <= PCOut;
 
-  InstMem     : entity work.RAM port map
+  InstMem     : entity work.RAMC port map
               (clk => clk, addr => to_integer(signed(PCOut)),
               re => '1', we => '0', q => instMemOut, data => muxJumpIn);
 
@@ -101,7 +101,7 @@ begin
   SigExt      : entity work.signExtend port map
               (A => instImmSmall, B => signExtendOut);
 
-  MemDados    : entity work.RAM port map
+  MemDados    : entity work.RAMC port map
               (clk => clk, addr => to_integer(signed(ULAOut)), data => readData2,
               re => memReadEnb, we => memWriteEnb, q => readMemData,
               endTeste => memTestEnd, saidaTeste => memTestOut);
